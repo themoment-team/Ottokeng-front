@@ -19,6 +19,7 @@ export const Title = styled.h1({
   fontSize: '28px',
   margin: '0 0 24px 0',
   // height: '33px',
+  fontWeight: '500',
 });
 
 export const Input = styled.input({
@@ -34,7 +35,7 @@ export const Input = styled.input({
 export const Checkbox = styled.input({
   width: '24px',
   height: '24px',
-  border: '1px solid #999999',
+  border: '1.2px solid #999999',
   borderRadius: '4.8px',
   margin: '0',
   cursor: 'pointer',
@@ -43,6 +44,7 @@ export const Checkbox = styled.input({
 export const CheckboxText = styled.p({
   marginLeft: '9.6px',
   fontSize: '16px',
+  fontWeight: '500',
 });
 
 export const RegistrationBox = styled.div({
@@ -71,6 +73,7 @@ export const SubmitBTN = styled.button({
 export const RegistrationText = styled.p({
   fontSize: '16px',
   color: '#6695F1',
+  fontWeight: '500',
 });
 
 export const Box = styled.div({
