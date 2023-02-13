@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-
+import { Header } from './components';
 function App() {
   return (
     <div className="App">
-      <header></header>
+      <Header />
       <BrowserRouter>
         <Routes>
           {/* <Route path="/" element={<MainPage />}></Route> */}
