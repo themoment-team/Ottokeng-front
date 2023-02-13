@@ -8,6 +8,7 @@ export const CheckBoxs = ({ text }: { text: string }) => {
       css={css`
         display: flex;
         justify-content: center;
+        align-items: center;
       `}
     >
       <S.Checkbox type="checkbox" />

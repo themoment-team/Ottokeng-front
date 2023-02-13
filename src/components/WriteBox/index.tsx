@@ -21,6 +21,7 @@ const WriteBox = ({
           height: 48px;
         `}
       />
+
       <S.Input
         placeholder="본인의 연락처, 분실물의 특징, 위치와 같은 자세한 내용을 입력해주세요."
         css={css`
@@ -58,7 +59,7 @@ const WriteBox = ({
           margin-top: 186px;
         `}
       >
-        <S.SubmitBTN>등록하기</S.SubmitBTN>
+        <S.SubmitBTN>{submitText}</S.SubmitBTN>
       </S.FlexBox>
     </S.Container>
   );
