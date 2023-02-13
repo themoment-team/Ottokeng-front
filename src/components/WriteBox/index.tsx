@@ -16,28 +16,50 @@ const WriteBox = ({
     <S.Container>
       <S.Title>{title}</S.Title>
       <S.Input
+        placeholder="제목을 입력해주세요."
         css={css`
           height: 48px;
         `}
       />
       <S.Input
+        placeholder="본인의 연락처, 분실물의 특징, 위치와 같은 자세한 내용을 입력해주세요."
         css={css`
           height: 240px;
         `}
       />
       <S.Box>
-        <CheckBoxs text="습득"></CheckBoxs>
-        <CheckBoxs text="분실"></CheckBoxs>
-        <RegistrationBox
-          svg={<I.CameraIcon />}
-          text="사진 등록하기"
-        ></RegistrationBox>
-        <RegistrationBox
-          svg={<I.LocationIcon />}
-          text="위치 등록하기"
-        ></RegistrationBox>
+        <S.FlexBox
+          css={css`
+            width: 154px;
+          `}
+        >
+          <CheckBoxs text="습득"></CheckBoxs>
+          <CheckBoxs text="분실"></CheckBoxs>
+        </S.FlexBox>
+        <S.FlexBox
+          css={css`
+            width: 288px;
+          `}
+        >
+          <RegistrationBox
+            svg={<I.CameraIcon />}
+            text="사진 등록하기"
+          ></RegistrationBox>
+          <RegistrationBox
+            svg={<I.LocationIcon />}
+            text="위치 등록하기"
+          ></RegistrationBox>
+        </S.FlexBox>
       </S.Box>
-      <S.SubmitBTN>등록하기</S.SubmitBTN>
+      <S.FlexBox
+        css={css`
+          width: 820px;
+          justify-content: center;
+          margin-top: 186px;
+        `}
+      >
+        <S.SubmitBTN>등록하기</S.SubmitBTN>
+      </S.FlexBox>
     </S.Container>
   );
 };

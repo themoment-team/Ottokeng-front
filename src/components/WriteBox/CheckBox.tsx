@@ -7,6 +7,7 @@ export const CheckBoxs = ({ text }: { text: string }) => {
     <div
       css={css`
         display: flex;
+        justify-content: center;
       `}
     >
       <S.Checkbox type="checkbox" />
