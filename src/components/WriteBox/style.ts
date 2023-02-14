@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 import styled from '@emotion/styled';
-import * as I from '../../assets/svgs';
 
 export const Container = styled.div({
   width: '820px',
@@ -62,7 +61,7 @@ export const RegistrationBox = styled.div({
 export const SubmitBTN = styled.button({
   width: '144px',
   height: '44px',
-  backgroundColor: '#6695F1',
+  backgroundColor: '#2E6EEB',
   fontSize: '20px',
   color: '#fff',
   borderRadius: '8px',
