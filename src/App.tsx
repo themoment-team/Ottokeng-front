@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import { Header } from './components';
+import { Header, Footer } from './components';
 function App() {
   return (
     <div className="App">
@@ -15,7 +15,7 @@ function App() {
           {/* <Route path="*" element={<NotFound />}></Route> */}
         </Routes>
       </BrowserRouter>
-      <footer></footer>
+      <Footer />
     </div>
   );
 }
