@@ -18,14 +18,14 @@ const WriteBox = ({
       <S.Input
         placeholder="제목을 입력해주세요."
         css={css`
-          height: 48px;
+          height: 46px;
         `}
       />
 
-      <S.Input
+      <S.TextArea
         placeholder="본인의 연락처, 분실물의 특징, 위치와 같은 자세한 내용을 입력해주세요."
         css={css`
-          height: 240px;
+          height: 218px;
         `}
       />
       <S.Box>

@@ -31,6 +31,9 @@ input {
 input::placeholder {
   color: #999999;
 }
-input[id='check1']:checked + label::after {
-  color: #6695f1;
+textarea {
+  font-family: 'Pretendard';
+}
+textarea::placeholder {
+  color: #999999;
 }

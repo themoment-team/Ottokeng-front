@@ -1,32 +1,43 @@
 /** @jsxImportSource @emotion/react */
 import styled from '@emotion/styled';
-import * as I from '../../assets/svgs';
 
 export const Container = styled.div({
   width: '820px',
-  height: '638px',
+  height: '655px',
   backgroundColor: '#fff',
-  padding: '41px 64px',
+  padding: '41px 64px 24px 64px',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
   boxShadow: '0 4px 10px 0 rgba(0, 0, 0, 0.1)',
   borderRadius: '8px',
+  marginTop: '100px',
 });
 
 export const Title = styled.h1({
   width: '200px',
   fontSize: '28px',
   margin: '0 0 24px 0',
-  // height: '33px',
+  height: '33px',
   fontWeight: '500',
 });
 
-export const Input = styled.input({
+export const Input = styled.input(props => ({
   width: '804px',
-  border: '1px solid #858585',
+  border: '1px solid #B8B8B8',
   borderRadius: '8px',
   padding: ' 0 0 0 16px',
+  marginBottom: '24px',
+  fontSize: '18px',
+  outline: 'none',
+}));
+
+export const TextArea = styled.textarea({
+  resize: 'none',
+  width: '804px',
+  border: '1px solid #B8B8B8',
+  borderRadius: '8px',
+  padding: ' 20px 0 0 16px',
   marginBottom: '24px',
   fontSize: '18px',
   outline: 'none',
@@ -49,7 +60,7 @@ export const CheckboxText = styled.p({
 
 export const RegistrationBox = styled.div({
   width: '134px',
-  heigth: '36px',
+  heigth: '34px',
   border: '1px solid #6695F1',
   borderRadius: '8px',
   display: 'flex',
@@ -62,7 +73,7 @@ export const RegistrationBox = styled.div({
 export const SubmitBTN = styled.button({
   width: '144px',
   height: '44px',
-  backgroundColor: '#6695F1',
+  backgroundColor: '#2E6EEB',
   fontSize: '20px',
   color: '#fff',
   borderRadius: '8px',
