@@ -3,8 +3,13 @@ import * as S from './style';
 import { css } from '@emotion/react';
 const Footer = () => {
   return (
-    <S.Container className="sex">
-      <S.FooterContentWrap>
+    <S.Container>
+      <S.FooterContentWrap
+        css={css`
+          position: absolute;
+          left: 292px;
+        `}
+      >
         <S.FooterContent>Home</S.FooterContent>
         <S.FooterContent>List</S.FooterContent>
         <S.FooterContent>My Page</S.FooterContent>
@@ -17,10 +22,10 @@ const Footer = () => {
           font-weight: 400;
           font-size: 18px;
           line-height: 21px;
-
           color: #6f6f6f;
 
-          margin-right: 283px;
+          position: absolute;
+          left: 1250px;
         `}
       >
         <span>Copyright 2023. the moment All rights reserved.</span>
