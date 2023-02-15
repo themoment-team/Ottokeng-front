@@ -12,7 +12,11 @@ const ListItem = () => {
   const [inform, setInform] = useState('정보');
 
   return (
-    <>
+    <div
+      css={css`
+        cursor: pointer;
+      `}
+    >
       <S.ContentBox>
         <S.IMGBox />
         <S.Content>
@@ -32,7 +36,7 @@ const ListItem = () => {
         </S.Content>
       </S.ContentBox>
       <S.Line></S.Line>
-    </>
+    </div>
   );
 };
 
