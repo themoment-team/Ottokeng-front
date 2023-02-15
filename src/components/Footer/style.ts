@@ -20,7 +20,7 @@ export const FooterContentWrap = styled.div`
   display: flex;
   justify-content: space-between;
   font-size: 16px;
-
+  margin-left: 292px;
   width: 367px;
   height: 19px;
   font-family: 'Pretendard';

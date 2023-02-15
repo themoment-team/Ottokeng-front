@@ -4,12 +4,7 @@ import { css } from '@emotion/react';
 const Footer = () => {
   return (
     <S.Container>
-      <S.FooterContentWrap
-        css={css`
-          position: absolute;
-          left: 292px;
-        `}
-      >
+      <S.FooterContentWrap>
         <S.FooterContent>Home</S.FooterContent>
         <S.FooterContent>List</S.FooterContent>
         <S.FooterContent>My Page</S.FooterContent>
@@ -22,10 +17,9 @@ const Footer = () => {
           font-weight: 400;
           font-size: 18px;
           line-height: 21px;
-          color: #6f6f6f;
 
-          position: absolute;
-          left: 1250px;
+          color: #6f6f6f;
+          margin-right: 283px;
         `}
       >
         <span>Copyright 2023. the moment All rights reserved.</span>
