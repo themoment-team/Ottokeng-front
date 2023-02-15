@@ -6,7 +6,7 @@ import { StartBtnBox } from './StartBtnBox';
 import { MarkerBox } from './MarkerBox';
 import { MarkerBox2 } from './MarkerBox2';
 
-const WriteBox = ({
+const MainBox = ({
   title,
   submitText,
   description,
@@ -46,4 +46,4 @@ const WriteBox = ({
   );
 };
 
-export default WriteBox;
+export default MainBox;

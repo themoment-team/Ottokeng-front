@@ -7,7 +7,7 @@ function App() {
       <header></header>
       <BrowserRouter>
         <Routes>
-          <Route path="/main" element={<P.StartPage />}></Route>
+          <Route path="/" element={<P.StartPage />}></Route>
           {/* <Route path="/login" element={<LoginPage />}></Route> */}
           {/* <Route path="/write" element={<WritePage />}></Route> */}
           {/* <Route path="/list" element={<ListPage />}></Route> */}
