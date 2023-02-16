@@ -30,6 +30,11 @@ export const Input = styled.input(props => ({
   marginBottom: '24px',
   fontSize: '18px',
   outline: 'none',
+  ':focus': {
+    translate: '0 -2px',
+    transition: 'all 0.2s',
+    boxShadow: '0 4px 10px 0 rgba(0, 0, 0, 0.2)',
+  },
 }));
 
 export const TextArea = styled.textarea({
@@ -38,9 +43,14 @@ export const TextArea = styled.textarea({
   border: '1px solid #B8B8B8',
   borderRadius: '8px',
   padding: ' 20px 0 0 16px',
-  marginBottom: '24px',
+  marginBottom: '20px',
   fontSize: '18px',
   outline: 'none',
+  ':focus': {
+    translate: '0 -2px',
+    transition: 'all 0.2s',
+    boxShadow: '0 4px 10px 0 rgba(0, 0, 0, 0.2)',
+  },
 });
 
 export const Checkbox = styled.input({
@@ -60,7 +70,7 @@ export const CheckboxText = styled.p({
 
 export const RegistrationBox = styled.div({
   width: '134px',
-  heigth: '34px',
+  heigth: '35px',
   border: '1px solid #6695F1',
   borderRadius: '8px',
   display: 'flex',
@@ -68,6 +78,11 @@ export const RegistrationBox = styled.div({
   justifyContent: 'space-evenly',
   padding: '6.5px 0',
   cursor: 'pointer',
+  ':hover': {
+    translate: '0 -2px',
+    transition: 'all 0.2s',
+    boxShadow: '0 4px 10px 0 rgba(0, 0, 0, 0.2)',
+  },
 });
 
 export const SubmitBTN = styled.button({
@@ -79,6 +94,11 @@ export const SubmitBTN = styled.button({
   borderRadius: '8px',
   border: '0',
   cursor: 'pointer',
+  ':hover': {
+    translate: '0 -2px',
+    transition: 'all 0.2s',
+    boxShadow: '0 4px 10px 0 rgba(0, 0, 0, 0.2)',
+  },
 });
 
 export const RegistrationText = styled.p({

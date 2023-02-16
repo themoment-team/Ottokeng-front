@@ -8,6 +8,20 @@ const theme = {
     fontSize: '18px',
     outline: 'none',
   },
+  focus: {
+    ':focus': {
+      translate: '0 -2px',
+      transition: 'all 0.2s',
+      boxShadow: '0 4px 10px 0 rgba(0, 0, 0, 0.2)',
+    },
+  },
+  hover: {
+    ':hover': {
+      translate: '0 -2px',
+      transition: 'all 0.2s',
+      boxShadow: '0 4px 10px 0 rgba(0, 0, 0, 0.2)',
+    },
+  },
 };
 
 export default theme;

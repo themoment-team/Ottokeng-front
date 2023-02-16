@@ -1,6 +1,6 @@
 import '@emotion/react';
 
-type themeId = 'input';
+type themeId = 'input' | 'focus' | 'hover';
 declare module '@emotion/react' {
   export interface Theme {
     [key in themeId]: {
@@ -11,6 +11,9 @@ declare module '@emotion/react' {
       marginBottom: string;
       fontSize: string;
       outline: string;
+      hover: any;
+      transition: string;
+      transform: string;
     };
   }
 }
