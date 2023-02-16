@@ -1,7 +1,6 @@
 import * as S from './style';
 import React from 'react';
 import { useLocation, useParams } from 'react-router-dom';
-
 import axios from 'axios';
 import { useState } from 'react';
 

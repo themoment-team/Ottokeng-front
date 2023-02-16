@@ -1,17 +1,29 @@
 import styled from '@emotion/styled';
 
-export const Container = styled.div`
+export const Container = styled.nav`
   width: 100%;
+  display: flex;
+  justify-content: center;
   height: 120px;
 `;
 
-export const Title = styled.div`
-  position: absolute;
-  width: 117px;
-  height: 35px;
-  left: 232px;
-  top: 42px;
-  cursor: pointer;
+export const HeaderContentWrap = styled.div`
+  width: 1552px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const NavigationContentWrqp = styled.div`
+  width: 636px;
+  height: 120px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const LogoWrap = styled.div`
+  width: 165px;
 
   font-family: 'Roboto';
   font-style: normal;
@@ -19,58 +31,20 @@ export const Title = styled.div`
   font-size: 30px;
   line-height: 35px;
   letter-spacing: -0.03em;
-  cursor: pointer;
 
   color: #191919;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 
-export const HomeTitle = styled.div`
-  position: absolute;
-  width: 18px;
-  height: 24px;
-  left: 413px;
-  top: 52px;
-
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 24px;
-  cursor: pointer;
-  &:hover {
-    color: #6695f1;
-  }
-`;
-
-export const AllBoards = styled.div`
-  position: absolute;
-  width: 70px;
-  height: 24px;
-  left: 491px;
-  top: 52px;
-
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 24px;
-  cursor: pointer;
-  &:hover {
-    color: #6695f1;
-  }
-`;
-
-export const MyPageTitle = styled.div`
-  position: absolute;
-  width: 87px;
-  height: 24px;
-  left: 621px;
-  cursor: pointer;
-  &:hover {
-    color: #6695f1;
-  }
-
-  top: 52px;
+export const HeaderListWrap = styled.div`
+  width: 407px;
+  justify-content: space-between;
+  list-style: none;
+  display: flex;
+  padding: 0;
 
   font-family: 'Pretendard';
   font-style: normal;
@@ -79,64 +53,53 @@ export const MyPageTitle = styled.div`
   line-height: 24px;
 `;
 
-export const TeamIntroTitle = styled.div`
-  position: absolute;
-  width: 52px;
-  height: 24px;
-  left: 768px;
-  top: 52px;
-  cursor: pointer;
-  &:hover {
-    color: #6695f1;
-  }
-
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 24px;
-`;
-
-export const TitleSearchBox = styled.input`
-  position: absolute;
-  width: 192px;
-  height: 19px;
-  left: 1116px;
-  top: 40px;
-  font-size: 16px;
-
-  padding: 13px 248px 12px 20px;
+export const SearchProfileWrap = styled.div`
+  width: 460px;
+  height: 44px;
 
   background: #f1f1f5;
   border-radius: 22px;
-  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
 `;
 
-export const TitleProfile = styled.div`
-  width: 32px;
-  height: 32px;
-  border-radius: 100%;
-  background-color: red;
+export const SearchBox = styled.input`
+  width: 460px;
+  height: 44px;
+
+  padding-left: 20px;
+
   border: none;
-  cursor: pointer;
-
-  position: absolute;
-  top: 40px;
-  left: 1616px;
-`;
-
-export const TitleUserName = styled.div`
-  position: absolute;
-  width: 60px;
-  height: 26px;
-  left: 1660px;
-  top: 43px;
-  cursor: pointer;
+  background: #f1f1f5;
+  border-radius: 22px;
 
   font-family: 'Pretendard';
   font-style: normal;
   font-weight: 400;
-  font-size: 21px;
+  font-size: 16px;
+  line-height: 19px;
+
+  color: #999999;
+`;
+
+export const UserImg = styled.div`
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  background-color: gray;
+`;
+
+export const UserNm = styled.div`
+  display: flex;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
   line-height: 26px;
   letter-spacing: 0.05em;
+
+  color: #191919;
 `;
