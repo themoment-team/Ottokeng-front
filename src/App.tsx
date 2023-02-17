@@ -8,6 +8,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<P.StartPage />}></Route>
+          <Route path="/main" element={<P.MainPage />}></Route>
           {/* <Route path="/login" element={<LoginPage />}></Route> */}
           {/* <Route path="/write" element={<WritePage />}></Route> */}
           {/* <Route path="/list" element={<ListPage />}></Route> */}
