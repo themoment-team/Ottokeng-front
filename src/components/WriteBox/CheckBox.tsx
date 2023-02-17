@@ -2,7 +2,7 @@
 import { css } from '@emotion/react';
 import * as S from './style';
 
-export const CheckBoxs = ({ text }: { text: string }) => {
+export const CheckBox = ({ text }: { text: string }) => {
   return (
     <div
       css={css`

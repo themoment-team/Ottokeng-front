@@ -2,7 +2,7 @@
 import * as S from './style';
 import * as I from '../../assets/svgs';
 import { css } from '@emotion/react';
-import { CheckBoxs } from './CheckBox';
+import { CheckBox } from './CheckBox';
 import { RegistrationBox } from './RegistrationBox';
 
 const WriteBox = ({
@@ -34,8 +34,8 @@ const WriteBox = ({
             width: 154px;
           `}
         >
-          <CheckBoxs text="습득"></CheckBoxs>
-          <CheckBoxs text="분실"></CheckBoxs>
+          <CheckBox text="습득"></CheckBox>
+          <CheckBox text="분실"></CheckBox>
         </S.FlexBox>
         <S.FlexBox
           css={css`
