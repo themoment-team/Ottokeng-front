@@ -4,14 +4,12 @@ import * as I from '../../assets/svgs';
 import { css } from '@emotion/react';
 import { CheckBox } from './CheckBox';
 import { RegistrationBox } from './RegistrationBox';
-
-const WriteBox = ({
-  title,
-  submitText,
-}: {
+interface TextProps {
   title: string;
   submitText: string;
-}) => {
+}
+
+const WriteBox = ({ title, submitText }: TextProps) => {
   return (
     <S.Container>
       <S.Title>{title}</S.Title>
