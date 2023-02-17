@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import * as S from './style';
-import * as I from '../../assets/svgs';
+import * as I from 'assets/svgs';
 import { css } from '@emotion/react';
 import { useState } from 'react';
 
@@ -35,7 +35,7 @@ const ListItem = () => {
           </S.BottomBox>
         </S.Content>
       </S.ContentBox>
-      <S.Line></S.Line>
+      <S.Line />
     </div>
   );
 };
