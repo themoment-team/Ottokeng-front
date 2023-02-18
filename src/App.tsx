@@ -1,6 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import * as P from './pages';
+declare global {
+  interface Window {
+    kakao: any;
+  }
+}
+
 function App() {
   return (
     <div className="App">

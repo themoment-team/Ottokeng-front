@@ -44,6 +44,15 @@ export const Comment = styled.p({
   fontSize: '28px',
 });
 
+export const MapComment = styled.p({
+  position: 'absolute',
+  width: '430px',
+  height: '33px',
+  left: '293px',
+  top: '130px',
+  fontSize: '28px',
+});
+
 export const ArrowBox = styled.div({
   position: 'absolute',
   top: '972px',
