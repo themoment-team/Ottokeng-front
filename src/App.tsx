@@ -11,12 +11,12 @@ function App() {
         <header></header>
         <BrowserRouter>
           <Routes>
-            {/* <Route path="/" element={<MainPage />}></Route> */}
-            {/* <Route path="/login" element={<LoginPage />}></Route> */}
+            {/* <Route path="/" element={<MainPage />}/> */}
+            {/* <Route path="/login" element={<LoginPage />}/> */}
             <Route path="/write" element={<P.WritePage />} />
-            {/* <Route path="/list" element={<ListPage />}></Route> */}
-            {/* <Route path="/list/:id" element={<Bulletin />}></Route> */}
-            {/* <Route path="*" element={<NotFound />}></Route> */}
+            {/* <Route path="/list" element={<ListPage />}/> */}
+            {/* <Route path="/list/:id" element={<Bulletin />}/> */}
+            {/* <Route path="*" element={<NotFound />}/> */}
           </Routes>
         </BrowserRouter>
         <footer></footer>
