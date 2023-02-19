@@ -5,18 +5,39 @@ import axios from 'axios';
 import { useState } from 'react';
 
 const GoogleLoginBtnAfter = () => {
+  interface IUser {
+    name: string;
+    imageUrl: string;
+    role: string;
+    tokenType: string;
+    accessToken: string;
+    refreshToken: string;
+  }
+
   const [ccode, setCcode] = useState<string | null>('');
+  const [user, setUser] = useState<IUser | undefined>();
 
   const param = useParams();
   const dlwjddn = useLocation();
   const params = new URLSearchParams(dlwjddn.search);
 
   const Get = async () => {
-    const { data }: any = await axios({
-      url: `http://172.20.10.7:8080/login/oauth/google?code=${ccode}`,
+    const { data } = await axios({
+      url: `http://172.30.1.32:8080/login/oauth/google?code=${ccode}`,
       method: 'get',
     });
-    console.log(data);
+    console.log(data.name);
+    setUser(data);
+  };
+
+  const Delet = async () => {
+    axios({
+      url: `http://172.30.1.32:8080/my-page/logout`,
+      method: 'delete',
+      headers: {
+        Authorization: user?.accessToken,
+      },
+    });
   };
 
   let code = params.get('code');
@@ -34,6 +55,29 @@ const GoogleLoginBtnAfter = () => {
           Get();
         }}
       ></button>
+      <button
+        onClick={() => {
+          console.log(user);
+        }}
+      >
+        이름
+      </button>
+      <button
+        onClick={() => {
+          Delet();
+          setUser({
+            name: '',
+            imageUrl: '',
+            role: '',
+            tokenType: '',
+            accessToken: '',
+            refreshToken: '',
+          });
+        }}
+      >
+        로그아웃
+      </button>
+      <p>{user?.name}</p>
     </>
   );
 };
