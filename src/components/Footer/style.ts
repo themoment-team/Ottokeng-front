@@ -32,4 +32,16 @@ export const FooterContentWrap = styled.ul`
   list-style: none;
 `;
 
+export const FooterTeamTitle = styled.div`
+  width: 367px;
+  height: 21px;
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+
+  color: #696969;
+`;
 // 1345 21

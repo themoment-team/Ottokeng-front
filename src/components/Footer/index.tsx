@@ -20,22 +20,9 @@ const Footer = () => {
             <li>My page</li>
             <li>About Team</li>
           </S.FooterContentWrap>
-          <div
-            css={css`
-              width: 367px;
-              height: 21px;
-
-              font-family: 'Pretendard';
-              font-style: normal;
-              font-weight: 400;
-              font-size: 18px;
-              line-height: 21px;
-
-              color: #696969;
-            `}
-          >
+          <S.FooterTeamTitle>
             Copyright 2023. the moment All rights reserved.
-          </div>
+          </S.FooterTeamTitle>
         </div>
       </S.FooterWrap>
     </>
