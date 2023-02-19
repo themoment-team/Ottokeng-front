@@ -1,31 +1,35 @@
 import styled from '@emotion/styled';
 
-export const Container = styled.div`
+export const FooterWrap = styled.div`
   width: 100%;
   height: 88px;
-  background-color: #e6e6ed;
+  background-color: #e3e3e9;
 
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
 `;
 
-export const FooterContent = styled.span`
-  cursor: pointer;
-`;
-
-export const FooterContentWrap = styled.div`
+export const FooterContentWrap = styled.ul`
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: space-between;
-  font-size: 16px;
-  margin-left: 292px;
   width: 367px;
   height: 19px;
+
   font-family: 'Pretendard';
   font-style: normal;
   font-weight: 400;
+  font-size: 16px;
   line-height: 19px;
+  /* identical to box height */
+
   letter-spacing: 0.08em;
 
-  color: #6f6f6f;
+  color: #696969;
+
+  list-style: none;
 `;
+
+// 1345 21
