@@ -44,4 +44,3 @@ export const FooterTeamTitle = styled.div`
 
   color: #696969;
 `;
-// 1345 21
