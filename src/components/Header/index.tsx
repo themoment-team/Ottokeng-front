@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import * as S from './style';
-import * as I from '../../assets/svgs';
+import * as I from 'assets/svgs';
 const Header = () => {
   return (
     <>

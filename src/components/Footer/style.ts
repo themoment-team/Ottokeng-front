@@ -17,7 +17,6 @@ export const FooterContentWrap = styled.ul`
   justify-content: space-between;
   width: 367px;
   height: 19px;
-
   font-family: 'Pretendard';
   font-style: normal;
   font-weight: 400;
@@ -30,6 +29,9 @@ export const FooterContentWrap = styled.ul`
   color: #696969;
 
   list-style: none;
+  > li {
+    cursor: pointer;
+  }
 `;
 
 export const FooterTeamTitle = styled.div`
