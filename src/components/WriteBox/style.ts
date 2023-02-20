@@ -68,7 +68,7 @@ export const CheckboxText = styled.p`
   font-weight: 500;
 `;
 
-export const RegistrationBox = styled.div`
+export const RegistrationBox = styled.label`
   width: 134px;
   height: 21px;
   border: 1px solid #6695f1;

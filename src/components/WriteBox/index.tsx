@@ -16,6 +16,7 @@ const WriteBox = ({
   const [title, setTitle] = useState<string>('');
   const [content, setContent] = useState<string>('');
   const [check, setCheck] = useState<string>('');
+  const [picture, setPicture] = useState<any>();
 
   const changeChecked = (e: string) => {
     const delCheck = document.getElementById(`${e}CB`) as HTMLInputElement;
@@ -87,12 +88,27 @@ const WriteBox = ({
         >
           <RegistrationBox
             svg={<I.CameraIcon />}
+            fileInput="fileInput"
             text="사진 등록하기"
-          ></RegistrationBox>
+          />
+          <input
+            // value={picture}
+            type="file"
+            id="fileInput"
+            css={css`
+              display: none;
+            `}
+            onChange={e => {
+              if ((e.target as HTMLInputElement) && e.target.files != null) {
+                setPicture(e.target.files[0]);
+              }
+            }}
+          />
           <RegistrationBox
             svg={<I.LocationIcon />}
+            fileInput=""
             text="위치 등록하기"
-          ></RegistrationBox>
+          />
         </S.FlexBox>
       </S.Box>
       <S.FlexBox
