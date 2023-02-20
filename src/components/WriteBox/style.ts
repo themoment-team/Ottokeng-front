@@ -70,7 +70,7 @@ export const CheckboxText = styled.p`
 
 export const RegistrationBox = styled.div`
   width: 134px;
-  height: 35px;
+  height: 21px;
   border: 1px solid #6695f1;
   border-radius: 8px;
   display: flex;
