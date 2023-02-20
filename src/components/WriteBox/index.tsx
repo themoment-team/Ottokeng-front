@@ -15,7 +15,7 @@ const WriteBox = ({
 }) => {
   const [title, setTitle] = useState<string>('');
   const [content, setContent] = useState<string>('');
-  let check: string = '';
+  const [check, setCheck] = useState<string>('');
 
   const changeChecked = (e: string) => {
     const delCheck = document.getElementById(`${e}CB`) as HTMLInputElement;
@@ -24,17 +24,23 @@ const WriteBox = ({
 
   const handleCheck = (e: any) => {
     if (e.target.checked) {
-      check = e.target.value;
+      setCheck(e.target.value);
       e.target.value === 'acquire'
         ? changeChecked('loss')
         : changeChecked('acquire');
-    } else check = '';
+    } else setCheck('');
+  };
+
+  const handleSubmit = (e: any) => {
+    console.log(title, content, check);
   };
 
   return (
     <S.Container>
       <S.Title>{kind}</S.Title>
       <S.Input
+        value={title}
+        onChange={e => setTitle(e.target.value)}
         placeholder="제목을 입력해주세요."
         css={css`
           height: 46px;
@@ -42,6 +48,8 @@ const WriteBox = ({
       />
 
       <S.TextArea
+        value={content}
+        onChange={e => setContent(e.target.value)}
         placeholder="본인의 연락처, 분실물의 특징, 위치와 같은 자세한 내용을 입력해주세요."
         css={css`
           height: 218px;
@@ -88,7 +96,7 @@ const WriteBox = ({
           margin-top: 186px;
         `}
       >
-        <S.SubmitBTN>{submitText}</S.SubmitBTN>
+        <S.SubmitBTN onClick={handleSubmit}>{submitText}</S.SubmitBTN>
       </S.FlexBox>
     </S.Container>
   );
