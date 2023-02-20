@@ -2,19 +2,38 @@
 import * as S from './style';
 import * as I from '../../assets/svgs';
 import { css } from '@emotion/react';
-import { CheckBoxs } from './CheckBox';
+import { CheckBox } from './CheckBox';
 import { RegistrationBox } from './RegistrationBox';
+import { useState } from 'react';
 
 const WriteBox = ({
-  title,
+  kind,
   submitText,
 }: {
-  title: string;
+  kind: string;
   submitText: string;
 }) => {
+  const [title, setTitle] = useState<string>('');
+  const [content, setContent] = useState<string>('');
+  let check: string = '';
+
+  const changeChecked = (e: string) => {
+    const delCheck = document.getElementById(`${e}CB`) as HTMLInputElement;
+    delCheck.checked = false;
+  };
+
+  const handleCheck = (e: any) => {
+    if (e.target.checked) {
+      check = e.target.value;
+      e.target.value === 'acquire'
+        ? changeChecked('loss')
+        : changeChecked('acquire');
+    } else check = '';
+  };
+
   return (
     <S.Container>
-      <S.Title>{title}</S.Title>
+      <S.Title>{kind}</S.Title>
       <S.Input
         placeholder="제목을 입력해주세요."
         css={css`
@@ -34,8 +53,18 @@ const WriteBox = ({
             width: 154px;
           `}
         >
-          <CheckBoxs text="습득"></CheckBoxs>
-          <CheckBoxs text="분실"></CheckBoxs>
+          <CheckBox
+            text="습득"
+            value="acquire"
+            handleCheck={handleCheck}
+            id="acquireCB"
+          ></CheckBox>
+          <CheckBox
+            text="분실"
+            value="loss"
+            handleCheck={handleCheck}
+            id="lossCB"
+          ></CheckBox>
         </S.FlexBox>
         <S.FlexBox
           css={css`
