@@ -32,7 +32,13 @@ const WriteBox = ({
   };
 
   const handleSubmit = (e: any) => {
-    console.log(title, content, check);
+    if (title !== '' && content !== '' && check !== '') {
+      //통과
+      console.log('좋아');
+    } else {
+      // 거름
+      console.log('안 돼 돌아가');
+    }
   };
 
   return (
