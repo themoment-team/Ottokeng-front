@@ -4,8 +4,6 @@ import * as I from '../../assets/svgs';
 import { css } from '@emotion/react';
 import { CheckBox } from './CheckBox';
 import { RegistrationBox } from './RegistrationBox';
-import { useEffect } from 'react';
-import axios from 'axios';
 
 interface TextProps {
   title: string;
@@ -13,21 +11,6 @@ interface TextProps {
 }
 
 const WriteBox = ({ title, submitText }: TextProps) => {
-  const getList = async url => {
-    try {
-      const res = await axios.post(url);
-      const data = res.data;
-      console.log(data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  useEffect(() => {
-    const url = ``;
-    getList(url);
-  }, []);
-
   return (
     <S.Container>
       <S.Title>{title}</S.Title>
