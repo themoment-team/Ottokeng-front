@@ -2,6 +2,7 @@ import { ListItem } from '../components';
 import { Container } from '../components/ListItem/style';
 import { useEffect } from 'react';
 import axios from 'axios';
+import React from 'react';
 
 const ListPage = () => {
   const getList = async (url: string) => {
