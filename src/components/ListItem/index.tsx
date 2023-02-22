@@ -4,13 +4,15 @@ import * as I from 'assets/svgs';
 import { css } from '@emotion/react';
 import { useState } from 'react';
 
-const ListItem = () => {
-  const [date, setDate] = useState('2000.01.01');
-  const [userName, setUserName] = useState('Anon');
-  const [chatNum, setChatNum] = useState(0);
-  const [title, setTitle] = useState('제목');
-  const [inform, setInform] = useState('정보');
+interface args {
+  title: string;
+  inform: string;
+  date: string;
+  userName: string;
+  chatNum: string;
+}
 
+const ListItem = ({ title, inform, date, userName, chatNum }: args) => {
   return (
     <div
       css={css`
