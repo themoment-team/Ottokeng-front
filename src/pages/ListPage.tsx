@@ -7,7 +7,7 @@ import React from 'react';
 const ListPage = () => {
   const [list, setList] = useState<JSX.Element[]>([]);
 
-  const getList = (datas: any) => {
+  const printList = (datas: any) => {
     const listItems: JSX.Element[] = datas.map((data: any) => {
       return (
         <ListItem
@@ -27,7 +27,7 @@ const ListPage = () => {
       const res = await axios.get(url + '/' + 'Authorization');
       const data = res.data;
       console.log(data);
-      getList(data);
+      printList(data);
     } catch (err) {
       console.log(err);
     }
