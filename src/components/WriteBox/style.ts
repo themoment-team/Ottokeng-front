@@ -26,7 +26,7 @@ export const Input = styled.input`
   width: 804px;
   border: 1px solid #b8b8b8;
   border-radius: 8px;
-  padding: 0 0 0 16px;
+  padding-left: 16px;
   margin-bottom: 24px;
   font-size: 18px;
   outline: none;
