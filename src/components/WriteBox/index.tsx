@@ -82,7 +82,7 @@ const WriteBox = ({
         onChange={e => setTitle(e.target.value)}
         placeholder="제목을 입력해주세요."
         css={css`
-          height: 46px;
+          height: 2.75rem;
         `}
       />
 
@@ -91,13 +91,13 @@ const WriteBox = ({
         onChange={e => setContent(e.target.value)}
         placeholder="본인의 연락처, 분실물의 특징, 위치와 같은 자세한 내용을 입력해주세요."
         css={css`
-          height: 218px;
+          height: 13.625rem;
         `}
       />
       <S.Box>
         <S.FlexBox
           css={css`
-            width: 154px;
+            width: 9.625rem;
           `}
         >
           <CheckBox
@@ -115,7 +115,7 @@ const WriteBox = ({
         </S.FlexBox>
         <S.FlexBox
           css={css`
-            width: 288px;
+            width: 18rem;
           `}
         >
           <RegistrationBox
@@ -141,9 +141,9 @@ const WriteBox = ({
       </S.Box>
       <S.FlexBox
         css={css`
-          width: 820px;
+          width: 51.25rem;
           justify-content: center;
-          margin-top: 186px;
+          margin-top: 11.625rem;
         `}
       >
         <S.SubmitBTN onClick={handleSubmit}>{submitText}</S.SubmitBTN>

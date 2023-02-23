@@ -76,7 +76,7 @@ export const RegistrationBox = styled.label`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding: 6.5px 0;
+  padding: 6.5008px 0;
   cursor: pointer;
   &:hover {
     translate: 0 -2px;
