@@ -1,83 +1,82 @@
-/** @jsxImportSource @emotion/react */
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
-  width: 820px;
-  height: 638px;
+  width: 51.25rem;
+  height: 39.875rem;
   background-color: #fff;
-  padding: 41px 64px;
+  padding: 2.5625rem 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  box-shadow: 0 0.25rem 0.625rem 0 rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
 `;
 
 export const Title = styled.h1`
-  width: 200px;
-  font-size: 28px;
-  margin: 0 0 24px 0;
-  // height: 33px;
+  width: 12.5rem;
+  font-size: 1.75rem;
+  margin: 0 0 1.5rem 0;
+  // height: 2.0625rem;
   font-weight: 500;
 `;
 
 export const Input = styled.input`
-  width: 804px;
-  border: 1px solid #858585;
-  border-radius: 8px;
-  padding: 0 0 0 16px;
-  margin-bottom: 24px;
-  font-size: 18px;
+  width: 50.25rem;
+  border: 0.0625rem solid #858585;
+  border-radius: 0.5rem;
+  padding: 0 0 0 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
   outline: none;
 `;
 
 export const Checkbox = styled.input`
-  width: 24px;
-  height: 24px;
-  border: 1.2px solid #999999;
-  border-radius: 4.8px;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0.075rem solid #999999;
+  border-radius: 0.3rem;
   margin: 0;
   cursor: pointer;
 `;
 
 export const CheckboxText = styled.p`
-  margin-left: 9.6px;
-  font-size: 16px;
+  margin-left: 0.6rem;
+  font-size: 1rem;
   font-weight: 500;
 `;
 
 export const RegistrationBox = styled.div`
-  width: 134px;
-  height: 36px;
-  border: 1px solid #6695f1;
-  border-radius: 8px;
+  width: 8.375rem;
+  height: 2.25rem;
+  border: 0.0625rem solid #6695f1;
+  border-radius: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding: 6.5px 0;
+  padding: 0.4063rem 0;
   cursor: pointer;
 `;
 
 export const SubmitBTN = styled.button`
-  width: 144px;
-  height: 44px;
+  width: 9rem;
+  height: 2.75rem;
   background-color: #2e6eeb;
-  font-size: 20px;
+  font-size: 1.25rem;
   color: #fff;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   border: 0;
   cursor: pointer;
 `;
 
 export const RegistrationText = styled.p`
-  font-size: 16px;
+  font-size: 1rem;
   color: #6695f1;
   font-weight: 500;
 `;
 
 export const Box = styled.div`
   display: flex;
-  width: 820px;
+  width: 51.25rem;
   margin-right: 0;
   justify-content: space-between;
 `;
