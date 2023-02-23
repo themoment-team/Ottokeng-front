@@ -3,28 +3,29 @@ import * as S from './style';
 import { css } from '@emotion/react';
 const Footer = () => {
   return (
-    <S.Container>
-      <S.FooterContentWrap>
-        <S.FooterContent>Home</S.FooterContent>
-        <S.FooterContent>List</S.FooterContent>
-        <S.FooterContent>My Page</S.FooterContent>
-        <S.FooterContent>About Team</S.FooterContent>
-      </S.FooterContentWrap>
-      <div
-        css={css`
-          font-family: 'Pretendard';
-          font-style: normal;
-          font-weight: 400;
-          font-size: 18px;
-          line-height: 21px;
+    <>
+      <S.FooterWrap>
+        <div
+          css={css`
+            width: 84.0625rem;
+            height: 1.3125rem;
 
-          color: #6f6f6f;
-          margin-right: 283px;
-        `}
-      >
-        <span>Copyright 2023. the moment All rights reserved.</span>
-      </div>
-    </S.Container>
+            display: flex;
+            justify-content: space-between;
+          `}
+        >
+          <S.FooterContentWrap>
+            <li>Home</li>
+            <li>List</li>
+            <li>My page</li>
+            <li>About Team</li>
+          </S.FooterContentWrap>
+          <S.FooterTeamTitle>
+            Copyright 2023. the moment All rights reserved.
+          </S.FooterTeamTitle>
+        </div>
+      </S.FooterWrap>
+    </>
   );
 };
 

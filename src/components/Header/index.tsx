@@ -21,15 +21,15 @@ const Header = () => {
           </S.NavigationContentWrqp>
           <div
             css={css`
-              width: 617px;
+              width: 38.5625rem;
               display: flex;
               justify-content: space-between;
             `}
           >
             <div
               css={css`
-                width: 460px;
-                height: 44px;
+                width: 28.75rem;
+                height: 2.75rem;
                 position: relative;
 
                 display: flex;
@@ -43,7 +43,7 @@ const Header = () => {
               <div
                 css={css`
                   position: absolute;
-                  right: 16px;
+                  right: 1rem;
                 `}
               >
                 <I.SearchIcon />
@@ -51,7 +51,7 @@ const Header = () => {
             </div>
             <div
               css={css`
-                width: 120px;
+                width: 7.5rem;
                 display: flex;
                 justify-content: space-between;
               `}
