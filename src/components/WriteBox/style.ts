@@ -1,10 +1,10 @@
-/** @jsxImportSource @emotion/react */
 import styled from '@emotion/styled';
+import P from 'assets/palette';
 
 export const Container = styled.div`
   width: 820px;
   height: 655px;
-  background-color: #fff;
+  background-color: ${P.white};
   padding: 41px 64px 24px 64px;
   display: flex;
   flex-direction: column;
@@ -24,7 +24,7 @@ export const Title = styled.h1`
 
 export const Input = styled.input`
   width: 804px;
-  border: 1px solid #b8b8b8;
+  border: 1px solid ${P.gray1};
   border-radius: 8px;
   padding-left: 16px;
   margin-bottom: 24px;
@@ -40,7 +40,7 @@ export const Input = styled.input`
 export const TextArea = styled.textarea`
   resize: none;
   width: 804px;
-  border: 1px solid #b8b8b8;
+  border: 1px solid ${P.gray1};
   border-radius: 8px;
   padding: 20px 0 0 16px;
   margin-bottom: 20px;
@@ -56,7 +56,7 @@ export const TextArea = styled.textarea`
 export const Checkbox = styled.input`
   width: 24px;
   height: 24px;
-  border: 1.2px solid #999999;
+  border: 1.2px solid ${P.gray2};
   border-radius: 4.8px;
   margin: 0;
   cursor: pointer;
@@ -71,7 +71,7 @@ export const CheckboxText = styled.p`
 export const RegistrationBox = styled.label`
   width: 134px;
   height: 21px;
-  border: 1px solid #6695f1;
+  border: 1px solid ${P.blue1};
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -88,7 +88,7 @@ export const RegistrationBox = styled.label`
 export const SubmitBTN = styled.button`
   width: 144px;
   height: 44px;
-  background-color: #2e6eeb;
+  background-color: ${P.blue2};
   font-size: 20px;
   color: #fff;
   border-radius: 8px;
@@ -103,7 +103,7 @@ export const SubmitBTN = styled.button`
 
 export const RegistrationText = styled.p`
   font-size: 16px;
-  color: #6695f1;
+  color: ${P.blue1};
   font-weight: 500;
 `;
 
