@@ -4,7 +4,7 @@ import * as I from '../../assets/svgs';
 import { css } from '@emotion/react';
 import { CheckBox } from './CheckBox';
 import { RegistrationBox } from './RegistrationBox';
-import { useState, useRef } from 'react';
+import { useState, useRef, SyntheticEvent } from 'react';
 import S3 from 'react-aws-s3-typescript';
 
 const WriteBox = ({
@@ -47,10 +47,11 @@ const WriteBox = ({
     delCheck.checked = false;
   };
 
-  const handleCheck = (e: any) => {
-    if (e.target.checked) {
-      setCheck(e.target.value);
-      e.target.value === 'acquire'
+  const handleCheck = (e: React.MouseEvent<HTMLElement>) => {
+    const target = e.target as HTMLInputElement;
+    if (target.checked) {
+      setCheck(target.value);
+      target.value === 'acquire'
         ? changeChecked('loss')
         : changeChecked('acquire');
     } else setCheck('');
