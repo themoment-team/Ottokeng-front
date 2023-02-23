@@ -39,7 +39,7 @@ const WriteBox = ({
       .then(data => {
         console.log(data.location);
       })
-      .catch(err => console.error(err));
+      .catch((err: string) => console.error(err));
   };
 
   const changeChecked = (e: string) => {
