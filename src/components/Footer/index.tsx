@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
-import * as S from './style';
 import { css } from '@emotion/react';
+import * as S from './style';
 const Footer = () => {
   return (
     <>
