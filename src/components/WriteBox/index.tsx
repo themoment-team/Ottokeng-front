@@ -68,6 +68,12 @@ const WriteBox = ({
     }
   };
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files != null) {
+      setPicture(e.target.files[0]);
+    }
+  };
+
   return (
     <S.Container>
       <S.Title>{kind}</S.Title>
@@ -124,11 +130,7 @@ const WriteBox = ({
             css={css`
               display: none;
             `}
-            onChange={e => {
-              if ((e.target as HTMLInputElement) && e.target.files != null) {
-                setPicture(e.target.files[0]);
-              }
-            }}
+            onChange={handleFileChange}
           />
           <RegistrationBox
             svg={<I.LocationIcon />}
