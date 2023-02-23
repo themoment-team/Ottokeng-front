@@ -4,7 +4,7 @@ import * as I from '../../assets/svgs';
 import { css } from '@emotion/react';
 import { CheckBox } from './CheckBox';
 import { RegistrationBox } from './RegistrationBox';
-import { useState, useRef, SyntheticEvent } from 'react';
+import { useState } from 'react';
 import S3 from 'react-aws-s3-typescript';
 
 const WriteBox = ({
