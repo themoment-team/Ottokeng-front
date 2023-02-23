@@ -69,7 +69,7 @@ const WriteBox = ({
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files != null) {
+    if (e.target.files !== null) {
       setPicture(e.target.files[0]);
     }
   };
