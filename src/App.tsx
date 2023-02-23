@@ -5,6 +5,13 @@ import theme from './theme';
 import { ThemeProvider } from '@emotion/react';
 
 function App() {
+  enum PATH {
+    write = '/write',
+    list = '/list',
+    bulletin = '/list/:id',
+    login = '/login',
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
@@ -12,10 +19,10 @@ function App() {
         <BrowserRouter>
           <Routes>
             {/* <Route path="/" element={<MainPage />}/> */}
-            {/* <Route path="/login" element={<LoginPage />}/> */}
-            <Route path="/write" element={<P.WritePage />} />
-            {/* <Route path="/list" element={<ListPage />}/> */}
-            {/* <Route path="/list/:id" element={<Bulletin />}/> */}
+            {/* <Route path={PATH.login} element={<LoginPage />}/> */}
+            <Route path={PATH.write} element={<P.WritePage />} />
+            {/* <Route path={PATH.list} element={<ListPage />}/> */}
+            {/* <Route path={PATH.bulletin} element={<Bulletin />}/> */}
             {/* <Route path="*" element={<NotFound />}/> */}
           </Routes>
         </BrowserRouter>
