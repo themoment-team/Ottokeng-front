@@ -7,7 +7,17 @@ import React from 'react';
 const ListPage = () => {
   const [list, setList] = useState<JSX.Element[]>([]);
 
-  const printList = (datas: any) => {
+  interface data {
+    title: string;
+    date: string;
+    name: string;
+    detail: string;
+    image: string;
+    adress: string;
+    Communication: string;
+  }
+
+  const printList = (datas: Array<object>) => {
     const listItems: JSX.Element[] = datas.map((data: any) => {
       return (
         <ListItem
