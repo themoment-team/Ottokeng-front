@@ -19,28 +19,7 @@ const WriteBox = ({
   const [check, setCheck] = useState<string>('');
   let picture: File;
 
-  // interface configInterFace {
-  //   bucketName: string;
-  //   region: string;
-  //   accessKeyId: string;
-  //   secretAccessKey: string;
-  // }
-
-  const config = {
-    bucketName: process.env.REACT_APP_BUCKET_NAME!,
-    region: process.env.REACT_APP_REGION!,
-    accessKeyId: process.env.REACT_APP_ACCESS!,
-    secretAccessKey: process.env.REACT_APP_SECRET!,
-  };
-
-  const s3Upload = async (picture: File) => {
-    const ReactS3Client = new S3(config);
-    ReactS3Client.uploadFile(picture, picture.name)
-      .then(data => {
-        console.log(data.location);
-      })
-      .catch((err: string) => console.error(err));
-  };
+  const sendPicture = async (picture: File) => {};
 
   const changeChecked = (e: string) => {
     const delCheck = document.getElementById(`${e}CB`) as HTMLInputElement;
@@ -60,7 +39,7 @@ const WriteBox = ({
   const handleSubmit = () => {
     if (title !== '' && content !== '' && check !== '') {
       //통과
-      s3Upload(picture);
+      sendPicture(picture);
     } else {
       // 거름
       console.log('안 돼 돌아가');
@@ -72,7 +51,7 @@ const WriteBox = ({
       picture = e.target.files[0];
     }
   };
-  
+
   return (
     <S.Container>
       <S.Title>{kind}</S.Title>
