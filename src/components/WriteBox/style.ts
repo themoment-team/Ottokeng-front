@@ -60,6 +60,7 @@ export const Checkbox = styled.input`
   border-radius: 4.8px;
   margin: 0;
   cursor: pointer;
+  outline:none;
 `;
 
 export const CheckboxText = styled.p`

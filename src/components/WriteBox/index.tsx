@@ -17,7 +17,7 @@ const WriteBox = ({
   const [title, setTitle] = useState<string>('');
   const [content, setContent] = useState<string>('');
   const [check, setCheck] = useState<string>('');
-  const [picture, setPicture] = useState<any>();
+  let picture: File;
 
   // interface configInterFace {
   //   bucketName: string;
@@ -57,10 +57,9 @@ const WriteBox = ({
     } else setCheck('');
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = () => {
     if (title !== '' && content !== '' && check !== '') {
       //통과
-      console.log('좋아');
       s3Upload(picture);
     } else {
       // 거름
@@ -70,10 +69,10 @@ const WriteBox = ({
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files !== null) {
-      setPicture(e.target.files[0]);
+      picture = e.target.files[0];
     }
   };
-
+  
   return (
     <S.Container>
       <S.Title>{kind}</S.Title>
