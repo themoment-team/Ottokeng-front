@@ -17,9 +17,11 @@ const WriteBox = ({
   const [title, setTitle] = useState<string>('');
   const [content, setContent] = useState<string>('');
   const [check, setCheck] = useState<string>('');
-  let picture: File;
+  let picture: FileList;
 
-  const sendPicture = async (picture: File) => {};
+  const sendPicture = async (picture: FileList) => {
+    console.log(picture);
+  };
 
   const changeChecked = (e: string) => {
     const delCheck = document.getElementById(`${e}CB`) as HTMLInputElement;
@@ -48,7 +50,7 @@ const WriteBox = ({
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files !== null) {
-      picture = e.target.files[0];
+      picture = e.target.files;
     }
   };
 
@@ -105,6 +107,7 @@ const WriteBox = ({
             // value={picture}
             type="file"
             id="fileInput"
+            multiple
             css={css`
               display: none;
             `}
