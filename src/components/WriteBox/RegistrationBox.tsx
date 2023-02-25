@@ -1,16 +1,15 @@
 import * as S from './style';
-import { css } from '@emotion/react';
 
-interface arg {
-  svg: any;
+interface props {
+  svg: string;
   text: string;
   fileInput: string;
 }
 
-export const RegistrationBox = ({ svg, text, fileInput }: arg) => {
+export const RegistrationBox = ({ svg, text, fileInput }: props) => {
   return (
     <S.RegistrationBox htmlFor={fileInput}>
-      {svg}
+      {<img src={svg} />}
       <S.RegistrationText>{text}</S.RegistrationText>
     </S.RegistrationBox>
   );

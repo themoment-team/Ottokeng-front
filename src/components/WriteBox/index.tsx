@@ -1,11 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import * as S from './style';
-import * as I from '../../assets/svgs';
+import * as I from 'assets/svgs';
 import { css } from '@emotion/react';
 import { CheckBox } from './CheckBox';
 import { RegistrationBox } from './RegistrationBox';
 import { useState } from 'react';
-import S3 from 'react-aws-s3-typescript';
 
 const WriteBox = ({
   kind,
@@ -99,12 +98,11 @@ const WriteBox = ({
           `}
         >
           <RegistrationBox
-            svg={<I.CameraIcon />}
-            fileInput="fileInput"
+            svg={I.CameraIcon}
             text="사진 등록하기"
+            fileInput="fileInput"
           />
           <input
-            // value={picture}
             type="file"
             id="fileInput"
             multiple
@@ -114,8 +112,8 @@ const WriteBox = ({
             onChange={handleFileChange}
           />
           <RegistrationBox
-            svg={<I.LocationIcon />}
             fileInput=""
+            svg={I.LocationIcon}
             text="위치 등록하기"
           />
         </S.FlexBox>

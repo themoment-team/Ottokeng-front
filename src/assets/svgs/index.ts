@@ -1,2 +1,3 @@
-export { default as LocationIcon } from './LocationIcon';
-export { default as CameraIcon } from './CameraIcon';
+export { default as CameraIcon } from './CameraIcon.svg';
+export { default as LocationIcon } from './LocationIcon.svg';
+export { default as MessageIcon } from './MessageIcon.svg';
