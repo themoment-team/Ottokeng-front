@@ -2,7 +2,7 @@
 import { css } from '@emotion/react';
 import * as S from './style';
 import * as I from '../../assets/svgs';
-const Header = () => {
+const Header = ({ header }: { header: string }) => {
   return (
     <>
       <S.Container>
@@ -54,11 +54,12 @@ const Header = () => {
                 width: 120px;
                 display: flex;
                 justify-content: space-between;
+                align-items: center;
               `}
             >
               <S.UserImg></S.UserImg>
               <S.UserNm>
-                <div>사용자</div>
+                <div>{header}</div>
               </S.UserNm>
               <I.MoreInfoIcon />
             </div>

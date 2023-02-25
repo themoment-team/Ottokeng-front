@@ -4,7 +4,7 @@ import { useLocation, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useState } from 'react';
 
-const GoogleLoginBtnAfter = () => {
+const GoogleLoginBtnAfter = ({ setHeader }: { setHeader: any }) => {
   interface IUser {
     name: string;
     imageUrl: string;
@@ -23,16 +23,17 @@ const GoogleLoginBtnAfter = () => {
 
   const Get = async () => {
     const { data } = await axios({
-      url: `http://172.30.1.32:8080/login/oauth/google?code=${ccode}`,
+      url: `http://192.168.0.16:8080/login/oauth/google?code=${ccode}`,
       method: 'get',
     });
     console.log(data.name);
     setUser(data);
+    setHeader(data.name);
   };
 
   const Delet = async () => {
     axios({
-      url: `http://172.30.1.32:8080/my-page/logout`,
+      url: `http://192.168.0.16:8080/my-page/logout`,
       method: 'delete',
       headers: {
         Authorization: user?.accessToken,
@@ -73,6 +74,7 @@ const GoogleLoginBtnAfter = () => {
             accessToken: '',
             refreshToken: '',
           });
+          setHeader('');
         }}
       >
         로그아웃
