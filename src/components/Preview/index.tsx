@@ -16,7 +16,10 @@ const Preview = () => {
         height: 1688px;
       `}
     >
-      <KakaoMap text="내 위치 주변의 게시글을 확인해 보세요!"></KakaoMap>
+      <KakaoMap
+        text="내 위치 주변의 게시글을 확인해 보세요!"
+        svg={<I.CloseIcon />}
+      ></KakaoMap>
       <PreviewBox text={description} svg={<I.ArrowIcon />}></PreviewBox>
       <PlulsBtn svg={<I.PlusIcon />}></PlulsBtn>
     </div>

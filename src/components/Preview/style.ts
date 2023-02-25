@@ -109,3 +109,7 @@ export const Map = styled.div({
   left: '284px',
   backgroundColor: 'black',
 });
+
+export const Wrap = styled.div({
+  backgroundColor: 'white',
+});

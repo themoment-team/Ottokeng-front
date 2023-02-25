@@ -5,3 +5,4 @@ export { default as ShadowIcon } from './ShadowIcon';
 export { default as ShadowIcon2 } from './ShadowIcon2';
 export { default as ArrowIcon } from './ArrowIcon';
 export { default as PlusIcon } from './PlusIcon';
+export { default as CloseIcon } from './CloseIcon';
