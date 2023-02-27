@@ -69,7 +69,7 @@ export const CheckboxText = styled.p`
   font-weight: 500;
 `;
 
-export const RegistrationBox = styled.label`
+export const RegistrationBox = styled.div`
   width: 8.375rem;
   height: 1.3125rem;
   border: 0.0625rem solid ${P.blue1};
@@ -133,7 +133,7 @@ export const IMGModal = styled.dialog`
   padding: 0;
 `;
 
-export const DashedBox = styled.div`
+export const DashedBox = styled.label`
   margin-top: 2.9375rem;
   width: 30rem;
   height: 20rem;
@@ -141,6 +141,7 @@ export const DashedBox = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 0.5rem;
+  cursor: pointer;
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='%23A4A4A4FF' stroke-width='5' stroke-dasharray='6 14' stroke-dashoffset='80' stroke-linecap='square'/%3e%3c/svg%3e");
 `;
 
@@ -149,6 +150,7 @@ export const TotalIMGBox = styled.div`
   height: 15.75rem;
   margin-top: 1.5rem;
   margin-bottom: 2.25rem;
+  overflow: auto;
 `;
 
 export const IMGBox = styled.div`

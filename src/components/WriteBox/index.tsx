@@ -17,6 +17,7 @@ const WriteBox = ({
   const [title, setTitle] = useState<string>('');
   const [content, setContent] = useState<string>('');
   const [check, setCheck] = useState<string>('');
+  const [imgList, setImgList] = useState<JSX.Element[]>([]);
   let picture: FileList;
 
   const sendPicture = async (picture: FileList) => {
@@ -51,6 +52,18 @@ const WriteBox = ({
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files !== null) {
       picture = e.target.files;
+      for (let i = 0; i < picture.length; i++) {
+        // eslint-disable-next-line no-loop-func
+        setImgList(imgList => [
+          ...imgList,
+          <IMGBox
+            picture={URL.createObjectURL(picture[i])}
+            title={picture[i].name}
+            key={picture[i].name + i}
+          ></IMGBox>,
+        ]);
+        console.log(i);
+      }
     }
   };
 
@@ -98,18 +111,12 @@ const WriteBox = ({
             width: 18rem;
           `}
         >
-          <RegistrationBox
-            svg={I.CameraIcon}
-            text="사진 등록하기"
-            fileInput="fileInput"
-          />
+          <RegistrationBox svg={I.CameraIcon} text="사진 등록하기" />
           <S.IMGModal>
-            <S.DashedBox>
+            <S.DashedBox htmlFor="fileInput">
               <img src={I.FileIcon} alt=""></img>
             </S.DashedBox>
-            <S.TotalIMGBox>
-              <IMGBox title="image 1.png" picture=""></IMGBox>
-            </S.TotalIMGBox>
+            <S.TotalIMGBox>{imgList}</S.TotalIMGBox>
             <S.SubmitBTN>등록하기</S.SubmitBTN>
           </S.IMGModal>
           <input
@@ -121,11 +128,7 @@ const WriteBox = ({
             `}
             onChange={handleFileChange}
           />
-          <RegistrationBox
-            fileInput=""
-            svg={I.LocationIcon}
-            text="위치 등록하기"
-          />
+          <RegistrationBox svg={I.LocationIcon} text="위치 등록하기" />
         </S.FlexBox>
       </S.Box>
       <S.FlexBox
