@@ -4,6 +4,7 @@ import * as I from 'assets/svgs';
 import { css } from '@emotion/react';
 import { CheckBox } from './CheckBox';
 import { RegistrationBox } from './RegistrationBox';
+import { IMGBox } from './IMGBox';
 import { useState } from 'react';
 
 const WriteBox = ({
@@ -102,6 +103,15 @@ const WriteBox = ({
             text="사진 등록하기"
             fileInput="fileInput"
           />
+          <S.IMGModal>
+            <S.DashedBox>
+              <img src={I.FileIcon} alt=""></img>
+            </S.DashedBox>
+            <S.TotalIMGBox>
+              <IMGBox title="image 1.png" picture=""></IMGBox>
+            </S.TotalIMGBox>
+            <S.SubmitBTN>등록하기</S.SubmitBTN>
+          </S.IMGModal>
           <input
             type="file"
             id="fileInput"
