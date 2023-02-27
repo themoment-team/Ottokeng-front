@@ -1,14 +1,14 @@
 /** @jsxImportSource @emotion/react */
-import * as S from './style';
 import { css } from '@emotion/react';
+import * as S from './style';
 const Footer = () => {
   return (
     <>
       <S.FooterWrap>
         <div
           css={css`
-            width: 1345px;
-            height: 21px;
+            width: 84.0625rem;
+            height: 1.3125rem;
 
             display: flex;
             justify-content: space-between;
