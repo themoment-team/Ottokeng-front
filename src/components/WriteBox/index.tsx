@@ -18,7 +18,7 @@ const WriteBox = ({
   const [content, setContent] = useState<string>('');
   const [check, setCheck] = useState<string>('');
   const [imgList, setImgList] = useState<JSX.Element[]>([]);
-  let picture: FileList;
+  let picture: Array<File> = [];
 
   const sendPicture = async (picture: FileList) => {
     console.log(picture);
@@ -42,7 +42,6 @@ const WriteBox = ({
   const handleSubmit = () => {
     if (title !== '' && content !== '' && check !== '') {
       //통과
-      sendPicture(picture);
     } else {
       // 거름
       console.log('안 돼 돌아가');
@@ -51,18 +50,20 @@ const WriteBox = ({
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files !== null) {
-      picture = e.target.files;
+      for (let i = 0; i < e.target.files.length; i++) {
+        picture.push(e.target.files[i]);
+      }
+      console.log(picture);
       for (let i = 0; i < picture.length; i++) {
         // eslint-disable-next-line no-loop-func
         setImgList(imgList => [
           ...imgList,
           <IMGBox
-            picture={URL.createObjectURL(picture[i])}
+            picture={picture[i]}
             title={picture[i].name}
             key={picture[i].name + i}
           ></IMGBox>,
         ]);
-        console.log(i);
       }
     }
   };
