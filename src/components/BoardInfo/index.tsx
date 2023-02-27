@@ -3,8 +3,15 @@ import { css } from '@emotion/react';
 import * as S from './style';
 import * as I from 'assets/svgs';
 import * as C from 'components';
+import { Swiper, SwiperSlide } from 'swiper/react'; // basic
+import SwiperCore, { Navigation, Pagination } from 'swiper';
+import 'swiper/css'; //basic
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const BoardInfo = () => {
+  SwiperCore.use([Pagination]);
+
   return (
     <>
       <S.Container>
@@ -16,8 +23,8 @@ const BoardInfo = () => {
                   display: flex;
                   justify-content: space-between;
                   align-items: center;
-                  width: 166px;
-                  height: 26px;
+                  width: 10.375rem;
+                  height: 1.625rem;
                 `}
               >
                 <S.UserIcon></S.UserIcon>
@@ -47,12 +54,12 @@ const BoardInfo = () => {
             >
               <div
                 css={css`
-                  margin-top: 8px;
+                  margin-top: 0.5rem;
                   font-family: 'Pretendard';
                   font-style: normal;
                   font-weight: 500;
-                  font-size: 20px;
-                  line-height: 24px;
+                  font-size: 1.25rem;
+                  line-height: 1.5rem;
                   /* identical to box height */
 
                   color: #191919;
@@ -62,11 +69,11 @@ const BoardInfo = () => {
               </div>
               <div
                 css={css`
-                  margin-top: 8px;
+                  margin-top: 0.5rem;
                   font-style: normal;
                   font-weight: 400;
-                  font-size: 17px;
-                  line-height: 20px;
+                  font-size: 1.0625rem;
+                  line-height: 1.25rem;
 
                   color: #6d6d6d;
                 `}
@@ -76,15 +83,31 @@ const BoardInfo = () => {
               </div>
             </div>
             <S.ItemImgs>
-              <div
+              <Swiper
+                modules={[Pagination, Navigation]}
+                style={{
+                  width: '32.5rem',
+                  height: '18.125rem',
+                  background: '#ddd',
+                  marginBottom: '2.25rem',
+                }}
+                spaceBetween={50}
+                slidesPerView={1}
+                navigation
+                pagination={{ clickable: true }}
+              >
+                <SwiperSlide>
+                  <S.Sex></S.Sex>
+                </SwiperSlide>
+                <SwiperSlide></SwiperSlide>
+                <SwiperSlide></SwiperSlide>
+                <SwiperSlide></SwiperSlide>
+              </Swiper>
+
+              {/* <div
                 css={css`
                   padding-right: 12px;
                   transform: rotate(180deg);
-
-                  /* position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                right: 12px; */
                 `}
               >
                 <I.Arrow />
@@ -92,14 +115,10 @@ const BoardInfo = () => {
               <div
                 css={css`
                   padding-right: 12px;
-                  /* position: absolute;
-                  top: 50%;
-                  transform: translateY(-50%);
-                  left: 12px; */
                 `}
               >
                 <I.Arrow />
-              </div>
+              </div> */}
             </S.ItemImgs>
             <S.CommentInputWrap>
               <div
@@ -107,7 +126,7 @@ const BoardInfo = () => {
                   position: absolute;
                   top: 50%;
                   transform: translateY(-50%);
-                  right: 16px;
+                  right: 1rem;
                 `}
               >
                 <I.Vector />
@@ -117,11 +136,13 @@ const BoardInfo = () => {
           </S.BoardContentWrap>
           <div
             css={css`
-              width: 520px;
+              width: 32.5rem;
               margin: 0 auto;
-              height: 300px;
-              margin-top: 24px;
-
+              height: 18.75rem;
+              margin-top: 1.5rem;
+              ::-webkit-scrollbar {
+                display: none; /* Chrome, Safari, Opera*/
+              }
               overflow-y: scroll;
               overflow-x: hidden;
             `}

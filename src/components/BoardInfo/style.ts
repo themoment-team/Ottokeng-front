@@ -84,7 +84,7 @@ export const ShowItemMapBtn = styled.button`
 `;
 
 export const ItemImgs = styled.div`
-  width: 520px;
+  /* width: 520px;
   height: 292px;
   border-radius: 8px;
   background-color: blue;
@@ -94,7 +94,7 @@ export const ItemImgs = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  margin-bottom: 36px;
+  margin-bottom: 36px; */
 `;
 
 export const CommentInputWrap = styled.div`
@@ -121,4 +121,10 @@ export const CommentInput = styled.input`
   border-radius: 7px;
 
   color: #6d6d6d;
+`;
+
+export const Sex = styled.div`
+  width: 520px;
+  height: 290px;
+  background-color: red;
 `;
