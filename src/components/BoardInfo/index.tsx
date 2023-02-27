@@ -82,44 +82,28 @@ const BoardInfo = () => {
                 <br /> 습득하신 분은 010-1234-5678로 연락주세요.
               </div>
             </div>
-            <S.ItemImgs>
-              <Swiper
-                modules={[Pagination, Navigation]}
-                style={{
-                  width: '32.5rem',
-                  height: '18.125rem',
-                  background: '#ddd',
-                  marginBottom: '2.25rem',
-                }}
-                spaceBetween={50}
-                slidesPerView={1}
-                navigation
-                pagination={{ clickable: true }}
-              >
-                <SwiperSlide>
-                  <S.Sex></S.Sex>
-                </SwiperSlide>
-                <SwiperSlide></SwiperSlide>
-                <SwiperSlide></SwiperSlide>
-                <SwiperSlide></SwiperSlide>
-              </Swiper>
 
-              {/* <div
-                css={css`
-                  padding-right: 12px;
-                  transform: rotate(180deg);
-                `}
-              >
-                <I.Arrow />
-              </div>
-              <div
-                css={css`
-                  padding-right: 12px;
-                `}
-              >
-                <I.Arrow />
-              </div> */}
-            </S.ItemImgs>
+            <Swiper
+              modules={[Pagination, Navigation]}
+              style={{
+                width: '32.5rem',
+                height: '18.125rem',
+                background: '#ddd',
+                marginBottom: '2.25rem',
+              }}
+              spaceBetween={50}
+              slidesPerView={1}
+              navigation
+              pagination={{ clickable: true }}
+            >
+              <SwiperSlide>
+                <S.Sex></S.Sex>
+              </SwiperSlide>
+              <SwiperSlide></SwiperSlide>
+              <SwiperSlide></SwiperSlide>
+              <SwiperSlide></SwiperSlide>
+            </Swiper>
+
             <S.CommentInputWrap>
               <div
                 css={css`

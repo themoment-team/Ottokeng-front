@@ -9,8 +9,8 @@ const Comment = () => {
     <S.Container>
       <div
         css={css`
-          width: 137px;
-          height: 28px;
+          width: 8.5625rem;
+          height: 1.75rem;
           justify-content: space-between;
           display: flex;
           align-items: center;
@@ -19,7 +19,7 @@ const Comment = () => {
         <div
           css={css`
             position: absolute;
-            right: 24px;
+            right: 1.5rem;
           `}
         >
           <I.Hamburger />
@@ -33,16 +33,16 @@ const Comment = () => {
           font-family: 'Pretendard';
           font-style: normal;
           font-weight: 400;
-          font-size: 15px;
-          line-height: 18px;
+          font-size: 0.9375rem;
+          line-height: 1.125rem;
           /* identical to box height */
 
           letter-spacing: 0.05em;
 
           color: #777777;
-          margin-top: 3px;
+          margin-top: 0.1875rem;
 
-          margin-left: 16px;
+          margin-left: 1rem;
         `}
       >
         빨간 케이스 말하시는 거죠? 제가 가지고 있습니다!
