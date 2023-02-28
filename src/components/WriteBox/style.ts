@@ -121,7 +121,7 @@ export const FlexBox = styled.div`
   justify-content: space-between;
 `;
 
-export const IMGModal = styled.dialog`
+export const IMGModal = styled.div`
   width: 36.25rem;
   height: 47.5rem;
   background-color: ${P.white};

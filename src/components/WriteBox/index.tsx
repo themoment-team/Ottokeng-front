@@ -5,7 +5,7 @@ import { css } from '@emotion/react';
 import { CheckBox } from './CheckBox';
 import { RegistrationBox } from './RegistrationBox';
 import { IMGBox } from './IMGBox';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const WriteBox = ({
   kind,
@@ -68,8 +68,46 @@ const WriteBox = ({
     }
   };
 
+  const handleShowModal = () => {
+    const IMGModal = document.querySelector('.IMGModal') as HTMLDialogElement;
+    IMGModal.showModal();
+  };
+
+  useEffect(() => {
+    const IMGModal = document.querySelector('.IMGModal') as HTMLDialogElement;
+    console.log(IMGModal);
+    IMGModal.close();
+  }, []);
+
   return (
     <S.Container>
+      <dialog
+        className="IMGModal"
+        css={css`
+          border: 0;
+          padding: 0;
+          border-radius: 0.5rem;
+        `}
+      >
+        <S.IMGModal>
+          <S.DashedBox htmlFor="fileInput">
+            <img src={I.FileIcon} alt=""></img>
+          </S.DashedBox>
+          <S.TotalIMGBox>{imgList}</S.TotalIMGBox>
+          <form method="dialog">
+            <S.SubmitBTN>등록하기</S.SubmitBTN>
+          </form>
+        </S.IMGModal>
+      </dialog>
+      <input
+        type="file"
+        id="fileInput"
+        multiple
+        css={css`
+          display: none;
+        `}
+        onChange={handleFileChange}
+      />
       <S.Title>{kind}</S.Title>
       <S.Input
         value={title}
@@ -112,24 +150,19 @@ const WriteBox = ({
             width: 18rem;
           `}
         >
-          <RegistrationBox svg={I.CameraIcon} text="사진 등록하기" />
-          <S.IMGModal>
-            <S.DashedBox htmlFor="fileInput">
-              <img src={I.FileIcon} alt=""></img>
-            </S.DashedBox>
-            <S.TotalIMGBox>{imgList}</S.TotalIMGBox>
-            <S.SubmitBTN>등록하기</S.SubmitBTN>
-          </S.IMGModal>
-          <input
-            type="file"
-            id="fileInput"
-            multiple
-            css={css`
-              display: none;
-            `}
-            onChange={handleFileChange}
+          <RegistrationBox
+            svg={I.CameraIcon}
+            text="사진 등록하기"
+            onClick={handleShowModal}
           />
-          <RegistrationBox svg={I.LocationIcon} text="위치 등록하기" />
+
+          <RegistrationBox
+            onClick={() => {
+              console.log();
+            }}
+            svg={I.LocationIcon}
+            text="위치 등록하기"
+          />
         </S.FlexBox>
       </S.Box>
       <S.FlexBox
