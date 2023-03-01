@@ -61,7 +61,7 @@ const WriteBox = ({
           <IMGBox
             picture={picture[i]}
             title={picture[i].name}
-            key={picture[i].name + i}
+            key={picture[i].name + Math.random()}
           ></IMGBox>,
         ]);
       }
