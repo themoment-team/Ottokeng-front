@@ -5,7 +5,7 @@ import { css } from '@emotion/react';
 import { CheckBox } from './CheckBox';
 import { RegistrationBox } from './RegistrationBox';
 import { IMGBox } from './IMGBox';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const WriteBox = ({
   kind,
@@ -73,12 +73,6 @@ const WriteBox = ({
     IMGModal.showModal();
   };
 
-  useEffect(() => {
-    const IMGModal = document.querySelector('.IMGModal') as HTMLDialogElement;
-    console.log(IMGModal);
-    IMGModal.close();
-  }, []);
-
   return (
     <S.Container>
       <dialog
@@ -87,6 +81,9 @@ const WriteBox = ({
           border: 0;
           padding: 0;
           border-radius: 0.5rem;
+          &::backdrop {
+            background-color: rgba(25, 25, 25, 0.3);
+          }
         `}
       >
         <S.IMGModal>
