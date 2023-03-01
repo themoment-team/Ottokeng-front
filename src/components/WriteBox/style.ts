@@ -95,6 +95,7 @@ export const SubmitBTN = styled.button`
   border-radius: 0.5rem;
   border: 0;
   cursor: pointer;
+  outline: none;
   &:hover {
     translate: 0 -0.125rem;
     transition: all 0.2s;
