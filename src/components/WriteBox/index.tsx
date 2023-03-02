@@ -48,24 +48,31 @@ const WriteBox = ({
     }
   };
 
+  const onRemove = (id: string) => {
+    setImgList(imgList.filter(imgBox => imgBox.key !== id));
+  };
+
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files !== null) {
       for (let i = 0; i < e.target.files.length; i++) {
         picture.push(e.target.files[i]);
       }
-      console.log(picture);
       for (let i = 0; i < picture.length; i++) {
         // eslint-disable-next-line no-loop-func
+        const randNum = String(Math.random());
         setImgList(imgList => [
           ...imgList,
           <IMGBox
             picture={picture[i]}
             title={picture[i].name}
-            key={picture[i].name + Math.random()}
+            key={picture[i].name + randNum}
+            id={randNum}
+            onRemove={onRemove}
           ></IMGBox>,
         ]);
       }
     }
+    console.log(imgList);
   };
 
   const handleShowModal = () => {
@@ -88,7 +95,7 @@ const WriteBox = ({
       >
         <S.IMGModal>
           <S.DashedBox htmlFor="fileInput">
-            <img src={I.FileIcon} alt=""></img>
+            <img src={I.FileIcon} alt="" />
           </S.DashedBox>
           <S.TotalIMGBox>{imgList}</S.TotalIMGBox>
           <form method="dialog">
