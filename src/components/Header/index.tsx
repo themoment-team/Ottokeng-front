@@ -53,6 +53,7 @@ const Header = () => {
               css={css`
                 width: 120px;
                 display: flex;
+                align-items: center;
                 justify-content: space-between;
               `}
             >
