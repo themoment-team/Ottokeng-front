@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import * as S from './style';
-import * as I from '../../assets/svgs';
+import * as I from 'assets/svgs';
 const Header = () => {
   return (
     <>
@@ -53,6 +53,7 @@ const Header = () => {
               css={css`
                 width: 7.5rem;
                 display: flex;
+                align-items: center;
                 justify-content: space-between;
               `}
             >
