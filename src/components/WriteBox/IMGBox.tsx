@@ -7,11 +7,11 @@ import React, { useEffect, useState } from 'react';
 interface props {
   picture: File;
   title: string;
-  randNum: string;
   onRemove: Function;
+  id: string;
 }
 
-export const IMGBox = ({ picture, title, onRemove, randNum }: props) => {
+export const IMGBox = ({ picture, title, onRemove, id }: props) => {
   const [value, setValue] = useState<number>(0);
   useEffect(() => {
     setTimeout(() => {
@@ -38,7 +38,7 @@ export const IMGBox = ({ picture, title, onRemove, randNum }: props) => {
           `}
           src={I.TrashIcon}
           alt=""
-          onClick={() => onRemove(randNum)}
+          onClick={() => onRemove(id)}
         />
       </S.IMGBox>
       <S.Line />

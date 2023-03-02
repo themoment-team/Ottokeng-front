@@ -17,8 +17,7 @@ const WriteBox = ({
   const [title, setTitle] = useState<string>('');
   const [content, setContent] = useState<string>('');
   const [check, setCheck] = useState<string>('');
-  const [imgList, setImgList] = useState<JSX.Element[]>([]);
-  let temp: Array<JSX.Element> = [];
+  const [imgList, setImgList] = useState<any>([]);
 
   const sendPicture = async (picture: FileList) => {
     console.log(picture);
@@ -48,34 +47,31 @@ const WriteBox = ({
     }
   };
 
-  const onRemove = (target: string) => {
-    temp = temp.filter(img => img.key !== target);
-    setImgList(temp);
+  const onRemove = (id: any) => {
+    // setImgList(imgList.filter(img => img.key !== target));
+    setImgList(imgList.filter((_: any, index: any) => index !== id));
   };
 
-  const addItem = (picture: File, randNum: string) => {
-    const item = (
-      <IMGBox
-        picture={picture}
-        title={picture.name}
-        key={picture.name + randNum}
-        onRemove={onRemove}
-        randNum={picture.name + randNum}
-      ></IMGBox>
-    );
-    temp.push(item);
-    console.log(temp);
-    setImgList(temp);
-  };
+  // const addItem = (picture: File, randNum: string) => {
+  //   const item = (
+  //     <IMGBox
+  //       picture={picture}
+  //       title={picture.name}
+  //       key={picture.name + randNum}
+  //       onRemove={onRemove}
+  //     ></IMGBox>
+  //   );
+  //   setImgList((imgList: any) => [item, ...imgList]);
+  // };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let imgLists = [...imgList];
     if (e.target.files !== null) {
       const pictures = Array.from(e.target.files);
-
-      pictures.forEach((picture: File) => {
-        const randNum = String(Math.random());
-        addItem(picture, randNum);
-      });
+      for (let i = 0; i < pictures.length; i++) {
+        imgLists.push(pictures[i]);
+      }
+      setImgList(imgLists);
     }
   };
 
@@ -101,7 +97,17 @@ const WriteBox = ({
           <S.DashedBox htmlFor="fileInput">
             <img src={I.FileIcon} alt="" />
           </S.DashedBox>
-          <S.TotalIMGBox>{imgList}</S.TotalIMGBox>
+          <S.TotalIMGBox>
+            {imgList.map((img: any, id: any) => (
+              <IMGBox
+                picture={img}
+                title={img.name}
+                key={id}
+                id={id}
+                onRemove={onRemove}
+              ></IMGBox>
+            ))}
+          </S.TotalIMGBox>
           <form method="dialog">
             <S.SubmitBTN>등록하기</S.SubmitBTN>
           </form>
