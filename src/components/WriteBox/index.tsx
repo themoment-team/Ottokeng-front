@@ -52,18 +52,6 @@ const WriteBox = ({
     setImgList(imgList.filter((_: any, index: any) => index !== id));
   };
 
-  // const addItem = (picture: File, randNum: string) => {
-  //   const item = (
-  //     <IMGBox
-  //       picture={picture}
-  //       title={picture.name}
-  //       key={picture.name + randNum}
-  //       onRemove={onRemove}
-  //     ></IMGBox>
-  //   );
-  //   setImgList((imgList: any) => [item, ...imgList]);
-  // };
-
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let imgLists = [...imgList];
     if (e.target.files !== null) {
