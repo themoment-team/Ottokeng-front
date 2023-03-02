@@ -157,7 +157,6 @@ export const TotalIMGBox = styled.div`
 export const IMGBox = styled.div`
   display: flex;
   width: 30.0625rem;
-  padding: 0.625rem 0;
   height: 2.25rem;
   align-items: center;
 `;
@@ -199,4 +198,5 @@ export const Line = styled.div`
   width: 30rem;
   height: 0.0625rem;
   background-color: ${P.gray4};
+  margin: 0.5rem 0;
 `;

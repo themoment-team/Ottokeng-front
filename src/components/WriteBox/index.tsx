@@ -59,6 +59,10 @@ const WriteBox = ({
       for (let i = 0; i < pictures.length; i++) {
         imgLists.push(pictures[i]);
       }
+      if (imgLists.length > 10) {
+        imgLists = imgLists.slice(0, 10);
+        alert('이미지는 최대 10장 까지만 등록 가능합니다');
+      }
       setImgList(imgLists);
     }
   };
