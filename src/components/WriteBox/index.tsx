@@ -18,7 +18,6 @@ const WriteBox = ({
   const [content, setContent] = useState<string>('');
   const [check, setCheck] = useState<string>('');
   const [imgList, setImgList] = useState<JSX.Element[]>([]);
-  let picture: Array<File> = [];
 
   const sendPicture = async (picture: FileList) => {
     console.log(picture);
@@ -49,14 +48,15 @@ const WriteBox = ({
   };
 
   const onRemove = (id: string) => {
+    console.log(id);
     setImgList(imgList.filter(imgBox => imgBox.key !== id));
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files !== null) {
-      for (let i = 0; i < e.target.files.length; i++) {
-        picture.push(e.target.files[i]);
-      }
+      const picture = Array.from(e.target.files);
+      console.log(picture);
+
       for (let i = 0; i < picture.length; i++) {
         // eslint-disable-next-line no-loop-func
         const randNum = String(Math.random());
@@ -66,13 +66,12 @@ const WriteBox = ({
             picture={picture[i]}
             title={picture[i].name}
             key={picture[i].name + randNum}
-            id={randNum}
+            id={picture[i].name + randNum}
             onRemove={onRemove}
           ></IMGBox>,
         ]);
       }
     }
-    console.log(imgList);
   };
 
   const handleShowModal = () => {
