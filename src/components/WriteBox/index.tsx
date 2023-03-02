@@ -18,6 +18,7 @@ const WriteBox = ({
   const [content, setContent] = useState<string>('');
   const [check, setCheck] = useState<string>('');
   const [imgList, setImgList] = useState<JSX.Element[]>([]);
+  let temp: Array<JSX.Element> = [];
 
   const sendPicture = async (picture: FileList) => {
     console.log(picture);
@@ -47,30 +48,34 @@ const WriteBox = ({
     }
   };
 
-  const onRemove = (id: string) => {
-    console.log(id);
-    setImgList(imgList.filter(imgBox => imgBox.key !== id));
+  const onRemove = (target: string) => {
+    temp = temp.filter(img => img.key !== target);
+    setImgList(temp);
+  };
+
+  const addItem = (picture: File, randNum: string) => {
+    const item = (
+      <IMGBox
+        picture={picture}
+        title={picture.name}
+        key={picture.name + randNum}
+        onRemove={onRemove}
+        randNum={picture.name + randNum}
+      ></IMGBox>
+    );
+    temp.push(item);
+    console.log(temp);
+    setImgList(temp);
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files !== null) {
-      const picture = Array.from(e.target.files);
-      console.log(picture);
+      const pictures = Array.from(e.target.files);
 
-      for (let i = 0; i < picture.length; i++) {
-        // eslint-disable-next-line no-loop-func
+      pictures.forEach((picture: File) => {
         const randNum = String(Math.random());
-        setImgList(imgList => [
-          ...imgList,
-          <IMGBox
-            picture={picture[i]}
-            title={picture[i].name}
-            key={picture[i].name + randNum}
-            id={picture[i].name + randNum}
-            onRemove={onRemove}
-          ></IMGBox>,
-        ]);
-      }
+        addItem(picture, randNum);
+      });
     }
   };
 
