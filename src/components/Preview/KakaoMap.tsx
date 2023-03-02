@@ -6,12 +6,38 @@ import { MapMarker, Map, CustomOverlayMap } from 'react-kakao-maps-sdk';
 
 const KakaoMap = ({ text, svg }: { text: string; svg: any }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-
+  const [objectId, setObjectId] = useState(0);
   const markerPosition = {
     lat: 35.142738601752846,
     lng: 126.80072297715732,
   };
-
+  const positions = [
+    {
+      title: '카카오',
+      latlng: { lat: 33.450705, lng: 126.570677 },
+      id: 1,
+    },
+    {
+      title: '생태연못',
+      latlng: { lat: 33.450936, lng: 126.569477 },
+      id: 2,
+    },
+    {
+      title: '텃밭',
+      latlng: { lat: 33.450879, lng: 126.56994 },
+      id: 3,
+    },
+    {
+      title: '근린공원',
+      latlng: { lat: 33.451393, lng: 126.570738 },
+      id: 4,
+    },
+    {
+      title: '광주소프트웨어마이스터고',
+      latlng: { lat: 35.142738601752846, lng: 126.80072297715732 },
+      id: 5,
+    },
+  ];
   return (
     <div>
       <S.MapComment>{text}</S.MapComment>
@@ -27,65 +53,65 @@ const KakaoMap = ({ text, svg }: { text: string; svg: any }) => {
           }}
           level={1}
         >
-          <MapMarker
-            position={markerPosition}
-            onClick={() => setIsOpen(true)}
-            image={{
-              src: 'https://ifh.cc/g/Y9tpDk.png', // 마커이미지의 주소입니다
-              size: {
-                width: 36,
-                height: 45,
-              }, // 마커이미지의 크기입니다
-              options: {
-                offset: {
-                  x: 15,
-                  y: 69,
-                }, // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
-              },
-            }}
-          />
+          {positions.map((position, index) => (
+            <MapMarker
+              key={`${position.title}-${position.latlng}`}
+              position={position.latlng}
+              onClick={() => setIsOpen(true)}
+              image={{
+                src: 'https://ifh.cc/g/Y9tpDk.png', // 마커이미지의 주소입니다
+                size: {
+                  width: 36,
+                  height: 45,
+                }, // 마커이미지의 크기입니다
+                options: {
+                  offset: {
+                    x: 15,
+                    y: 69,
+                  }, // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+                },
+              }}
+              title={position.title}
+            ></MapMarker>
+          ))}
           {isOpen && (
             <CustomOverlayMap position={markerPosition}>
               <S.Wrap>
                 <div className="info">
-                  <div className="title">
-                    카카오 스페이스닷원
+                  <S.Esc
+                    className="close"
+                    onClick={() => setIsOpen(false)}
+                    title="닫기"
+                  >
+                    {svg}
+                  </S.Esc>
+                  <S.Overlay>
                     <div
-                      className="close"
-                      onClick={() => setIsOpen(false)}
-                      title="닫기"
+                      css={css`
+                        display: flex;
+                        justifycontent: center;
+                        alignitems: center;
+                      `}
                     >
-                      {svg}
-                    </div>
-                  </div>
-                  <div className="body">
-                    <div className="img">
-                      <img
+                      <S.LocationImg
                         src="//t1.daumcdn.net/thumb/C84x76/?fname=http://t1.daumcdn.net/cfile/2170353A51B82DE005"
                         width="73"
                         height="70"
                         alt="카카오 스페이스닷원"
                       />
                     </div>
-                    <div className="desc">
-                      <div className="ellipsis">
-                        제주특별자치도 제주시 첨단로 242
-                      </div>
-                      <div className="jibun ellipsis">
-                        (우) 63309 (지번) 영평동 2181
-                      </div>
+                    <S.Desc>
+                      <S.DescTitle>휴대폰을 분실했습니다</S.DescTitle>
                       <div>
-                        <a
-                          href="https://www.kakaocorp.com/main"
-                          target="_blank"
-                          className="link"
-                          rel="noreferrer"
-                        >
-                          홈페이지
-                        </a>
+                        <S.Ellipsis>
+                          제주특별자치도 제주시 첨단로 242
+                        </S.Ellipsis>
+                        <S.JibunEllipsis>
+                          (우) 63309 (지번) 영평동 2181
+                        </S.JibunEllipsis>
                       </div>
-                    </div>
-                  </div>
+                    </S.Desc>
+                  </S.Overlay>
                 </div>
               </S.Wrap>
             </CustomOverlayMap>
