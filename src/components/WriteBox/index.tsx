@@ -47,9 +47,9 @@ const WriteBox = ({
     }
   };
 
-  const onRemove = (id: any) => {
+  const onRemove = (id: string) => {
     // setImgList(imgList.filter(img => img.key !== target));
-    setImgList(imgList.filter((_: any, index: any) => index !== id));
+    setImgList(imgList.filter((_: any, index: string) => index !== id));
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -90,14 +90,14 @@ const WriteBox = ({
             <img src={I.FileIcon} alt="" />
           </S.DashedBox>
           <S.TotalIMGBox>
-            {imgList.map((img: any, id: any) => (
+            {imgList.map((img: File, id: string) => (
               <IMGBox
                 picture={img}
                 title={img.name}
                 key={id}
                 id={id}
                 onRemove={onRemove}
-              ></IMGBox>
+              />
             ))}
           </S.TotalIMGBox>
           <form method="dialog">
