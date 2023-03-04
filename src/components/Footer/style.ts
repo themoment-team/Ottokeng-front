@@ -15,12 +15,12 @@ export const FooterContentWrap = styled.ul`
   padding: 0;
   display: flex;
   justify-content: space-between;
-  width: 367px;
-  height: 19px;
+  width: 22.9375rem;
+  height: 1.1875rem;
   font-family: 'Pretendard';
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 19px;
   /* identical to box height */
 
