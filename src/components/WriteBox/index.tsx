@@ -19,7 +19,7 @@ const WriteBox = ({
   const [content, setContent] = useState<string>('');
   const [check, setCheck] = useState<string>('');
   const [imgList, setImgList] = useState<any>([]);
-  const [location, setLocation] = useState<string>('');
+  const [location, setLocation] = useState<string>('d');
 
   const changeChecked = (e: string) => {
     const delCheck = document.getElementById(`${e}CB`) as HTMLInputElement;
@@ -36,7 +36,8 @@ const WriteBox = ({
     } else setCheck('');
   };
 
-  const sendData = async (url: string) => {
+  const sendData = async (url: string, date: string) => {
+    console.log(date);
     const formData = new FormData();
 
     imgList.forEach((img: File) => {
@@ -69,12 +70,19 @@ const WriteBox = ({
       title !== '' &&
       content !== '' &&
       check !== '' &&
-      imgList !== null &&
+      (imgList[0] ?? false) &&
       location !== ''
     ) {
       //통과
       const url = 'https://';
-      sendData(url);
+      const date = new Date();
+      sendData(
+        url,
+        `${date.getFullYear()}/${String(date.getMonth() + 1).padStart(
+          2,
+          '0',
+        )}/${String(date.getDate()).padStart(2, '0')}`,
+      );
     } else {
       // 거름
       console.error('안 돼 돌아가');
