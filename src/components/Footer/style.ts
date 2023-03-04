@@ -35,14 +35,14 @@ export const FooterContentWrap = styled.ul`
 `;
 
 export const FooterTeamTitle = styled.div`
-  width: 367px;
-  height: 21px;
+  width: 22.9375rem;
+  height: 1.3125rem;
 
   font-family: 'Pretendard';
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 21px;
+  font-size: 1.125rem;
+  line-height: 1.3125rem;
 
   color: #696969;
 `;

@@ -7,8 +7,8 @@ const Footer = () => {
       <S.FooterWrap>
         <div
           css={css`
-            width: 1345px;
-            height: 21px;
+            width: 84.0625rem;
+            height: 1.3125rem;
 
             display: flex;
             justify-content: space-between;
