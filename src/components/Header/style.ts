@@ -39,7 +39,7 @@ export const LogoWrap = styled.div`
   justify-content: space-between;
 `;
 
-export const HeaderListWrap = styled.div`
+export const HeaderListWrap = styled.ul`
   width: 25.4375rem;
   justify-content: space-between;
   list-style: none;
@@ -92,7 +92,7 @@ export const UserImg = styled.div`
   background-color: gray;
 `;
 
-export const UserNm = styled.div`
+export const UserName = styled.div`
   display: flex;
   font-family: 'Pretendard';
   font-style: normal;

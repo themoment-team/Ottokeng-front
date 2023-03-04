@@ -1,4 +1,4 @@
-const MoreInforIcon = () => {
+const MoreInfoIcon = () => {
   return (
     <svg
       width="16"
@@ -18,4 +18,4 @@ const MoreInforIcon = () => {
   );
 };
 
-export default MoreInforIcon;
+export default MoreInfoIcon;
