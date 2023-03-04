@@ -6,6 +6,7 @@ import { CheckBox } from './CheckBox';
 import { RegistrationBox } from './RegistrationBox';
 import { IMGBox } from './IMGBox';
 import { useState } from 'react';
+import axios from 'axios';
 
 const WriteBox = ({
   kind,
@@ -18,10 +19,7 @@ const WriteBox = ({
   const [content, setContent] = useState<string>('');
   const [check, setCheck] = useState<string>('');
   const [imgList, setImgList] = useState<any>([]);
-
-  const sendPicture = async (picture: FileList) => {
-    console.log(picture);
-  };
+  const [location, setLocation] = useState<string>('');
 
   const changeChecked = (e: string) => {
     const delCheck = document.getElementById(`${e}CB`) as HTMLInputElement;
@@ -38,12 +36,48 @@ const WriteBox = ({
     } else setCheck('');
   };
 
+  const sendData = async (url: string) => {
+    const formData = new FormData();
+
+    imgList.forEach((img: File) => {
+      formData.append('files', img);
+    });
+
+    formData.append(
+      'data',
+      JSON.stringify({
+        title: title,
+        content: content,
+        check: check,
+        location: location,
+      }),
+    );
+
+    try {
+      const res = await axios.post(url, formData, {
+        headers: { 'Content-Type': 'multipart/form-data', charset: 'utf-8' },
+      });
+      const data = res.data;
+      console.log(data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   const handleSubmit = () => {
-    if (title !== '' && content !== '' && check !== '') {
+    if (
+      title !== '' &&
+      content !== '' &&
+      check !== '' &&
+      imgList !== null &&
+      location !== ''
+    ) {
       //통과
+      const url = 'https://';
+      sendData(url);
     } else {
       // 거름
-      console.log('안 돼 돌아가');
+      console.error('안 돼 돌아가');
     }
   };
 
