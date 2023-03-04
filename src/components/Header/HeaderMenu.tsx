@@ -1,11 +1,11 @@
 import * as S from './style';
 import * as I from 'assets/svgs';
 
-export const HeaderMenu = ({ svg }: any) => {
+export const HeaderMenu = () => {
   return (
     <S.NavigationContentWrqp>
       <S.LogoWrap>
-        <img src={svg} />
+        <I.LogoIcon />
         Ottokeng
       </S.LogoWrap>
       <S.HeaderListWrap>

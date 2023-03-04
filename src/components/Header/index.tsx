@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import * as S from './style';
-import * as I from 'assets/svgs';
 import { HeaderMenu } from './HeaderMenu';
 import { HeaderSearch } from './HeaderSearch';
 import { HeaderUser } from './HeaderUser';
@@ -10,7 +9,7 @@ const Header = () => {
     <>
       <S.Container>
         <S.HeaderContentWrap>
-          <HeaderMenu svg={<I.LogoIcon />} />
+          <HeaderMenu />
           <div
             css={css`
               width: 38.5625rem;
