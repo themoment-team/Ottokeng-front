@@ -147,11 +147,19 @@ export const DashedBox = styled.label`
 `;
 
 export const TotalIMGBox = styled.div`
-  width: 30.0625rem;
+  width: 31.3125rem;
   height: 15.75rem;
-  margin-top: 1.5rem;
-  margin-bottom: 2.25rem;
+  margin: 1.5rem 0 2.25rem 1.25rem;
   overflow: auto;
+  &::-webkit-scrollbar {
+    background-color: white;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: ${P.gray3};
+    border-radius: 20px;
+    background-clip: padding-box;
+    border: 5px solid transparent;
+  }
 `;
 
 export const IMGBox = styled.div`

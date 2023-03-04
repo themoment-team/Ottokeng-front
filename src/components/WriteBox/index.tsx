@@ -90,15 +90,20 @@ const WriteBox = ({
             <img src={I.FileIcon} alt="" />
           </S.DashedBox>
           <S.TotalIMGBox>
-            {imgList.map((img: File, id: string) => (
-              <IMGBox
-                picture={img}
-                title={img.name}
-                key={id}
-                id={id}
-                onRemove={onRemove}
-              />
-            ))}
+            {imgList.map((img: File, id: string) => {
+              let isLast = true;
+              if (id === imgList.length) isLast = false;
+              return (
+                <IMGBox
+                  picture={img}
+                  title={img.name}
+                  key={id}
+                  id={id}
+                  onRemove={onRemove}
+                  isLast={isLast}
+                />
+              );
+            })}
           </S.TotalIMGBox>
           <form method="dialog">
             <S.SubmitBTN>등록하기</S.SubmitBTN>

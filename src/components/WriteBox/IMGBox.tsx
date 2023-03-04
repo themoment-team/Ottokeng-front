@@ -9,9 +9,10 @@ interface props {
   title: string;
   onRemove: Function;
   id: string;
+  isLast: boolean;
 }
 
-export const IMGBox = ({ picture, title, onRemove, id }: props) => {
+export const IMGBox = ({ picture, title, onRemove, id, isLast }: props) => {
   const [value, setValue] = useState<number>(0);
   useEffect(() => {
     setTimeout(() => {
@@ -41,7 +42,7 @@ export const IMGBox = ({ picture, title, onRemove, id }: props) => {
           onClick={() => onRemove(id)}
         />
       </S.IMGBox>
-      <S.Line />
+      {isLast && <S.Line />}
     </div>
   );
 };
