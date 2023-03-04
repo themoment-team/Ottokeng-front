@@ -50,6 +50,7 @@ const WriteBox = ({
         title: title,
         content: content,
         check: check,
+        date: date,
         location: location,
       }),
     );
