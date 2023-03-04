@@ -1,4 +1,4 @@
-const LogoIcon = () => {
+const LogoIcon = () => (
   <svg
     width="40"
     height="40"
@@ -20,7 +20,7 @@ const LogoIcon = () => {
       transform="matrix(-1 0 0 1 23.3687 13.1371)"
       fill="#6695F1"
     />
-  </svg>;
-};
+  </svg>
+);
 
 export default LogoIcon;
