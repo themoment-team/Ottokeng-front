@@ -19,7 +19,7 @@ const WriteBox = ({
   const [content, setContent] = useState<string>('');
   const [check, setCheck] = useState<string>('');
   const [imgList, setImgList] = useState<any>([]);
-  const [location, setLocation] = useState<string>('d');
+  const [location, setLocation] = useState<string>('address');
 
   const changeChecked = (e: string) => {
     const delCheck = document.getElementById(`${e}CB`) as HTMLInputElement;
@@ -37,28 +37,41 @@ const WriteBox = ({
   };
 
   const sendData = async (url: string, date: string) => {
-    console.log(date);
     const formData = new FormData();
+    const type = check === 'acquire' ? 'LOST_WRITING' : 'FIND_WRITING';
+
+    const contents = {
+      title: title,
+      content: content,
+      // date: date,
+      acquire: 'GET',
+      address: location,
+      communication: 'communication',
+      type: type,
+    };
 
     imgList.forEach((img: File) => {
-      formData.append('files', img);
+      formData.append('file', img);
     });
 
-    formData.append(
-      'data',
-      JSON.stringify({
-        title: title,
-        content: content,
-        check: check,
-        date: date,
-        location: location,
-      }),
-    );
+    const json = JSON.stringify(contents);
+    const blob = new Blob([json], { type: 'application/json' });
+    formData.append('content', blob);
+
+    for (let values of formData.values()) {
+      console.log(values);
+    }
 
     try {
       const res = await axios.post(url, formData, {
-        headers: { 'Content-Type': 'multipart/form-data', charset: 'utf-8' },
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          charset: 'utf-8',
+          Authorization:
+            'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyNjU3NTcwOTQ4IiwiaWF0IjoxNjc4MDAwMjY1LCJleHAiOjE2NzgwMTEwNjV9.6WD7if7uicOGyZ2D441F7WxHLVmWjXBIYskIMMmP7T0',
+        },
       });
+      console.log('Fdsa');
       const data = res.data;
       console.log(data);
     } catch (err) {
@@ -75,7 +88,7 @@ const WriteBox = ({
       location !== ''
     ) {
       //통과
-      const url = 'https://';
+      const url = 'http://10.120.74.187:8080/post/writing';
       const date = new Date();
       sendData(
         url,
