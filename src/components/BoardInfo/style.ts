@@ -108,9 +108,3 @@ export const CommentInput = styled.input`
 
   color: #6d6d6d;
 `;
-
-export const Sex = styled.div`
-  width: 32.5rem;
-  height: 18.125rem;
-  background-color: red;
-`;

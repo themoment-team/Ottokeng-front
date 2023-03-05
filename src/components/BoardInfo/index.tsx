@@ -31,21 +31,7 @@ const BoardInfo = () => {
                 <S.UserNm>사용자</S.UserNm>
                 <S.BoardPostDate>2002.01.01</S.BoardPostDate>
               </div>
-              <S.ShowItemMapBtn>
-                {/* <div
-                  css={css`
-                    width: 14.2px;
-                    height: 17.95px;
-                    background: #ffffff;
-                    position: absolute;
-                    transform: matrix(-1, 0, 0, 1, 0, 0);
-
-                    top: 11px;
-                    left: 14px;
-                  `}
-                ></div> */}
-                위치 확인하기
-              </S.ShowItemMapBtn>
+              <S.ShowItemMapBtn>위치 확인하기</S.ShowItemMapBtn>
             </S.BoardHeaderWrap>
             <div
               css={css`
@@ -96,9 +82,7 @@ const BoardInfo = () => {
               navigation
               pagination={{ clickable: true }}
             >
-              <SwiperSlide>
-                <S.Sex></S.Sex>
-              </SwiperSlide>
+              <SwiperSlide></SwiperSlide>
               <SwiperSlide></SwiperSlide>
               <SwiperSlide></SwiperSlide>
               <SwiperSlide></SwiperSlide>
