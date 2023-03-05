@@ -42,7 +42,7 @@ const WriteBox = ({
 
     const contents = {
       title: title,
-      content: content,
+      contents: content,
       // date: date,
       acquire: 'GET',
       address: location,
@@ -68,10 +68,9 @@ const WriteBox = ({
           'Content-Type': 'multipart/form-data',
           charset: 'utf-8',
           Authorization:
-            'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyNjU3NTcwOTQ4IiwiaWF0IjoxNjc4MDAwMjY1LCJleHAiOjE2NzgwMTEwNjV9.6WD7if7uicOGyZ2D441F7WxHLVmWjXBIYskIMMmP7T0',
+            'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyNjU3NTcwOTQ4IiwiaWF0IjoxNjc4MDU3MDM0LCJleHAiOjE2NzgwNjc4MzR9.hSKWUSYBGZ1CU0e-hupWdMUHIwKw6VnWnrDEIcpMPyc',
         },
       });
-      console.log('Fdsa');
       const data = res.data;
       console.log(data);
     } catch (err) {
@@ -115,16 +114,18 @@ const WriteBox = ({
       for (let i = 0; i < pictures.length; i++) {
         imgLists.push(pictures[i]);
       }
-      if (imgLists.length > 10) {
-        imgLists = imgLists.slice(0, 10);
-        alert('이미지는 최대 10장 까지만 등록 가능합니다');
+      if (imgLists.length > 5) {
+        imgLists = imgLists.slice(0, 5);
+        alert('이미지는 최대 5장 까지만 등록 가능합니다');
       }
       setImgList(imgLists);
     }
   };
 
-  const handleShowModal = () => {
-    const IMGModal = document.querySelector('.IMGModal') as HTMLDialogElement;
+  const handleShowModal = (className: string) => {
+    const IMGModal = document.querySelector(
+      `.${className}`,
+    ) as HTMLDialogElement;
     IMGModal.showModal();
   };
 
@@ -165,6 +166,30 @@ const WriteBox = ({
             <S.SubmitBTN>등록하기</S.SubmitBTN>
           </form>
         </S.IMGModal>
+      </dialog>
+      <dialog
+        className="MapModal"
+        css={css`
+          border: 0;
+          padding: 0;
+          border-radius: 0.5rem;
+          &::backdrop {
+            background-color: rgba(25, 25, 25, 0.3);
+          }
+        `}
+      >
+        <S.MapModal>
+          <S.Map></S.Map>
+          <form method="dialog">
+            <S.SubmitBTN
+              css={css`
+                margin-top: 9rem;
+              `}
+            >
+              위치등록
+            </S.SubmitBTN>
+          </form>
+        </S.MapModal>
       </dialog>
       <input
         type="file"
@@ -220,15 +245,13 @@ const WriteBox = ({
           <RegistrationBox
             svg={I.CameraIcon}
             text="사진 등록하기"
-            onClick={handleShowModal}
+            onClick={() => handleShowModal('IMGModal')}
           />
 
           <RegistrationBox
-            onClick={() => {
-              console.log();
-            }}
-            svg={I.LocationIcon}
+            onClick={() => handleShowModal('MapModal')}
             text="위치 등록하기"
+            svg={I.LocationIcon}
           />
         </S.FlexBox>
       </S.Box>

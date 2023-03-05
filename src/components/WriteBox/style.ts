@@ -208,3 +208,20 @@ export const Line = styled.div`
   background-color: ${P.gray4};
   margin: 0.5rem 0;
 `;
+
+export const MapModal = styled.div`
+  width: 52.5rem;
+  height: 38rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: ${P.white};
+  padding: 2.5rem 0 2rem 0;
+`;
+
+export const Map = styled.map`
+  width: 47.5rem;
+  height: 26.25rem;
+  background-color: ${P.gray1};
+  border-radius: 0.5rem;
+`;
