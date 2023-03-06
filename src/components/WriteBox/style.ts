@@ -129,7 +129,7 @@ export const IMGModal = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 0.5rem;
-  border: 0.0625rem solid black;
+  border: 0;
   align-items: center;
   padding: 0;
 `;
