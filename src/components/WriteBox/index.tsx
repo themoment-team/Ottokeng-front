@@ -63,8 +63,7 @@ const WriteBox = ({
         headers: {
           'Content-Type': 'multipart/form-data',
           charset: 'utf-8',
-          Authorization:
-            'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyNjU3NTcwOTQ4IiwiaWF0IjoxNjc4MDU3MDM0LCJleHAiOjE2NzgwNjc4MzR9.hSKWUSYBGZ1CU0e-hupWdMUHIwKw6VnWnrDEIcpMPyc',
+          Authorization: '',
         },
       });
       const data = res.data;
