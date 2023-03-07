@@ -58,10 +58,6 @@ const WriteBox = ({
     const blob = new Blob([json], { type: 'application/json' });
     formData.append('content', blob);
 
-    for (let values of formData.values()) {
-      console.log(values);
-    }
-
     try {
       const res = await axios.post(url, formData, {
         headers: {
