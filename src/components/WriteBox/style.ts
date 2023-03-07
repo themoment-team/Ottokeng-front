@@ -96,11 +96,6 @@ export const SubmitBTN = styled.button`
   border: 0;
   cursor: pointer;
   outline: none;
-  &:hover {
-    translate: 0 -0.125rem;
-    transition: all 0.2s;
-    box-shadow: 0 0.25rem 0.625rem 0 rgba(0, 0, 0, 0.2);
-  }
 `;
 
 export const RegistrationText = styled.p`
@@ -156,9 +151,9 @@ export const TotalIMGBox = styled.div`
   }
   &::-webkit-scrollbar-thumb {
     background-color: ${P.gray3};
-    border-radius: 20px;
+    border-radius: 1.25rem;
     background-clip: padding-box;
-    border: 5px solid transparent;
+    border: 0.3125rem solid transparent;
   }
 `;
 
