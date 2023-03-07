@@ -3,19 +3,13 @@ import { Container } from '../components/ListItem/style';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 const ListPage = () => {
-  const [list, setList] = useState<JSX.Element[]>([]);
+  const location = useLocation();
 
-  interface data {
-    title: string;
-    date: string;
-    name: string;
-    detail: string;
-    image: string;
-    adress: string;
-    Communication: string;
-  }
+  const [list, setList] = useState<JSX.Element[]>([]);
+  const [isModify, setIsModify] = useState<boolean>(false);
 
   const printList = (datas: Array<object>) => {
     const listItems: JSX.Element[] = datas.map((data: any) => {
@@ -26,6 +20,7 @@ const ListPage = () => {
           date="data"
           userName="userName"
           chatNum={data.Communication}
+          isModify={isModify}
         />
       );
     });
@@ -39,15 +34,28 @@ const ListPage = () => {
       console.log(data);
       printList(data);
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
 
   useEffect(() => {
+    location.pathname === '/user' && setIsModify(true);
     const url = ``;
     getData(url);
   }, []);
-  return <Container>{list}</Container>;
+  return (
+    <Container>
+      {' '}
+      <ListItem
+        title=""
+        inform=""
+        date="date"
+        userName="userName"
+        chatNum=""
+        isModify={isModify}
+      />
+    </Container>
+  );
 };
 
 export default ListPage;
