@@ -39,23 +39,11 @@ const ListPage = () => {
   };
 
   useEffect(() => {
-    location.pathname === '/user' && setIsModify(true);
+    location.pathname === '/list' && setIsModify(true);
     const url = ``;
     getData(url);
   }, []);
-  return (
-    <Container>
-      {' '}
-      <ListItem
-        title=""
-        inform=""
-        date="date"
-        userName="userName"
-        chatNum=""
-        isModify={isModify}
-      />
-    </Container>
-  );
+  return <Container>{list}</Container>;
 };
 
 export default ListPage;
