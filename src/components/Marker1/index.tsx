@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import * as S from './style';
-export const MarkerBox = ({ svg, svg2 }: { svg: any; svg2: any }) => {
+const Marker1 = ({ svg, svg2 }: { svg: any; svg2: any }) => {
   return (
     <S.MarkerBox>
       {svg}
@@ -9,3 +9,5 @@ export const MarkerBox = ({ svg, svg2 }: { svg: any; svg2: any }) => {
     </S.MarkerBox>
   );
 };
+
+export default Marker1;

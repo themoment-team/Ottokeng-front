@@ -2,11 +2,9 @@
 import * as S from './style';
 import * as I from '../../assets/svgs';
 import { css } from '@emotion/react';
-import { StartBtnBox } from './StartBtnBox';
-import { MarkerBox } from './MarkerBox';
-import { MarkerBox2 } from './MarkerBox2';
-
-const MainBox = ({
+import { StartBtn, Marker1, Marker2 } from 'components';
+import { Link } from 'react-router-dom';
+const StartPage = ({
   title,
   submitText,
   description,
@@ -39,11 +37,13 @@ const MainBox = ({
       >
         {description}
       </S.Description>
-      <StartBtnBox svg={<I.VectorIcon />} text="시작하기"></StartBtnBox>
-      <MarkerBox svg={<I.MarkerIcon />} svg2={<I.ShadowIcon />}></MarkerBox>
-      <MarkerBox2 svg={<I.MarkerIcon2 />} svg2={<I.ShadowIcon2 />}></MarkerBox2>
+      <Link to="/main">
+        <StartBtn svg={<I.VectorIcon />} text="시작하기"></StartBtn>
+      </Link>
+      <Marker1 svg={<I.MarkerIcon />} svg2={<I.ShadowIcon />}></Marker1>
+      <Marker2 svg={<I.MarkerIcon2 />} svg2={<I.ShadowIcon2 />}></Marker2>
     </S.Container>
   );
 };
 
-export default MainBox;
+export default StartPage;

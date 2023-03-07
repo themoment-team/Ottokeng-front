@@ -1,12 +1,12 @@
-import { MainBox } from '../components';
-const StartPage = () => {
+import { StartPage } from 'PageContainer';
+const Start = () => {
   return (
-    <MainBox
+    <StartPage
       title="Find Your Missing"
       submitText="시작하기"
       description="오또켕을 통해 당신의 소중한 물건을 찾아보세요."
-    ></MainBox>
+    ></StartPage>
   );
 };
 
-export default StartPage;
+export default Start;

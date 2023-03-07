@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import * as S from './style';
-export const PlulsBtn = ({ svg }: { svg: any }) => {
+const PlusBtn = ({ svg }: { svg: any }) => {
   return (
     <div>
       <S.PlusBtn>
@@ -10,3 +10,5 @@ export const PlulsBtn = ({ svg }: { svg: any }) => {
     </div>
   );
 };
+
+export default PlusBtn;
