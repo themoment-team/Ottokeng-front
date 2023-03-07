@@ -36,7 +36,7 @@ const WriteBox = ({
     } else setCheck('');
   };
 
-  const sendData = async (url: string, date: string) => {
+  const sendData = async (url: string) => {
     const formData = new FormData();
     const type = check === 'acquire' ? 'LOST_WRITING' : 'FIND_WRITING';
 
@@ -83,14 +83,7 @@ const WriteBox = ({
     ) {
       //통과
       const url = 'http://10.120.74.187:8080/post/writing';
-      const date = new Date();
-      sendData(
-        url,
-        `${date.getFullYear()}/${String(date.getMonth() + 1).padStart(
-          2,
-          '0',
-        )}/${String(date.getDate()).padStart(2, '0')}`,
-      );
+      sendData(url);
     } else {
       // 거름
       console.error('안 돼 돌아가');
