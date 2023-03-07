@@ -42,7 +42,7 @@ const Comment = () => {
           color: #777777;
           margin-top: 0.1875rem;
 
-          margin-left: 1rem;
+          margin-left: 2.5rem;
         `}
       >
         빨간 케이스 말하시는 거죠? 제가 가지고 있습니다!
