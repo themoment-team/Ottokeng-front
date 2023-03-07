@@ -44,7 +44,7 @@ const GoogleLoginBtnAfter = ({ setHeader }: { setHeader: any }) => {
   let code = params.get('code');
   return (
     <>
-      <button
+      {/* <button
         onClick={() => {
           console.log(dlwjddn);
           console.log(code);
@@ -79,7 +79,7 @@ const GoogleLoginBtnAfter = ({ setHeader }: { setHeader: any }) => {
       >
         로그아웃
       </button>
-      <p>{user?.name}</p>
+      <p>{user?.name}</p> */}
     </>
   );
 };
