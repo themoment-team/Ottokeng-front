@@ -138,7 +138,11 @@ const WriteBox = () => {
         `}
         onChange={handleFileChange}
       />
-      <S.Title>{path === '/write' ? '글쓰기' : '수정하기'}</S.Title>
+      <S.Title>
+        {path === '/write/update' || path === '/write/update/'
+          ? '수정하기'
+          : '글쓰기'}
+      </S.Title>
       <S.Input
         value={title}
         onChange={e => setTitle(e.target.value)}
@@ -200,7 +204,9 @@ const WriteBox = () => {
         `}
       >
         <S.SubmitBTN onClick={handleSubmit}>
-          {path === '/write' ? '등록하기' : '수정완료'}
+          {path === '/write/update' || path === '/write/update/'
+            ? '수정완료'
+            : '등록하기'}
         </S.SubmitBTN>
       </S.FlexBox>
     </S.Container>
