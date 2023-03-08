@@ -6,7 +6,7 @@ interface props {
   onClick: any;
 }
 
-export const RegistrationBox = ({ svg, text, onClick }: props) => {
+const RegistrationBox = ({ svg, text, onClick }: props) => {
   return (
     <S.RegistrationBox onClick={onClick}>
       {<img src={svg} alt="" />}
@@ -14,3 +14,5 @@ export const RegistrationBox = ({ svg, text, onClick }: props) => {
     </S.RegistrationBox>
   );
 };
+
+export default RegistrationBox;

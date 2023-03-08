@@ -12,7 +12,7 @@ interface props {
   isLast: boolean;
 }
 
-export const IMGBox = ({ picture, title, onRemove, id, isLast }: props) => {
+const IMGBox = ({ picture, title, onRemove, id, isLast }: props) => {
   const [value, setValue] = useState<number>(0);
   useEffect(() => {
     setTimeout(() => {
@@ -46,3 +46,5 @@ export const IMGBox = ({ picture, title, onRemove, id, isLast }: props) => {
     </div>
   );
 };
+
+export default IMGBox;

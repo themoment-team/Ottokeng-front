@@ -1,10 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import * as S from './style';
 import * as I from 'assets/svgs';
+import * as C from '../index';
 import { css } from '@emotion/react';
-import { CheckBox } from './CheckBox';
-import { RegistrationBox } from './RegistrationBox';
-import { IMGBox } from './IMGBox';
 import { useState } from 'react';
 import axios from 'axios';
 
@@ -117,67 +115,22 @@ const WriteBox = ({
     IMGModal.showModal();
   };
 
+  const ModalDesign = css`
+    border: 0;
+    padding: 0;
+    border-radius: 0.5rem;
+    &::backdrop {
+      background-color: rgba(25, 25, 25, 0.3);
+    }
+  `;
+
   return (
     <S.Container>
-      <dialog
-        className="IMGModal"
-        css={css`
-          border: 0;
-          padding: 0;
-          border-radius: 0.5rem;
-          &::backdrop {
-            background-color: rgba(25, 25, 25, 0.3);
-          }
-        `}
-      >
-        <S.IMGModal>
-          <S.DashedBox htmlFor="fileInput">
-            <img src={I.FileIcon} alt="" />
-          </S.DashedBox>
-          <S.TotalIMGBox>
-            {imgList.map((img: File, id: string) => {
-              let isLast = true;
-              if (id === imgList.length) isLast = false;
-              return (
-                <IMGBox
-                  picture={img}
-                  title={img.name}
-                  key={id}
-                  id={id}
-                  onRemove={onRemove}
-                  isLast={isLast}
-                />
-              );
-            })}
-          </S.TotalIMGBox>
-          <form method="dialog">
-            <S.SubmitBTN>등록하기</S.SubmitBTN>
-          </form>
-        </S.IMGModal>
+      <dialog className="IMGModal" css={ModalDesign}>
+        <C.IMGModal imgList={imgList} onRemove={onRemove} />
       </dialog>
-      <dialog
-        className="MapModal"
-        css={css`
-          border: 0;
-          padding: 0;
-          border-radius: 0.5rem;
-          &::backdrop {
-            background-color: rgba(25, 25, 25, 0.3);
-          }
-        `}
-      >
-        <S.MapModal>
-          <S.Map></S.Map>
-          <form method="dialog">
-            <S.SubmitBTN
-              css={css`
-                margin-top: 9rem;
-              `}
-            >
-              위치등록
-            </S.SubmitBTN>
-          </form>
-        </S.MapModal>
+      <dialog className="MapModal" css={ModalDesign}>
+        <C.MapModal />
       </dialog>
       <input
         type="file"
@@ -212,31 +165,30 @@ const WriteBox = ({
             width: 9.625rem;
           `}
         >
-          <CheckBox
+          <C.CheckBox
             text="습득"
             value="acquire"
             handleCheck={handleCheck}
             id="acquireCB"
-          ></CheckBox>
-          <CheckBox
+          ></C.CheckBox>
+          <C.CheckBox
             text="분실"
             value="loss"
             handleCheck={handleCheck}
             id="lossCB"
-          ></CheckBox>
+          ></C.CheckBox>
         </S.FlexBox>
         <S.FlexBox
           css={css`
             width: 18rem;
           `}
         >
-          <RegistrationBox
+          <C.RegistrationBox
             svg={I.CameraIcon}
             text="사진 등록하기"
             onClick={() => handleShowModal('IMGModal')}
           />
-
-          <RegistrationBox
+          <C.RegistrationBox
             onClick={() => handleShowModal('MapModal')}
             text="위치 등록하기"
             svg={I.LocationIcon}

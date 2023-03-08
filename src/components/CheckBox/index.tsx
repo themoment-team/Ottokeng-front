@@ -2,14 +2,14 @@
 import { css } from '@emotion/react';
 import * as S from './style';
 
-interface args {
+interface props {
   text: string;
   value: string;
   handleCheck: any;
   id: string;
 }
 
-export const CheckBox = ({ text, value, handleCheck, id }: args) => {
+const CheckBox = ({ text, value, handleCheck, id }: props) => {
   return (
     <div
       css={css`
@@ -23,3 +23,5 @@ export const CheckBox = ({ text, value, handleCheck, id }: args) => {
     </div>
   );
 };
+
+export default CheckBox;

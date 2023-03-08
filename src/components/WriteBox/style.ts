@@ -53,39 +53,6 @@ export const TextArea = styled.textarea`
   }
 `;
 
-export const Checkbox = styled.input`
-  width: 1.5rem;
-  height: 1.5rem;
-  border: 0.075rem solid ${P.gray2};
-  border-radius: 0.3rem;
-  margin: 0;
-  cursor: pointer;
-  outline: none;
-`;
-
-export const CheckboxText = styled.p`
-  margin-left: 0.6rem;
-  font-size: 1rem;
-  font-weight: 500;
-`;
-
-export const RegistrationBox = styled.div`
-  width: 8.375rem;
-  height: 1.3125rem;
-  border: 0.0625rem solid ${P.blue1};
-  border-radius: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  padding: 0.4063rem 0;
-  cursor: pointer;
-  &:hover {
-    translate: 0 -0.125rem;
-    transition: all 0.2s;
-    box-shadow: 0 0.25rem 0.625rem 0 rgba(0, 0, 0, 0.2);
-  }
-`;
-
 export const SubmitBTN = styled.button`
   width: 9rem;
   height: 2.75rem;
@@ -96,12 +63,6 @@ export const SubmitBTN = styled.button`
   border: 0;
   cursor: pointer;
   outline: none;
-`;
-
-export const RegistrationText = styled.p`
-  font-size: 1rem;
-  color: ${P.blue1};
-  font-weight: 500;
 `;
 
 export const Box = styled.div`
@@ -115,108 +76,4 @@ export const FlexBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-`;
-
-export const IMGModal = styled.div`
-  width: 36.25rem;
-  height: 47.5rem;
-  background-color: ${P.white};
-  display: flex;
-  flex-direction: column;
-  border-radius: 0.5rem;
-  border: 0;
-  align-items: center;
-  padding: 0;
-`;
-
-export const DashedBox = styled.label`
-  margin-top: 2.9375rem;
-  width: 30rem;
-  height: 20rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='%23A4A4A4FF' stroke-width='5' stroke-dasharray='6 14' stroke-dashoffset='80' stroke-linecap='square'/%3e%3c/svg%3e");
-`;
-
-export const TotalIMGBox = styled.div`
-  width: 31.3125rem;
-  height: 15.75rem;
-  margin: 1.5rem 0 2.25rem 1.25rem;
-  overflow: auto;
-  &::-webkit-scrollbar {
-    background-color: white;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: ${P.gray3};
-    border-radius: 1.25rem;
-    background-clip: padding-box;
-    border: 0.3125rem solid transparent;
-  }
-`;
-
-export const IMGBox = styled.div`
-  display: flex;
-  width: 30.0625rem;
-  height: 2.25rem;
-  align-items: center;
-`;
-
-export const IMGFile = styled.img`
-  width: 2rem;
-  height: 2.25rem;
-  margin-right: 1rem;
-`;
-
-export const IMGContentBox = styled.div`
-  width: 22.5rem;
-  height: 2.25rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`;
-
-export const IMGTitle = styled.p`
-  font-size: 0.875rem;
-  font-weight: 500;
-`;
-
-export const Range = styled.input`
-  width: 22.5rem;
-  height: 0.25rem;
-  outline: none;
-  margin-left: -0.0625rem;
-
-  &::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    outline: none;
-    background: transparent;
-    opacity: 0;
-  }
-`;
-
-export const Line = styled.div`
-  width: 30rem;
-  height: 0.0625rem;
-  background-color: ${P.gray4};
-  margin: 0.5rem 0;
-`;
-
-export const MapModal = styled.div`
-  width: 52.5rem;
-  height: 38rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: ${P.white};
-  padding: 2.5rem 0 2rem 0;
-`;
-
-export const Map = styled.map`
-  width: 47.5rem;
-  height: 26.25rem;
-  background-color: ${P.gray1};
-  border-radius: 0.5rem;
 `;
