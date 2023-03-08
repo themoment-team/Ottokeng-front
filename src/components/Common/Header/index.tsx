@@ -4,7 +4,16 @@ import * as S from './style';
 import { HeaderMenu } from './HeaderMenu';
 import { HeaderSearch } from './HeaderSearch';
 import { HeaderUser } from './HeaderUser';
-const Header = () => {
+
+interface UserProps {
+  name: string;
+  userImg: string;
+}
+interface props {
+  header: UserProps;
+}
+
+const Header = ({ header }: props) => {
   return (
     <>
       <S.Container>
@@ -18,7 +27,7 @@ const Header = () => {
             `}
           >
             <HeaderSearch />
-            <HeaderUser />
+            <HeaderUser header={header} />
           </div>
         </S.HeaderContentWrap>
       </S.Container>

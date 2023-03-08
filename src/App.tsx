@@ -1,17 +1,30 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { Theme } from '@emotion/react';
 import { Header } from './components';
+import { useState } from 'react';
+
+interface UserProps {
+  name: string;
+  userImg: string;
+}
+
+let init: UserProps = {
+  name: 'Anon',
+  userImg: 'img',
+};
 
 function App() {
+  const [header, setHeader] = useState<UserProps>(init);
+
   enum PATH {
     login = '/login',
     loginUser = 'login/login/*',
     list = '/list/',
   }
+
   return (
     <div className="App">
-      <Header />
-
+      <Header header={header} />
       <BrowserRouter>
         <Routes>
           {/* <Route path="/" element={<MainPage />}></Route> */}

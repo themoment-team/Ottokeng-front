@@ -85,11 +85,13 @@ export const SearchBox = styled.input`
   color: #999999;
 `;
 
-export const UserImg = styled.div`
+export const UserImg = styled.div<{ backGroundImg: string }>`
   width: 2rem;
   height: 2rem;
   border-radius: 100%;
   background-color: gray;
+
+  background-image: url(${props => props.backGroundImg});
 `;
 
 export const UserName = styled.div`
