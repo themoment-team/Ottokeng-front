@@ -5,7 +5,7 @@ const BoardTitle = () => {
   return (
     <div
       css={css`
-        margin-bottom: 20px;
+        margin-bottom: 1.25rem;
       `}
     >
       <S.BoardTitle>휴대폰을 분실했습니다.</S.BoardTitle>
