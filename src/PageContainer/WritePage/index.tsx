@@ -1,23 +1,20 @@
 /** @jsxImportSource @emotion/react */
 import * as S from './style';
 import * as I from 'assets/svgs';
-import * as C from '../index';
+import * as C from 'components/index';
 import { css } from '@emotion/react';
 import { useState } from 'react';
 import axios from 'axios';
+import { useLocation } from 'react-router-dom';
 
-const WriteBox = ({
-  kind,
-  submitText,
-}: {
-  kind: string;
-  submitText: string;
-}) => {
+const WriteBox = () => {
   const [title, setTitle] = useState<string>('');
   const [content, setContent] = useState<string>('');
   const [check, setCheck] = useState<string>('');
   const [imgList, setImgList] = useState<any>([]);
   const [location, setLocation] = useState<string>('address');
+
+  const path = useLocation().pathname;
 
   const changeChecked = (e: string) => {
     const delCheck = document.getElementById(`${e}CB`) as HTMLInputElement;
@@ -141,7 +138,7 @@ const WriteBox = ({
         `}
         onChange={handleFileChange}
       />
-      <S.Title>{kind}</S.Title>
+      <S.Title>{path === '/write' ? '글쓰기' : '수정하기'}</S.Title>
       <S.Input
         value={title}
         onChange={e => setTitle(e.target.value)}
@@ -202,7 +199,9 @@ const WriteBox = ({
           margin-top: 11.625rem;
         `}
       >
-        <S.SubmitBTN onClick={handleSubmit}>{submitText}</S.SubmitBTN>
+        <S.SubmitBTN onClick={handleSubmit}>
+          {path === '/write' ? '등록하기' : '수정완료'}
+        </S.SubmitBTN>
       </S.FlexBox>
     </S.Container>
   );

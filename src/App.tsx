@@ -6,7 +6,7 @@ import { ThemeProvider } from '@emotion/react';
 
 function App() {
   enum PATH {
-    write = '/write',
+    write = '/write/*',
     list = '/list',
     bulletin = '/list/:id',
     login = '/login',
