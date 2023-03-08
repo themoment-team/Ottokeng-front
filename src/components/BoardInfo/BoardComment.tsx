@@ -1,8 +1,25 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import axios from 'axios';
 import * as C from 'components';
+import { useEffect, useState } from 'react';
 
 const BoardComment = () => {
+  const [comments, setComments] = useState<any[]>([]);
+
+  const getComments = async (url: string) => {
+    const res = await axios.post(url);
+    const datas = res.data;
+    datas.array.forEach((data: any) => {
+      setComments([...comments, data]);
+    });
+  };
+
+  useEffect(() => {
+    const url = '';
+    getComments(url);
+  }, []);
+
   return (
     <>
       <div
@@ -18,12 +35,9 @@ const BoardComment = () => {
           overflow-x: hidden;
         `}
       >
-        <C.Comment></C.Comment>
-        <C.Comment></C.Comment>
-        <C.Comment></C.Comment>
-        <C.Comment></C.Comment>
-        <C.Comment></C.Comment>
-        <C.Comment></C.Comment>
+        {comments.map((comment: any) => {
+          return comment;
+        })}
       </div>
     </>
   );

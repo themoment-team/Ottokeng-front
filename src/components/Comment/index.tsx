@@ -3,8 +3,16 @@ import { css } from '@emotion/react';
 
 import * as S from './style';
 import * as I from 'assets/svgs';
+import { useState } from 'react';
 
-const Comment = () => {
+interface props {
+  user: string;
+  date: string;
+  content: string;
+  picture: string;
+}
+
+const Comment = ({ user, date, content, picture }: props) => {
   return (
     <S.Container>
       <div
@@ -24,9 +32,13 @@ const Comment = () => {
         >
           <I.Hamburger />
         </div>
-        <S.UserIcon></S.UserIcon>
-        <S.BoardPostDate>이정우</S.BoardPostDate>
-        <S.BoardPostDate>2002.01.01</S.BoardPostDate>
+        <S.UserIcon
+          css={css`
+            background-image: url(${picture});
+          `}
+        ></S.UserIcon>
+        <S.BoardPostDate>{user}</S.BoardPostDate>
+        <S.BoardPostDate>{date}</S.BoardPostDate>
       </div>
       <div
         css={css`
@@ -36,16 +48,13 @@ const Comment = () => {
           font-size: 0.9375rem;
           line-height: 1.125rem;
           /* identical to box height */
-
           letter-spacing: 0.05em;
-
           color: #777777;
           margin-top: 0.1875rem;
-
           margin-left: 2.5rem;
         `}
       >
-        빨간 케이스 말하시는 거죠? 제가 가지고 있습니다!
+        {content}
       </div>
     </S.Container>
   );
