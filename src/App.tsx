@@ -4,11 +4,8 @@ import { Theme } from '@emotion/react';
 import { GoogleLoginBtnBefore, GoogleLoginBtnAfter } from './components';
 
 function App() {
-  // const [header, setHeader] = useState<string>('사용자');
   return (
     <div className="App">
-      {/* <Header header={header} /> */}
-
       <BrowserRouter>
         <Routes>
           {/* <Route path="/" element={<MainPage />}></Route> */}
