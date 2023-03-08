@@ -17,7 +17,7 @@ const ListPage = () => {
         <ListItem
           title={data.title}
           inform={data.detail}
-          date="data"
+          date="date"
           userName="userName"
           chatNum={data.Communication}
           isModify={isModify}
