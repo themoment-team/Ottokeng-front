@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { Theme } from '@emotion/react';
-import { BoardInfo } from './components';
+import * as C from 'components';
 
 function App() {
   enum PATH {
@@ -21,7 +21,7 @@ function App() {
           ></Route> */}
           {/* <Route path="/write" element={<WritePage />}></Route> */}
           {/* <Route path="/list" element={<ListPage />}></Route> */}
-          <Route path={PATH.list} element={<BoardInfo />}></Route>
+          <Route path={PATH.list} element={<C.BoardInfo />}></Route>
           {/* <Route path="*" element={<NotFound />}></Route> */}
         </Routes>
       </BrowserRouter>
