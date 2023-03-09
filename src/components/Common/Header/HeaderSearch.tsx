@@ -2,7 +2,10 @@
 import { css } from '@emotion/react';
 import * as I from 'assets/svgs';
 import * as S from './style';
+import { useState } from 'react';
 export const HeaderSearch = () => {
+  const [search, setSearch] = useState<string>('');
+
   return (
     <>
       <div
@@ -15,7 +18,13 @@ export const HeaderSearch = () => {
           align-items: center;
         `}
       >
-        <S.SearchBox type="text" placeholder="잃어버린 분실물을 찾아보세요!" />
+        <S.SearchBox
+          type="text"
+          placeholder="잃어버린 분실물을 찾아보세요!"
+          onChange={e => {
+            setSearch(e.target.value);
+          }}
+        />
         <div
           css={css`
             position: absolute;
