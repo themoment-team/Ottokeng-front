@@ -4,7 +4,7 @@ import { useLocation, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useState } from 'react';
 
-const GoogleLoginBtnAfter = ({ setHeader }: { setHeader: any }) => {
+const GoogleLoginBtnAfter = () => {
   interface IUser {
     name: string;
     imageUrl: string;
@@ -28,7 +28,7 @@ const GoogleLoginBtnAfter = ({ setHeader }: { setHeader: any }) => {
     });
     console.log(data.name);
     setUser(data);
-    setHeader(data.name);
+    // setHeader(data.name);
   };
 
   const Delet = async () => {
@@ -44,7 +44,7 @@ const GoogleLoginBtnAfter = ({ setHeader }: { setHeader: any }) => {
   let code = params.get('code');
   return (
     <>
-      {/* <button
+      <button
         onClick={() => {
           console.log(dlwjddn);
           console.log(code);
@@ -74,12 +74,12 @@ const GoogleLoginBtnAfter = ({ setHeader }: { setHeader: any }) => {
             accessToken: '',
             refreshToken: '',
           });
-          setHeader('');
+          // setHeader('');
         }}
       >
         로그아웃
       </button>
-      <p>{user?.name}</p> */}
+      <p>{user?.name}</p>
     </>
   );
 };

@@ -10,10 +10,7 @@ function App() {
         <Routes>
           {/* <Route path="/" element={<MainPage />}></Route> */}
           <Route path="/login" element={<GoogleLoginBtnBefore />}></Route>
-          {/* <Route
-            path="/login/login/*"
-            element={<GoogleLoginBtnAfter setHeader={setHeader} />}
-          ></Route> */}
+          <Route path="/login/*" element={<GoogleLoginBtnBefore />}></Route>
           {/* <Route path="/write" element={<WritePage />}></Route> */}
           {/* <Route path="/list" element={<ListPage />}></Route> */}
           {/* <Route path="/list/" element={<BoardInfo />}></Route> */}
