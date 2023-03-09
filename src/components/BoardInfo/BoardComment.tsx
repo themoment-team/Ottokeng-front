@@ -5,13 +5,13 @@ import * as C from 'components';
 import { useEffect, useState } from 'react';
 
 const BoardComment = () => {
-  const [comments, setComments] = useState<any[]>([]);
+  const [datas, setDatas] = useState<any[]>([1, 2, 3]);
 
   const getComments = async (url: string) => {
-    const res = await axios.post(url);
+    const res = await axios.post(url + 'accessToken');
     const datas = res.data;
     datas.array.forEach((data: any) => {
-      setComments([...comments, data]);
+      setDatas([...datas, data]);
     });
   };
 
@@ -35,8 +35,16 @@ const BoardComment = () => {
           overflow-x: hidden;
         `}
       >
-        {comments.map((comment: any) => {
-          return comment;
+        {datas.map((data: any) => {
+          return (
+            <C.Comment
+              key={data.commentId}
+              user={data.writer}
+              date={data.createdAt}
+              content={data.contents}
+              picture={data.commentId}
+            />
+          );
         })}
       </div>
     </>
