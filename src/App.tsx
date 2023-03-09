@@ -23,7 +23,7 @@ function App() {
             <Route path={PATH.write} element={<P.WritePage />} />
             {/* <Route path={PATH.list} element={<ListPage />}/> */}
             {/* <Route path={PATH.bulletin} element={<Bulletin />}/> */}
-            {/* <Route path="*" element={<NotFound />}/> */}
+            <Route path="*" element={<h1>404 Not Found</h1>} />
           </Routes>
         </BrowserRouter>
         <footer></footer>
