@@ -3,8 +3,17 @@ import { css } from '@emotion/react';
 import * as I from 'assets/svgs';
 import * as S from './style';
 import { useState } from 'react';
+import axios from 'axios';
 export const HeaderSearch = () => {
   const [search, setSearch] = useState<string>('');
+
+  const getSearch = async () => {
+    const { data } = await axios({
+      url: `http://10.82.20.148:8080/post/writing/search/${search}`,
+      method: 'get',
+    });
+    console.log(data);
+  };
 
   return (
     <>
