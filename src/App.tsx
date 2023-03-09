@@ -11,7 +11,7 @@ function App() {
           {/* <Route path="/" element={<MainPage />}/> */}
           {/* <Route path="/login" element={<LoginPage />}/> */}
           {/* <Route path="/write" element={<P.WritePage />} /> */}
-          <Route path="/list" element={<P.ListPage />} />
+          <Route path="/constent/list" element={<P.ListPage />} />
           {/* <Route path="/list/:id" element={<Bulletin />}/> */}
           {/* <Route path="*" element={<NotFound />}/> */}
         </Routes>
