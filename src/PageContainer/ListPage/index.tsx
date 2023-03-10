@@ -1,5 +1,5 @@
-import { ListItem } from '../components';
-import { Container } from '../components/ListItem/style';
+import * as C from '../../components';
+import { Container } from '../../components/ListItem/style';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import React from 'react';
@@ -14,7 +14,8 @@ const ListPage = () => {
   const printList = (datas: Array<object>) => {
     const listItems: JSX.Element[] = datas.map((data: any) => {
       return (
-        <ListItem
+        <C.ListItem
+          key={data.id}
           title={data.title}
           inform={data.detail}
           date="date"
