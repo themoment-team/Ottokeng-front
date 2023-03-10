@@ -10,6 +10,7 @@ const ListPage = () => {
 
   const [list, setList] = useState<JSX.Element[]>([]);
   const [isModify, setIsModify] = useState<boolean>(false);
+  const [reload, setReload] = useState<boolean>(true);
 
   type datas = {
     id: string;
@@ -25,7 +26,15 @@ const ListPage = () => {
 
   const printList = (datas: Array<datas>) => {
     const listItems: JSX.Element[] = datas.map((data: datas) => {
-      return <C.ListItem key={data.id} datas={data} isModify={isModify} />;
+      return (
+        <C.ListItem
+          key={data.id}
+          datas={data}
+          isModify={isModify}
+          setReload={setReload}
+          reload={reload}
+        />
+      );
     });
     setList(list => [...list, ...listItems]);
   };
@@ -45,7 +54,7 @@ const ListPage = () => {
     location.pathname === '/list' && setIsModify(true);
     const url = `https://abcd/post/writing`;
     getData(url);
-  }, []);
+  }, [reload]);
   return <Container>{list}</Container>;
 };
 

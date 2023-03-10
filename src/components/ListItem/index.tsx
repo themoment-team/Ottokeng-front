@@ -23,6 +23,8 @@ type datas = {
 interface props {
   datas: datas;
   isModify: boolean;
+  setReload: Function;
+  reload: boolean;
 }
 
 type comments = {
@@ -32,7 +34,7 @@ type comments = {
   createdAt: string;
 };
 
-const ListItem = ({ datas, isModify }: props) => {
+const ListItem = ({ datas, isModify, setReload, reload }: props) => {
   const navigation =
     useNavigation<
       StackNavigationProp<any | { datas: datas; comments: comments }>
@@ -52,9 +54,28 @@ const ListItem = ({ datas, isModify }: props) => {
       }
     } else {
       if (window.confirm('정말 삭제 하시겠습니까?')) {
+        delBulletin(datas.id);
       }
     }
     setShowModal(false);
+  };
+
+  const delBulletin = async (id: string) => {
+    const res = await axios.delete('https://abc/post/writing', {
+      headers: {
+        Authorization: 'accessToken',
+      },
+      data: {
+        pathVariable: {
+          id: id,
+        },
+      },
+    });
+    console.log(res);
+    if (res.status === 204) {
+      alert('게시글이 삭제 되었습니다');
+      setReload(!reload);
+    }
   };
 
   const getComments = async () => {
