@@ -2,26 +2,44 @@
 import * as S from './style';
 import * as I from 'assets/svgs';
 import { css } from '@emotion/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { useNavigation } from '@react-navigation/core';
+import axios from 'axios';
+
+type datas = {
+  id: string;
+  title: string;
+  contents: string;
+  writer: string;
+  acquire: 'GET';
+  address: string;
+  type: 'LOST_WRITING' | 'FIND_WRITING';
+  createdAt: string;
+  imageUrls: [string];
+};
 
 interface props {
-  title: string;
-  inform: string;
-  date: string;
-  userName: string;
-  chatNum: string;
+  datas: datas;
   isModify: boolean;
 }
 
-const ListItem = ({
-  title,
-  inform,
-  date,
-  userName,
-  chatNum,
-  isModify,
-}: props) => {
+type comments = {
+  commentId: 1;
+  writer: string;
+  contents: string;
+  createdAt: string;
+};
+
+const ListItem = ({ datas, isModify }: props) => {
+  const navigation =
+    useNavigation<
+      StackNavigationProp<any | { datas: datas; comments: comments }>
+    >();
+
   const [showModal, setShowModal] = useState<boolean>(false);
+  const [comments, setComments] = useState<comments[]>([]);
 
   const handleDotClick = () => {
     setShowModal(true);
@@ -30,6 +48,7 @@ const ListItem = ({
   const handleEventClick = (isModify: boolean) => {
     if (isModify) {
       if (window.confirm('수정 하시겠습니까?')) {
+        navigation.navigate('/write/update', { datas });
       }
     } else {
       if (window.confirm('정말 삭제 하시겠습니까?')) {
@@ -38,13 +57,34 @@ const ListItem = ({
     setShowModal(false);
   };
 
+  const getComments = async () => {
+    const res = await axios.get('https://abc/post/comment/' + datas.id, {
+      headers: {
+        Authorization: 'accessToken',
+      },
+    });
+    setComments(res.data);
+  };
+
+  const handleContentClick = () => {
+    navigation.navigate('/list', { datas, comments });
+  };
+
+  useEffect(() => {
+    getComments();
+  }, []);
+
   return (
     <div>
-      <S.ContentBox>
-        <S.IMGBox />
+      <S.ContentBox onClick={handleContentClick}>
+        <S.IMGBox
+          css={css`
+            background-image: url(${datas.imageUrls[0]});
+          `}
+        />
         <S.Content>
           <S.DotTitleBox>
-            <S.Title>{title}</S.Title>
+            <S.Title>{datas.title}</S.Title>
             {isModify && (
               <img
                 css={css`
@@ -59,7 +99,7 @@ const ListItem = ({
             )}
           </S.DotTitleBox>
           <S.ModifyFlexBox>
-            <S.Inform>{inform}</S.Inform>
+            <S.Inform>{datas.contents}</S.Inform>
             {showModal && (
               <S.ModifyBox>
                 <S.BoxText
@@ -79,12 +119,12 @@ const ListItem = ({
           <S.BottomBox>
             <S.DateAndNameBox>
               <S.DateAndName>
-                {date} &nbsp;.&nbsp; 작성자 &nbsp;: {userName}
+                {datas.createdAt} &nbsp;.&nbsp; 작성자 &nbsp;: {datas.writer}
               </S.DateAndName>
             </S.DateAndNameBox>
             <S.MessageBox>
               <img src={I.MessageIcon} alt="" />
-              <S.NumberOfChat>{chatNum}</S.NumberOfChat>
+              <S.NumberOfChat>{comments.length + 1}</S.NumberOfChat>
             </S.MessageBox>
           </S.BottomBox>
         </S.Content>

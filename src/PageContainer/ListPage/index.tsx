@@ -11,19 +11,21 @@ const ListPage = () => {
   const [list, setList] = useState<JSX.Element[]>([]);
   const [isModify, setIsModify] = useState<boolean>(false);
 
-  const printList = (datas: Array<object>) => {
-    const listItems: JSX.Element[] = datas.map((data: any) => {
-      return (
-        <C.ListItem
-          key={data.id}
-          title={data.title}
-          inform={data.detail}
-          date="date"
-          userName="userName"
-          chatNum={data.Communication}
-          isModify={isModify}
-        />
-      );
+  type datas = {
+    id: string;
+    title: string;
+    contents: string;
+    writer: string;
+    acquire: 'GET';
+    address: string;
+    type: 'LOST_WRITING' | 'FIND_WRITING';
+    createdAt: string;
+    imageUrls: [string];
+  };
+
+  const printList = (datas: Array<datas>) => {
+    const listItems: JSX.Element[] = datas.map((data: datas) => {
+      return <C.ListItem key={data.id} datas={data} isModify={isModify} />;
     });
     setList(list => [...list, ...listItems]);
   };
@@ -41,7 +43,7 @@ const ListPage = () => {
 
   useEffect(() => {
     location.pathname === '/list' && setIsModify(true);
-    const url = ``;
+    const url = `https://abcd/post/writing`;
     getData(url);
   }, []);
   return <Container>{list}</Container>;
