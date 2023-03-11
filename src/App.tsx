@@ -13,8 +13,6 @@ let init: UserProps = {
   userImg: 'img',
 };
 
-const [header, setHeader] = useState<UserProps>(init);
-
 function App() {
   enum PATH {
     write = '/write/*',
@@ -22,6 +20,7 @@ function App() {
     bulletin = '/list/:id',
     login = '/login',
   }
+  const [header, setHeader] = useState<UserProps>(init);
 
   return (
     <div className="App">
