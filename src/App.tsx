@@ -4,6 +4,12 @@ import { Theme } from '@emotion/react';
 import { Footer } from './components';
 
 function App() {
+  enum PATH {
+    login = '/login',
+    loginUser = 'login/login/*',
+    list = '/list/',
+  }
+
   return (
     <div className="App">
       <BrowserRouter>

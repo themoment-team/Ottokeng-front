@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import * as S from './style';
 import { css } from '@emotion/react';
+import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <S.FooterWrap>
@@ -14,10 +15,18 @@ const Footer = () => {
         `}
       >
         <S.FooterContentWrap>
-          <li>Home</li>
-          <li>List</li>
-          <li>My page</li>
-          <li>About Team</li>
+          <Link to="/">
+            <li>Home</li>
+          </Link>
+          <Link to="/content/list">
+            <li>List</li>
+          </Link>
+          <Link to="/user">
+            <li>My page</li>
+          </Link>
+          <Link to="/about">
+            <li>About Team</li>
+          </Link>
         </S.FooterContentWrap>
         <S.FooterTeamTitle>
           Copyright 2023. the moment All rights reserved.
