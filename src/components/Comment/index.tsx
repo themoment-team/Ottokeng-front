@@ -4,6 +4,7 @@ import { css } from '@emotion/react';
 import * as S from './style';
 import * as I from 'assets/svgs';
 import { useState } from 'react';
+import axios from 'axios';
 
 interface props {
   user: string;
@@ -13,6 +14,25 @@ interface props {
 }
 
 const Comment = ({ user, date, content, picture }: props) => {
+  const [showCommentModify, setShowCommentModify] = useState<boolean>(false);
+
+  // const editComment = async () => {
+  //   await axios({
+  //     url: 'http://localhost:3000/post/comment/{commentId}',
+  //     method: 'patch',
+  //     headers: {
+  //       Authorization: accessToken,
+  //     },
+  //   });
+  // };
+
+  // const deletComment = async () => {
+  //   await axios({
+  //     url: 'http://localhost:3000/post/comment/{commentId}',
+  //     method: 'delet',
+  //   });
+  // };
+
   return (
     <S.Container>
       <div
@@ -30,8 +50,34 @@ const Comment = ({ user, date, content, picture }: props) => {
             right: 1.5rem;
           `}
         >
-          <I.Hamburger />
+          <div
+            onClick={() => {
+              setShowCommentModify(!showCommentModify);
+            }}
+            css={css`
+              cursor: pointer;
+            `}
+          >
+            <I.Hamburger />
+          </div>
         </div>
+
+        {showCommentModify ? (
+          <S.Sex>
+            <S.CommentModify top="11px">댓글수정</S.CommentModify>
+            <hr
+              css={css`
+                width: 88px;
+                height: 0;
+                border: 1px solid #ececec;
+                margin: 0;
+              `}
+            />
+            <S.CommentModify bottom="11px">댓글삭제</S.CommentModify>
+          </S.Sex>
+        ) : (
+          <></>
+        )}
         <S.UserIcon
           css={css`
             background-image: url(${picture});

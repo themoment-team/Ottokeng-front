@@ -5,7 +5,7 @@ import * as C from 'components';
 import { useEffect, useState } from 'react';
 
 const BoardComment = () => {
-  const [datas, setDatas] = useState<any[]>([1, 2, 3]);
+  const [datas, setDatas] = useState<any[]>([1]);
 
   const getComments = async (url: string) => {
     const res = await axios.post(url + 'accessToken');
