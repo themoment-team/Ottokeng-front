@@ -45,12 +45,17 @@ export const HeaderListWrap = styled.ul`
   list-style: none;
   display: flex;
   padding: 0;
+`;
 
+export const HeaderList = styled.li`
   font-family: 'Pretendard';
   font-style: normal;
   font-weight: 400;
   font-size: 1.25rem;
   line-height: 1.5rem;
+  text-decoration: none;
+
+  color: #191919;
 `;
 
 export const SearchProfileWrap = styled.div`

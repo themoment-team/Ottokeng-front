@@ -23,8 +23,9 @@ function App() {
 
   return (
     <div className="App">
-      <Header header={header} />
       <BrowserRouter>
+        <Header header={header} />
+
         <Routes>
           {/* <Route path="/" element={<MainPage />}></Route> */}
           {/* <Route path={PATH.login} element={<Login />}></Route> */}
@@ -37,8 +38,8 @@ function App() {
           {/* <Route path={PATH.list} element={<BoardInfo />}></Route> */}
           {/* <Route path="*" element={<NotFound />}></Route> */}
         </Routes>
+        <footer />
       </BrowserRouter>
-      <footer />
     </div>
   );
 }
