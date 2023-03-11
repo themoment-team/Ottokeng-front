@@ -35,4 +35,6 @@ textarea {
 }
 textarea::placeholder {
   color: #999999;
+a {
+  text-decoration: none;
 }
