@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const FooterWrap = styled.div`
   width: 100%;
-  height: 88px;
+  height: 5.5rem;
   background-color: #e3e3e9;
 
   display: flex;
@@ -21,7 +21,7 @@ export const FooterContentWrap = styled.ul`
   font-style: normal;
   font-weight: 400;
   font-size: 1rem;
-  line-height: 19px;
+  line-height: 1.1875rem;
   /* identical to box height */
 
   letter-spacing: 0.08em;
