@@ -15,8 +15,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "baseUrl": "./src",
-
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "downlevelIteration": true
   },
-  "include": ["src/**/*", "src/svg.d.ts"]
+  "include": ["src", "src/custom.d.ts"]
 }

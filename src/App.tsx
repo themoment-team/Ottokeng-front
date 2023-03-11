@@ -1,22 +1,48 @@
-import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import * as C from 'components';
+import { useState } from 'react';
 import * as P from './PageContainer';
 
+interface UserProps {
+  name: string;
+  userImg: string;
+}
+
+let init: UserProps = {
+  name: 'Anon',
+  userImg: 'img',
+};
+
+const [header, setHeader] = useState<UserProps>(init);
+
 function App() {
+  enum PATH {
+    write = '/write/*',
+    list = '/list',
+    bulletin = '/list/:id',
+    login = '/login',
+  }
+
   return (
     <div className="App">
-      <header></header>
       <BrowserRouter>
+        <C.Header header={header} />
         <Routes>
           {/* <Route path="/" element={<MainPage />}/> */}
-          {/* <Route path="/login" element={<LoginPage />}/> */}
-          {/* <Route path="/write" element={<P.WritePage />} /> */}
+          {/* <Route
+            path={PATH.loginUser}
+            element={<GoogleLoginBtnAfter />}
+          ></Route>*/}
+          {/* <Route path={PATH.login} element={<LoginPage />}/> */}
           <Route path="/content/list" element={<P.ListPage />} />
-          {/* <Route path="/list/:id" element={<Bulletin />}/> */}
-          {/* <Route path="*" element={<NotFound />}/> */}
+          <Route path={PATH.write} element={<P.WritePage />} />
+          {/* <Route path={PATH.list} element={<ListPage />}/> */}
+          {/* <Route path={PATH.list} element={<BoardInfo />}></Route> */}
+          {/* <Route path={PATH.bulletin} element={<Bulletin />}/> */}
+          <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>
+        <C.Footer />
       </BrowserRouter>
-      <footer></footer>
     </div>
   );
 }

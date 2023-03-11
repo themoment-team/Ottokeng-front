@@ -1,4 +1,3 @@
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css');
 body,
 html {
   margin: 0;
@@ -31,6 +30,7 @@ input {
 input::placeholder {
   color: #999999;
 }
-input[id='check1']:checked + label::after {
-  color: #6695f1;
+
+a {
+  text-decoration: none;
 }
