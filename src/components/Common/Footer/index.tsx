@@ -16,16 +16,16 @@ const Footer = () => {
       >
         <S.FooterContentWrap>
           <Link to="/">
-            <li>Home</li>
+            <S.FooterList>Home</S.FooterList>
           </Link>
           <Link to="/content/list">
-            <li>List</li>
+            <S.FooterList>List</S.FooterList>
           </Link>
           <Link to="/user">
-            <li>My page</li>
+            <S.FooterList>My page</S.FooterList>
           </Link>
           <Link to="/about">
-            <li>About Team</li>
+            <S.FooterList>About Team</S.FooterList>
           </Link>
         </S.FooterContentWrap>
         <S.FooterTeamTitle>

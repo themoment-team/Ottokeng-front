@@ -46,3 +46,7 @@ export const FooterTeamTitle = styled.div`
 
   color: #696969;
 `;
+
+export const FooterList = styled.li`
+  color: #696969;
+`;
