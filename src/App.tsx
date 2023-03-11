@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import { Header } from './components';
+import * as C from 'components';
 import { useState } from 'react';
 
 interface UserProps {
@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header header={header} />
+        <C.Header header={header} />
 
         <Routes>
           {/* <Route path="/" element={<MainPage />}></Route> */}
@@ -38,7 +38,6 @@ function App() {
           {/* <Route path={PATH.list} element={<BoardInfo />}></Route> */}
           {/* <Route path="*" element={<NotFound />}></Route> */}
         </Routes>
-        <footer />
       </BrowserRouter>
     </div>
   );
