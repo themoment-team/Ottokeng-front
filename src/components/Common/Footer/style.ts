@@ -1,9 +1,12 @@
 import styled from '@emotion/styled';
 
+const backGroundColor = '#e3e3e9';
+const textColor = '#696969';
+
 export const FooterWrap = styled.div`
   width: 100%;
   height: 5.5rem;
-  background-color: #e3e3e9;
+  background-color: ${backGroundColor};
 
   display: flex;
   justify-content: center;
@@ -26,7 +29,7 @@ export const FooterContentWrap = styled.ul`
 
   letter-spacing: 0.08em;
 
-  color: #696969;
+  color: ${textColor};
 
   list-style: none;
   > li {
@@ -44,5 +47,5 @@ export const FooterTeamTitle = styled.div`
   font-size: 1.125rem;
   line-height: 1.3125rem;
 
-  color: #696969;
+  color: ${textColor};
 `;
