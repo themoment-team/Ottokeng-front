@@ -1,7 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import * as S from './style';
-const Preview = ({ text, svg }: { text: string; svg: any }) => {
+import * as I from 'assets/svgs';
+const Preview = () => {
   return (
     <div>
       <div
@@ -13,19 +14,19 @@ const Preview = ({ text, svg }: { text: string; svg: any }) => {
       >
         <S.ListItem>
           <S.PhotoBox></S.PhotoBox>
-          <S.Description>{text}</S.Description>
+          <S.Description></S.Description>
         </S.ListItem>
         <S.ListItem>
           <S.PhotoBox></S.PhotoBox>
-          <S.Description>{text}</S.Description>
+          <S.Description></S.Description>
         </S.ListItem>
         <S.ListItem>
           <S.PhotoBox></S.PhotoBox>
-          <S.Description>{text}</S.Description>
+          <S.Description></S.Description>
         </S.ListItem>
         <S.ListItem>
           <S.PhotoBox></S.PhotoBox>
-          <S.Description>{text}</S.Description>
+          <S.Description></S.Description>
         </S.ListItem>
       </div>
     </div>

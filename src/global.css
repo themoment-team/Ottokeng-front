@@ -7,8 +7,15 @@ html {
   -moz-osx-font-smoothing: grayscale;
   background-color: #f1f1f5;
   font-family: 'Pretendard';
+  -ms-overflow-style: none;
 }
-
+::-webkit-scrollbar {
+  display: none;
+}
 p {
   font-family: 'Pretendard';
+}
+a {
+  font-family: 'Pretendard';
+  text-decoration: none;
 }

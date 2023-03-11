@@ -2,11 +2,26 @@
 import { css } from '@emotion/react';
 import * as S from './style';
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { MapMarker, Map, CustomOverlayMap } from 'react-kakao-maps-sdk';
 
 const KakaoMap = ({ text, svg }: { text: string; svg: any }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [objectId, setObjectId] = useState(0);
+  const url = `http://localhost:3000/main/post/writing`;
+  const getData = async (url: string) => {
+    try {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: 'Bearer',
+        },
+      });
+      const data = res.data;
+      console.log(data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+  getData(url);
   const markerPosition = {
     lat: 35.142738601752846,
     lng: 126.80072297715732,

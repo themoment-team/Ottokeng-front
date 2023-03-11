@@ -4,10 +4,8 @@ import { css } from '@emotion/react';
 import * as I from 'assets/svgs';
 import * as S from './style';
 import { useEffect, useState } from 'react';
+import axios from 'axios';
 const MainPage = ({ svg }: { svg: any }) => {
-  const [description, setDescription] = useState(
-    '0000년 00월 00일 00에서 00을 잃어버렸음.보신분 연락해주세요',
-  );
   return (
     <div
       css={css`
@@ -29,7 +27,7 @@ const MainPage = ({ svg }: { svg: any }) => {
         </S.Arrow>
         <S.Arrow>{svg}</S.Arrow>
       </S.ArrowBox>
-      <Preview text={description} svg={<I.ArrowIcon />}></Preview>
+      <Preview />
       <PlusBtn svg={<I.PlusIcon />}></PlusBtn>
       <S.DotsBox>
         <S.Dots></S.Dots>
