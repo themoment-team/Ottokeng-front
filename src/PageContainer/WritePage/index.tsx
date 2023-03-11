@@ -3,16 +3,19 @@ import * as S from './style';
 import * as I from 'assets/svgs';
 import * as C from 'components/index';
 import { css } from '@emotion/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
 
 const WriteBox = () => {
+  const { state } = useLocation();
   const [title, setTitle] = useState<string>('');
   const [content, setContent] = useState<string>('');
   const [check, setCheck] = useState<string>('');
   const [imgList, setImgList] = useState<any>([]);
   const [location, setLocation] = useState<string>('address');
+
+  let isUpdate = false;
 
   const path = useLocation().pathname;
 
@@ -38,15 +41,15 @@ const WriteBox = () => {
     const contents = {
       title: title,
       contents: content,
-      // date: date,
       acquire: 'GET',
       address: location,
       communication: 'communication',
       type: type,
     };
 
-    imgList.forEach((img: File) => {
-      formData.append('file', img);
+    imgList.forEach((img: File | string) => {
+      if (!isUpdate) formData.append('file', img);
+      else formData.append('file', img as File);
     });
 
     const json = JSON.stringify(contents);
@@ -77,7 +80,8 @@ const WriteBox = () => {
       location !== ''
     ) {
       //통과
-      const url = 'http://10.120.74.187:8080/post/writing';
+      const url =
+        'http://10.120.74.187:8080/post/writing' + isUpdate && state.id;
       sendData(url);
     } else {
       // 거름
@@ -85,8 +89,23 @@ const WriteBox = () => {
     }
   };
 
-  const onRemove = (id: string) => {
-    // setImgList(imgList.filter(img => img.key !== target));
+  const delServerIMG = async (picture: string) => {
+    const res = await axios.delete(`/post/writing/image/${picture}`, {
+      headers: {
+        Authorization: '',
+      },
+    });
+  };
+
+  interface updateProps {
+    picture: string | undefined;
+    id: string;
+  }
+
+  const onRemove = ({ picture, id }: updateProps) => {
+    if (isUpdate && picture !== undefined) {
+      delServerIMG(picture);
+    }
     setImgList(imgList.filter((_: any, index: string) => index !== id));
   };
 
@@ -121,6 +140,18 @@ const WriteBox = () => {
     }
   `;
 
+  useEffect(() => {
+    isUpdate = path === '/write/update' ? true : false;
+    if (isUpdate) {
+      setTitle(state.title ?? '');
+      setContent(state.contents ?? '');
+      setCheck(state.type ?? '');
+      setImgList(state.imageUrls ?? []);
+      setLocation(state.address ?? '');
+      changeChecked(state.type === 'LOST_WRITING' ? 'loss' : 'acquire');
+    }
+  }, []);
+
   return (
     <S.Container>
       <dialog className="IMGModal" css={ModalDesign}>
@@ -138,11 +169,7 @@ const WriteBox = () => {
         `}
         onChange={handleFileChange}
       />
-      <S.Title>
-        {path === '/write/update' || path === '/write/update/'
-          ? '수정하기'
-          : '글쓰기'}
-      </S.Title>
+      <S.Title>{isUpdate ? '수정하기' : '글쓰기'}</S.Title>
       <S.Input
         value={title}
         onChange={e => setTitle(e.target.value)}
@@ -204,9 +231,7 @@ const WriteBox = () => {
         `}
       >
         <S.SubmitBTN onClick={handleSubmit}>
-          {path === '/write/update' || path === '/write/update/'
-            ? '수정완료'
-            : '등록하기'}
+          {isUpdate ? '수정완료' : '등록하기'}
         </S.SubmitBTN>
       </S.FlexBox>
     </S.Container>

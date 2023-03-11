@@ -14,7 +14,7 @@ const IMGModal = ({ imgList, onRemove }: props) => {
         <img src={I.FileIcon} alt="" />
       </S.DashedBox>
       <S.TotalIMGBox>
-        {imgList.map((img: File, id: string) => {
+        {imgList.map((img: any, id: string) => {
           let isLast = true;
           if (id === imgList.length) isLast = false;
           return (

@@ -2,10 +2,11 @@
 import * as S from './style';
 import * as I from 'assets/svgs';
 import { css } from '@emotion/react';
+import { useLocation } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 
 interface props {
-  picture: File;
+  picture: any;
   title: string;
   onRemove: Function;
   id: string;
@@ -13,8 +14,12 @@ interface props {
 }
 
 const IMGBox = ({ picture, title, onRemove, id, isLast }: props) => {
+  const path = useLocation().pathname;
   const [value, setValue] = useState<number>(0);
+  let isUpdate: boolean = false;
+
   useEffect(() => {
+    isUpdate = path === '/write/update' ? true : false;
     setTimeout(() => {
       for (let i = 0; i <= 100000; i++) {
         setValue(value + i);
@@ -25,7 +30,9 @@ const IMGBox = ({ picture, title, onRemove, id, isLast }: props) => {
   return (
     <div>
       <S.IMGBox>
-        <S.IMGFile src={URL.createObjectURL(picture)} />
+        <S.IMGFile
+          src={isUpdate ? picture : URL.createObjectURL(picture as File)}
+        />
         <S.IMGContentBox>
           <S.IMGTitle>{title}</S.IMGTitle>
           <S.Range readOnly type="range" min="0" max="10000" value={value} />
@@ -39,7 +46,7 @@ const IMGBox = ({ picture, title, onRemove, id, isLast }: props) => {
           `}
           src={I.TrashIcon}
           alt=""
-          onClick={() => onRemove(id)}
+          onClick={() => onRemove(isUpdate ? { picture, id } : { id })}
         />
       </S.IMGBox>
       {isLast && <S.Line />}
