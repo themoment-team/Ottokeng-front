@@ -15,7 +15,7 @@ export const HeaderUser = ({ header }: props) => {
   return (
     <div
       css={css`
-        width: 7.5rem;
+        width: 104px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -25,7 +25,6 @@ export const HeaderUser = ({ header }: props) => {
       <S.UserName>
         <div>{header.name}</div>
       </S.UserName>
-      <I.MoreInfoIcon />
     </div>
   );
 };

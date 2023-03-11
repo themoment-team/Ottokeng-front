@@ -16,7 +16,7 @@ export const HeaderMenu = () => {
     <S.NavigationContentWrqp>
       <Link to="/">
         <S.LogoWrap>
-          <I.LogoIcon />
+          <img src={I.LogoIcon} />
           Ottokeng
         </S.LogoWrap>
       </Link>

@@ -40,7 +40,7 @@ export const HeaderSearch = () => {
             right: 1rem;
           `}
         >
-          <I.SearchIcon />
+          <img src={I.SearchIcon} />
         </div>
       </div>
     </>
