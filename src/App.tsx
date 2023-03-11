@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import { Theme } from '@emotion/react';
 import { Header } from './components';
 import { useState } from 'react';
 
