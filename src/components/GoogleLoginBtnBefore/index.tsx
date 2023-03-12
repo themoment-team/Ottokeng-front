@@ -71,7 +71,7 @@ const GoogleLoginBtnBefore = () => {
           </a>
         </div>
       ) : (
-        <p>sex</p>
+        <p>hi</p>
       )}
     </S.Container>
   );
