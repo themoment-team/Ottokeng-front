@@ -1,3 +1,4 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css');
 body,
 html {
   margin: 0;
@@ -6,31 +7,15 @@ html {
   -moz-osx-font-smoothing: grayscale;
   background-color: #f1f1f5;
   font-family: 'Pretendard';
+  -ms-overflow-style: none;
 }
-.App {
-  background-color: #f1f1f5;
-  display: flex;
-  align: center;
-  justify-content: center;
-}
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+::-webkit-scrollbar {
+  display: none;
 }
 p {
   font-family: 'Pretendard';
-  margin: 0;
 }
-button {
-  font-family: 'Pretendard';
-}
-input {
-  font-family: 'Pretendard';
-}
-input::placeholder {
-  color: #999999;
-}
-
 a {
+  font-family: 'Pretendard';
   text-decoration: none;
 }

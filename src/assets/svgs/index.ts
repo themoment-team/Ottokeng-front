@@ -1,8 +1,8 @@
-export { default as DotIcon } from './DotIcon.svg';
-export { default as CameraIcon } from './CameraIcon.svg';
-export { default as LocationIcon } from './LocationIcon.svg';
-export { default as MessageIcon } from './MessageIcon.svg';
-export { default as FileIcon } from './FileIcon.svg';
-export { default as TrashIcon } from './TrashIcon.svg';
-export { default as LogoIcon } from './LogoIcon.svg';
-export { default as SearchIcon } from './SearchIcon.svg';
+export { default as VectorIcon } from './VectorIcon';
+export { default as MarkerIcon } from './MarkerIcon';
+export { default as MarkerIcon2 } from './MarkerIcon2';
+export { default as ShadowIcon } from './ShadowIcon';
+export { default as ShadowIcon2 } from './ShadowIcon2';
+export { default as ArrowIcon } from './ArrowIcon';
+export { default as PlusIcon } from './PlusIcon';
+export { default as CloseIcon } from './CloseIcon';

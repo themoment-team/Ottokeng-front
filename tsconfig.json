@@ -14,9 +14,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "baseUrl": "./src",
     "jsx": "react-jsx",
-    "downlevelIteration": true
+    "types": ["kakao.maps.d.ts"],
+    "baseUrl": "src",
+    "paths": { "@/public/*": ["../public/*"] }
   },
-  "include": ["src", "src/custom.d.ts"]
+  "include": ["src/**/*"]
 }

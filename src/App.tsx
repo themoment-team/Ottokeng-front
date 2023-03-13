@@ -1,32 +1,29 @@
+import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import { useState } from 'react';
 import * as P from 'pages';
+declare global {
+  interface Window {
+    kakao: any;
+  }
+}
 
 function App() {
-  enum PATH {
-    write = '/write/*',
-    list = '/list',
-    bulletin = '/list/:id',
-    login = '/login',
-  }
-
   return (
     <div className="App">
+      <header></header>
       <BrowserRouter>
         <Routes>
-          {/* <Route path="/" element={<MainPage />}/> */}
-          {/* <Route
-            path={PATH.loginUser}
-            element={<GoogleLoginBtnAfter />}
-          ></Route>*/}
-          {/* <Route path={PATH.login} element={<LoginPage />}/> */}
-          <Route path="/content/list" element={<P.ListPage />} />
-          <Route path={PATH.write} element={<P.WritePage />} />
-          {/* <Route path={PATH.list} element={<BoardInfo />}></Route> */}
-          {/* <Route path={PATH.bulletin} element={<Bulletin />}/> */}
-          <Route path="*" element={<h1>404 Not Found</h1>} />
+          <Route path="/" element={<P.StartPage />}></Route>
+          <Route path="/main" element={<P.MainPage />}></Route>
+          <Route path="/about" element={<P.AboutPage />}></Route>
+          {/* <Route path="/login" element={<LoginPage />}></Route> */}
+          {/* <Route path="/write" element={<WritePage />}></Route> */}
+          {/* <Route path="/list" element={<ListPage />}></Route> */}
+          {/* <Route path="/list/:id" element={<Bulletin />}></Route> */}
+          {/* <Route path="*" element={<NotFound />}></Route> */}
         </Routes>
       </BrowserRouter>
+      <footer></footer>
     </div>
   );
 }
