@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import * as S from './style';
 import * as I from 'assets/svgs';
-import * as C from 'components/index';
+import * as C from 'components';
 import { css } from '@emotion/react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -152,89 +152,104 @@ const WriteBox = () => {
     }
   }, []);
 
-  return (
-    <S.Container>
-      <dialog className="IMGModal" css={ModalDesign}>
-        <C.IMGModal imgList={imgList} onRemove={onRemove} />
-      </dialog>
-      <dialog className="MapModal" css={ModalDesign}>
-        <C.MapModal />
-      </dialog>
-      <input
-        type="file"
-        id="fileInput"
-        multiple
-        css={css`
-          display: none;
-        `}
-        onChange={handleFileChange}
-      />
-      <S.Title>{isUpdate ? '수정하기' : '글쓰기'}</S.Title>
-      <S.Input
-        value={title}
-        onChange={e => setTitle(e.target.value)}
-        placeholder="제목을 입력해주세요."
-        css={css`
-          height: 2.75rem;
-        `}
-      />
+  interface UserProps {
+    name: string;
+    userImg: string;
+  }
 
-      <S.TextArea
-        value={content}
-        onChange={e => setContent(e.target.value)}
-        placeholder="본인의 연락처, 분실물의 특징, 위치와 같은 자세한 내용을 입력해주세요."
-        css={css`
-          height: 13.625rem;
-        `}
-      />
-      <S.Box>
+  let init: UserProps = {
+    name: 'Anon',
+    userImg: 'img',
+  };
+  const [header, setHeader] = useState<UserProps>(init);
+
+  return (
+    <>
+      <C.Header header={header} />
+      <S.Container>
+        <dialog className="IMGModal" css={ModalDesign}>
+          <C.IMGModal imgList={imgList} onRemove={onRemove} />
+        </dialog>
+        <dialog className="MapModal" css={ModalDesign}>
+          <C.MapModal />
+        </dialog>
+        <input
+          type="file"
+          id="fileInput"
+          multiple
+          css={css`
+            display: none;
+          `}
+          onChange={handleFileChange}
+        />
+        <S.Title>{isUpdate ? '수정하기' : '글쓰기'}</S.Title>
+        <S.Input
+          value={title}
+          onChange={e => setTitle(e.target.value)}
+          placeholder="제목을 입력해주세요."
+          css={css`
+            height: 2.75rem;
+          `}
+        />
+
+        <S.TextArea
+          value={content}
+          onChange={e => setContent(e.target.value)}
+          placeholder="본인의 연락처, 분실물의 특징, 위치와 같은 자세한 내용을 입력해주세요."
+          css={css`
+            height: 13.625rem;
+          `}
+        />
+        <S.Box>
+          <S.FlexBox
+            css={css`
+              width: 9.625rem;
+            `}
+          >
+            <C.CheckBox
+              text="습득"
+              value="acquire"
+              handleCheck={handleCheck}
+              id="acquireCB"
+            ></C.CheckBox>
+            <C.CheckBox
+              text="분실"
+              value="loss"
+              handleCheck={handleCheck}
+              id="lossCB"
+            ></C.CheckBox>
+          </S.FlexBox>
+          <S.FlexBox
+            css={css`
+              width: 18rem;
+            `}
+          >
+            <C.RegistrationBox
+              svg={I.CameraIcon}
+              text="사진 등록하기"
+              onClick={() => handleShowModal('IMGModal')}
+            />
+            <C.RegistrationBox
+              onClick={() => handleShowModal('MapModal')}
+              text="위치 등록하기"
+              svg={I.LocationIcon}
+            />
+          </S.FlexBox>
+        </S.Box>
         <S.FlexBox
           css={css`
-            width: 9.625rem;
+            width: 51.25rem;
+            justify-content: center;
+            margin-top: 11.625rem;
           `}
         >
-          <C.CheckBox
-            text="습득"
-            value="acquire"
-            handleCheck={handleCheck}
-            id="acquireCB"
-          ></C.CheckBox>
-          <C.CheckBox
-            text="분실"
-            value="loss"
-            handleCheck={handleCheck}
-            id="lossCB"
-          ></C.CheckBox>
+          <S.SubmitBTN onClick={handleSubmit}>
+            {isUpdate ? '수정완료' : '등록하기'}
+          </S.SubmitBTN>
         </S.FlexBox>
-        <S.FlexBox
-          css={css`
-            width: 18rem;
-          `}
-        >
-          <C.RegistrationBox
-            svg={I.CameraIcon}
-            text="사진 등록하기"
-            onClick={() => handleShowModal('IMGModal')}
-          />
-          <C.RegistrationBox
-            onClick={() => handleShowModal('MapModal')}
-            text="위치 등록하기"
-            svg={I.LocationIcon}
-          />
-        </S.FlexBox>
-      </S.Box>
-      <S.FlexBox
-        css={css`
-          width: 51.25rem;
-          justify-content: center;
-          margin-top: 11.625rem;
-        `}
-      >
-        <S.SubmitBTN onClick={handleSubmit}>
-          {isUpdate ? '수정완료' : '등록하기'}
-        </S.SubmitBTN>
-      </S.FlexBox>
-    </S.Container>
+      </S.Container>
+      <C.Footer />
+    </>
   );
 };
 
