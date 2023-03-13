@@ -20,8 +20,8 @@ function App() {
             element={<GoogleLoginBtnAfter />}
           ></Route>*/}
           {/* <Route path={PATH.login} element={<LoginPage />}/> */}
+          <Route path="/content/list" element={<P.ListPage />} />
           <Route path={PATH.write} element={<P.WritePage />} />
-          {/* <Route path={PATH.list} element={<ListPage />}/> */}
           {/* <Route path={PATH.list} element={<BoardInfo />}></Route> */}
           {/* <Route path={PATH.bulletin} element={<Bulletin />}/> */}
           <Route path="*" element={<h1>404 Not Found</h1>} />
