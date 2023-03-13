@@ -5,3 +5,4 @@ export { default as StartBtn } from './StartBtn';
 export { default as Marker1 } from './Marker1';
 export { default as Marker2 } from './Marker2';
 export { default as ProfileBOx } from './ProfileBox';
+export { default as User } from './User';

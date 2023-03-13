@@ -16,6 +16,7 @@ function App() {
           <Route path="/" element={<P.StartPage />}></Route>
           <Route path="/main" element={<P.MainPage />}></Route>
           <Route path="/about" element={<P.AboutPage />}></Route>
+          <Route path="/user" element={<P.UserPage />}></Route>
           {/* <Route path="/login" element={<LoginPage />}></Route> */}
           {/* <Route path="/write" element={<WritePage />}></Route> */}
           {/* <Route path="/list" element={<ListPage />}></Route> */}

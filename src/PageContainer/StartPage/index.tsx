@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import * as S from './style';
-import * as I from '../../assets/svgs';
+import * as I from 'assets/svgs';
 import { css } from '@emotion/react';
 import { StartBtn, Marker1, Marker2 } from 'components';
 import { Link } from 'react-router-dom';

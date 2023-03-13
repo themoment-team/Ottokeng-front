@@ -9,7 +9,8 @@ const MainPage = ({ svg }: { svg: any }) => {
   return (
     <div
       css={css`
-        height: 1688px;
+        width: 100%;
+        height: 100%;
       `}
     >
       <KakaoMap

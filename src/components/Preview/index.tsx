@@ -8,8 +8,8 @@ const Preview = () => {
       <div
         css={css`
           display: flex;
-          width: 1355px;
-          height: 360px;
+          width: 84.6875rem;
+          height: 22.5rem;
         `}
       >
         <S.ListItem>
