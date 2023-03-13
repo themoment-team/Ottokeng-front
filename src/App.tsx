@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import { Theme } from '@emotion/react';
 import { GoogleLoginBtnBefore, GoogleLoginBtnAfter } from './components';
 
 function App() {
