@@ -4,7 +4,8 @@ export const FooterWrap = styled.div`
   width: 100%;
   height: 5.5rem;
   background-color: #e3e3e9;
-
+  position: absolute;
+  bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;

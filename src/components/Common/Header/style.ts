@@ -5,6 +5,9 @@ export const Container = styled.nav`
   display: flex;
   justify-content: center;
   height: 7.5rem;
+  position: fixed;
+  top: 0;
+  background-color: #fff;
 `;
 
 export const HeaderContentWrap = styled.div`
