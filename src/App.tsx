@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import * as C from 'components';
 import { useState } from 'react';
-import * as P from './PageContainer';
+import * as P from 'pages';
 
 function App() {
   enum PATH {
@@ -23,7 +22,6 @@ function App() {
           {/* <Route path={PATH.login} element={<LoginPage />}/> */}
           <Route path="/content/list" element={<P.ListPage />} />
           <Route path={PATH.write} element={<P.WritePage />} />
-          {/* <Route path={PATH.list} element={<ListPage />}/> */}
           {/* <Route path={PATH.list} element={<BoardInfo />}></Route> */}
           {/* <Route path={PATH.bulletin} element={<Bulletin />}/> */}
           <Route path="*" element={<h1>404 Not Found</h1>} />
