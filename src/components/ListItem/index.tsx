@@ -145,7 +145,7 @@ const ListItem = ({ datas, isModify, setReload, reload }: props) => {
             </S.DateAndNameBox>
             <S.MessageBox>
               <img src={I.MessageIcon} alt="" />
-              <S.NumberOfChat>{comments.length + 1}</S.NumberOfChat>
+              <S.NumberOfChat>{comments.length}</S.NumberOfChat>
             </S.MessageBox>
           </S.BottomBox>
         </S.Content>

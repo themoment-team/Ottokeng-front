@@ -1,5 +1,5 @@
-import * as C from '../../components';
-import { Container } from '../../components/ListItem/style';
+import * as C from 'components';
+import { Container } from 'components/ListItem/style';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import React from 'react';
