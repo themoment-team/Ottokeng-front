@@ -3,16 +3,6 @@ import * as C from 'components';
 import { useState } from 'react';
 import * as P from './PageContainer';
 
-interface UserProps {
-  name: string;
-  userImg: string;
-}
-
-let init: UserProps = {
-  name: 'Anon',
-  userImg: 'img',
-};
-
 function App() {
   enum PATH {
     write = '/write/*',
@@ -20,12 +10,10 @@ function App() {
     bulletin = '/list/:id',
     login = '/login',
   }
-  const [header, setHeader] = useState<UserProps>(init);
 
   return (
     <div className="App">
       <BrowserRouter>
-        <C.Header header={header} />
         <Routes>
           {/* <Route path="/" element={<MainPage />}/> */}
           {/* <Route
@@ -40,7 +28,6 @@ function App() {
           {/* <Route path={PATH.bulletin} element={<Bulletin />}/> */}
           <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>
-        <C.Footer />
       </BrowserRouter>
     </div>
   );

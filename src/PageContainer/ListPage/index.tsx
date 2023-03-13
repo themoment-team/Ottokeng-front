@@ -55,7 +55,25 @@ const ListPage = () => {
     const url = `https://abcd/post/writing`;
     getData(url);
   }, [reload]);
-  return <Container>{list}</Container>;
+
+  interface UserProps {
+    name: string;
+    userImg: string;
+  }
+
+  let init: UserProps = {
+    name: 'Anon',
+    userImg: 'img',
+  };
+  const [header, setHeader] = useState<UserProps>(init);
+
+  return (
+    <>
+      <C.Header header={header} />
+      <Container>{list}</Container>;
+      <C.Footer />
+    </>
+  );
 };
 
 export default ListPage;
