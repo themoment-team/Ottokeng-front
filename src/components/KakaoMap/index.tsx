@@ -72,7 +72,7 @@ const KakaoMap = ({ text, svg }: { text: string; svg: any }) => {
                 src: 'https://ifh.cc/g/Y9tpDk.png', // 마커이미지의 주소입니다
                 size: {
                   width: 36,
-                  height: 45,
+                  height: 46,
                 }, // 마커이미지의 크기입니다
                 options: {
                   offset: {
