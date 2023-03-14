@@ -11,7 +11,7 @@ export const Container = styled.div`
   justify-content: center;
   box-shadow: 0 0.25rem 0.625rem 0 rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
-  margin-top: 6.25rem;
+  margin-top: 8.25rem;
 `;
 
 export const Title = styled.h1`

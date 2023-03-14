@@ -248,7 +248,6 @@ const WriteBox = () => {
           </S.SubmitBTN>
         </S.FlexBox>
       </S.Container>
-      <C.Footer />
     </>
   );
 };

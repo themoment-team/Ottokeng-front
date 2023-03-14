@@ -4,7 +4,7 @@ export const Container = styled.nav`
   width: 100%;
   display: flex;
   justify-content: center;
-  height: 7.5rem;
+  height: 5.5rem;
   position: fixed;
   top: 0;
   background-color: #fff;
