@@ -20,10 +20,10 @@ const MainPage = () => {
             transform: rotate(180deg);
           `}
         >
-          <I.ArrowIcon />
+          <img src={I.ArrowIcon}></img>
         </S.Arrow>
         <S.Arrow>
-          <I.ArrowIcon />
+          <img src={I.ArrowIcon}></img>
         </S.Arrow>
       </S.ArrowBox>
       <Preview />

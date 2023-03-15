@@ -5,9 +5,9 @@ import * as I from 'assets/svgs';
 const Marker1 = () => {
   return (
     <S.MarkerBox>
-      <I.MarkerIcon />
+      <img src={I.MarkerIcon}></img>
       <S.Shadow>
-        <I.ShadowIcon />
+        <img src={I.ShadowIcon}></img>
       </S.Shadow>
     </S.MarkerBox>
   );
