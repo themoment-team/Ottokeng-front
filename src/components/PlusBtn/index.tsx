@@ -1,11 +1,14 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import * as S from './style';
-const PlusBtn = ({ svg }: { svg: any }) => {
+import * as I from 'assets/svgs';
+const PlusBtn = () => {
   return (
     <div>
       <S.PlusBtn>
-        <S.Plus>{svg}</S.Plus>
+        <S.Plus>
+          <I.PlusIcon />
+        </S.Plus>
       </S.PlusBtn>
     </div>
   );

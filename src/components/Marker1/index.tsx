@@ -1,11 +1,14 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import * as S from './style';
-const Marker1 = ({ svg, svg2 }: { svg: any; svg2: any }) => {
+import * as I from 'assets/svgs';
+const Marker1 = () => {
   return (
     <S.MarkerBox>
-      {svg}
-      <S.Shadow>{svg2}</S.Shadow>
+      <I.MarkerIcon />
+      <S.Shadow>
+        <I.ShadowIcon />
+      </S.Shadow>
     </S.MarkerBox>
   );
 };

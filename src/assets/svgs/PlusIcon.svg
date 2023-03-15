@@ -1,5 +1,4 @@
-const PlusIcon = () => {
-  return (
+
     <svg
       width="36"
       height="31"
@@ -16,7 +15,3 @@ const PlusIcon = () => {
         strokeLinejoin="round"
       />
     </svg>
-  );
-};
-
-export default PlusIcon;

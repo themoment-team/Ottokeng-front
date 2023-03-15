@@ -1,5 +1,4 @@
-const VectorIcon = () => {
-  return (
+
     <svg
       width="15"
       height="6"
@@ -12,7 +11,3 @@ const VectorIcon = () => {
         stroke="black"
       />
     </svg>
-  );
-};
-
-export default VectorIcon;
