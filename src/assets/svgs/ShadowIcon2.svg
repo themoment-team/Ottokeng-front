@@ -1,5 +1,4 @@
-const ShadowIcon2 = () => {
-  return (
+
     <svg
       width="176"
       height="109"
@@ -43,7 +42,3 @@ const ShadowIcon2 = () => {
         </filter>
       </defs>
     </svg>
-  );
-};
-
-export default ShadowIcon2;

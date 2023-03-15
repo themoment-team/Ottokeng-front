@@ -1,7 +1,4 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
-const CloseIcon = () => {
-  return (
+
     <svg
       width="12"
       height="11"
@@ -14,7 +11,4 @@ const CloseIcon = () => {
         fill="#999999"
       />
     </svg>
-  );
-};
 
-export default CloseIcon;
