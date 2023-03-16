@@ -46,7 +46,7 @@ export const BoardPostDate = styled.div`
   color: #a1a1a1;
 `;
 
-export const Sex = styled.div`
+export const ShowEdit = styled.div`
   width: 100px;
   height: 72px;
   background-color: #fff;

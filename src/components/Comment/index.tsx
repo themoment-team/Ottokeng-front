@@ -29,7 +29,7 @@ const Comment = ({ user, date, content, picture }: props) => {
   // const deletComment = async () => {
   //   await axios({
   //     url: 'http://localhost:3000/post/comment/{commentId}',
-  //     method: 'delet',
+  //     method: 'delete',
   //   });
   // };
 
@@ -63,7 +63,7 @@ const Comment = ({ user, date, content, picture }: props) => {
         </div>
 
         {showCommentModify ? (
-          <S.Sex>
+          <S.ShowEdit>
             <S.CommentModify top="11px">댓글수정</S.CommentModify>
             <hr
               css={css`
@@ -74,7 +74,7 @@ const Comment = ({ user, date, content, picture }: props) => {
               `}
             />
             <S.CommentModify bottom="11px">댓글삭제</S.CommentModify>
-          </S.Sex>
+          </S.ShowEdit>
         ) : (
           <></>
         )}
