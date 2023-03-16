@@ -3,15 +3,7 @@ import { css } from '@emotion/react';
 import * as S from './style';
 import * as I from 'assets/svgs';
 
-interface UserProps {
-  name: string;
-  userImg: string;
-}
-interface props {
-  header: UserProps;
-}
-
-export const HeaderUser = ({ header }: props) => {
+export const HeaderUser = () => {
   return (
     <div
       css={css`
@@ -21,9 +13,9 @@ export const HeaderUser = ({ header }: props) => {
         justify-content: space-between;
       `}
     >
-      <S.UserImg backGroundImg={header.userImg}></S.UserImg>
+      <S.UserImg></S.UserImg>
       <S.UserName>
-        <div>{header.name}</div>
+        <div>사용자</div>
       </S.UserName>
     </div>
   );

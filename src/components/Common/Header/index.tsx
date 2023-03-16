@@ -5,15 +5,7 @@ import { HeaderMenu } from './HeaderMenu';
 import { HeaderSearch } from './HeaderSearch';
 import { HeaderUser } from './HeaderUser';
 
-interface UserProps {
-  name: string;
-  userImg: string;
-}
-interface props {
-  header: UserProps;
-}
-
-const Header = ({ header }: props) => {
+const Header = () => {
   return (
     <>
       <S.Container>
@@ -27,7 +19,7 @@ const Header = ({ header }: props) => {
             `}
           >
             <HeaderSearch />
-            <HeaderUser header={header} />
+            <HeaderUser />
           </div>
         </S.HeaderContentWrap>
       </S.Container>

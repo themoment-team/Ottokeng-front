@@ -165,7 +165,7 @@ const WriteBox = () => {
 
   return (
     <>
-      <C.Header header={header} />
+      <C.Header />
       <S.Container>
         <dialog className="IMGModal" css={ModalDesign}>
           <C.IMGModal imgList={imgList} onRemove={onRemove} />

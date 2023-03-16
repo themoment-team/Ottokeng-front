@@ -5,6 +5,7 @@ export const FooterWrap = styled.div`
   height: 5.5rem;
   background-color: #e3e3e9;
   position: absolute;
+  position: fixed;
   bottom: 0;
   display: flex;
   justify-content: center;
@@ -18,7 +19,6 @@ export const FooterContentWrap = styled.ul`
   justify-content: space-between;
   width: 22.9375rem;
   height: 1.1875rem;
-  font-family: 'Pretendard';
   font-style: normal;
   font-weight: 400;
   font-size: 1rem;
@@ -36,10 +36,8 @@ export const FooterContentWrap = styled.ul`
 `;
 
 export const FooterTeamTitle = styled.div`
-  width: 22.9375rem;
   height: 1.3125rem;
 
-  font-family: 'Pretendard';
   font-style: normal;
   font-weight: 400;
   font-size: 1.125rem;

@@ -69,7 +69,7 @@ const ListPage = () => {
 
   return (
     <>
-      <C.Header header={header} />
+      <C.Header />
       <Container>{list}</Container>;
       <C.Footer />
     </>

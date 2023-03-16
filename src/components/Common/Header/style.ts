@@ -51,7 +51,6 @@ export const HeaderListWrap = styled.ul`
 `;
 
 export const HeaderList = styled.li`
-  font-family: 'Pretendard';
   font-style: normal;
   font-weight: 400;
   font-size: 1.25rem;
@@ -84,7 +83,6 @@ export const SearchBox = styled.input`
   background: #f1f1f5;
   border-radius: 1.375rem;
 
-  font-family: 'Pretendard';
   font-style: normal;
   font-weight: 400;
   font-size: 1rem;
@@ -93,18 +91,15 @@ export const SearchBox = styled.input`
   color: #999999;
 `;
 
-export const UserImg = styled.div<{ backGroundImg: string }>`
+export const UserImg = styled.div`
   width: 2rem;
   height: 2rem;
   border-radius: 100%;
   background-color: gray;
-
-  background-image: url(${props => props.backGroundImg});
 `;
 
 export const UserName = styled.div`
   display: flex;
-  font-family: 'Pretendard';
   font-style: normal;
   font-weight: 400;
   font-size: 1.375rem;
@@ -112,4 +107,9 @@ export const UserName = styled.div`
   letter-spacing: 0.05em;
 
   color: #191919;
+`;
+
+export const Lists = styled.p`
+  font-weight: 500;
+  font-family: Roboto;
 `;

@@ -46,7 +46,6 @@ export const TextArea = styled.textarea`
   margin-bottom: 1.25rem;
   font-size: 1.125rem;
   outline: none;
-  font-family: 'Pretendard';
   &::placeholder {
     color: ${P.gray2};
   }
