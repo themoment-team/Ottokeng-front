@@ -39,7 +39,7 @@ const BoardInfo = () => {
                 right: 1rem;
               `}
             >
-              <I.Vector />
+              <img src={I.Vector} />
             </div>
             <S.CommentInput
               placeholder="댓글 입력해주세요"

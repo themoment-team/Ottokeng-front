@@ -58,7 +58,7 @@ const Comment = ({ user, date, content, picture }: props) => {
               cursor: pointer;
             `}
           >
-            <I.Hamburger />
+            <img src={I.Hamburger} />
           </div>
         </div>
 

@@ -1,5 +1,4 @@
-const Hamburger = () => {
-  return (
+
     <svg
       width="24"
       height="24"
@@ -14,7 +13,4 @@ const Hamburger = () => {
         fill="#A1A1A1"
       />
     </svg>
-  );
-};
 
-export default Hamburger;

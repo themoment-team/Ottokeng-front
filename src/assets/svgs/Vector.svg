@@ -1,5 +1,4 @@
-const Vector = () => {
-  return (
+
     <svg
       width="21"
       height="20"
@@ -15,7 +14,4 @@ const Vector = () => {
         strokeLinejoin="round"
       />
     </svg>
-  );
-};
 
-export default Vector;

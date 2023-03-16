@@ -1,4 +1,4 @@
-const MapIcon = () => (
+
   <svg
     width="15"
     height="18"
@@ -21,6 +21,4 @@ const MapIcon = () => (
       fill="#2E6EEB"
     />
   </svg>
-);
 
-export default MapIcon;

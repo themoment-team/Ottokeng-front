@@ -31,7 +31,7 @@ export const Writer = () => {
             justify-content: space-between;
           `}
         >
-          <I.MapIcon />
+          <img src={I.MapIcon} />
           위치 확인하기
         </div>
       </S.ShowItemMapBtn>
