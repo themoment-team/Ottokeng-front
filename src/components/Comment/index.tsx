@@ -62,7 +62,7 @@ const Comment = ({ user, date, content, picture }: props) => {
           </div>
         </div>
 
-        {showCommentModify ? (
+        {showCommentModify && (
           <S.ShowEdit>
             <S.CommentModify top="11px">댓글수정</S.CommentModify>
             <hr
@@ -75,8 +75,6 @@ const Comment = ({ user, date, content, picture }: props) => {
             />
             <S.CommentModify bottom="11px">댓글삭제</S.CommentModify>
           </S.ShowEdit>
-        ) : (
-          <></>
         )}
         <S.UserIcon
           css={css`
