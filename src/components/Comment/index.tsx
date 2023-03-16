@@ -88,7 +88,6 @@ const Comment = ({ user, date, content, picture }: props) => {
       </div>
       <div
         css={css`
-          font-family: 'Pretendard';
           font-style: normal;
           font-weight: 400;
           font-size: 0.9375rem;

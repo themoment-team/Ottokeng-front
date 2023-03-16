@@ -25,7 +25,6 @@ export const UserIcon = styled.div`
 `;
 
 export const UserNm = styled.div`
-  font-family: 'Pretendard';
   font-style: normal;
   font-weight: 400;
   font-size: 1.25rem;
@@ -37,7 +36,6 @@ export const UserNm = styled.div`
 `;
 
 export const BoardPostDate = styled.div`
-  font-family: 'Pretendard';
   font-style: normal;
   font-weight: 400;
   font-size: 0.8125rem;
@@ -63,7 +61,6 @@ export const ShowEdit = styled.div`
 `;
 
 export const CommentModify = styled.span<CommentPosition>`
-  font-family: 'Pretendard';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;

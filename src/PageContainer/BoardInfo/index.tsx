@@ -24,33 +24,47 @@ const BoardInfo = () => {
   // };
 
   return (
-    <S.Container>
-      <S.BoardInfoWrap>
-        <S.BoardContentWrap>
-          <C.Writer />
-          <C.BoardTitle />
-          <C.BoardImg />
-          <S.CommentInputWrap>
-            <div
-              css={css`
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                right: 1rem;
-              `}
-            >
-              <img src={I.Vector} />
-            </div>
-            <S.CommentInput
-              placeholder="댓글 입력해주세요"
-              type="text"
-              onChange={e => setComment(e.target.value)}
-            />
-          </S.CommentInputWrap>
-        </S.BoardContentWrap>
-        <C.BoardComment />
-      </S.BoardInfoWrap>
-    </S.Container>
+    <>
+      <C.Header />
+      <S.Container>
+        <div
+          css={css`
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          `}
+        >
+          <S.BoardInfoWrap>
+            <S.BoardContentWrap>
+              <C.Writer />
+              <C.BoardTitle />
+              <C.BoardImg />
+              <S.CommentInputWrap>
+                <div
+                  css={css`
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 1rem;
+                  `}
+                >
+                  <img src={I.Vector} />
+                </div>
+                <S.CommentInput
+                  placeholder="댓글 입력해주세요"
+                  type="text"
+                  onChange={e => setComment(e.target.value)}
+                />
+              </S.CommentInputWrap>
+            </S.BoardContentWrap>
+            <C.BoardComment />
+          </S.BoardInfoWrap>
+          <C.Footer />
+        </div>
+      </S.Container>
+    </>
   );
 };
 

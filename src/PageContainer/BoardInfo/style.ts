@@ -2,8 +2,7 @@ import styled from '@emotion/styled';
 
 export const Container = styled.div`
   width: 100%;
-  height: 60rem;
-  position: relative;
+  height: 100%;
 
   background-color: #f1f1f5;
 
@@ -40,7 +39,6 @@ export const CommentInput = styled.input`
   padding-left: 1rem;
   box-sizing: border-box;
 
-  font-family: 'Pretendard';
   font-style: normal;
   font-weight: 400;
   font-size: 1rem;

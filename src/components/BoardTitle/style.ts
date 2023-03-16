@@ -1,12 +1,10 @@
 import styled from '@emotion/styled';
 export const BoardTitle = styled.div`
   margin-top: 0.5rem;
-  font-family: 'Pretendard';
   font-style: normal;
   font-weight: 500;
   font-size: 1.25rem;
   line-height: 1.5rem;
-  /* identical to box height */
 
   color: #191919;
 `;
