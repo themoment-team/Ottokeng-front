@@ -94,7 +94,7 @@ const KakaoMap = ({ text }: { text: string }) => {
                     onClick={() => setIsOpen(false)}
                     title="닫기"
                   >
-                    <I.CloseIcon />
+                    <img src={I.CloseIcon}></img>
                   </S.Esc>
                   <S.Overlay>
                     <div

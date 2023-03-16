@@ -7,7 +7,7 @@ const PlusBtn = () => {
     <div>
       <S.PlusBtn>
         <S.Plus>
-          <I.PlusIcon />
+          <img src={I.PlusIcon}></img>
         </S.Plus>
       </S.PlusBtn>
     </div>

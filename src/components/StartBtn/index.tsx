@@ -7,7 +7,7 @@ const StartBtn = ({ text }: { text: string }) => {
   return (
     <S.StartBtnBox>
       <S.StartBtn>{text}</S.StartBtn>
-      <I.VectorIcon />
+      <img src={I.VectorIcon}></img>
     </S.StartBtnBox>
   );
 };
