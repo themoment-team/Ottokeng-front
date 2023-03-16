@@ -1,11 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import * as S from './style';
+import * as I from 'assets/svgs';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { MapMarker, Map, CustomOverlayMap } from 'react-kakao-maps-sdk';
 
-const KakaoMap = ({ text, svg }: { text: string; svg: any }) => {
+const KakaoMap = ({ text }: { text: string }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const url = `http://localhost:3000/main/post/writing`;
   const getData = async (url: string) => {
@@ -72,7 +73,7 @@ const KakaoMap = ({ text, svg }: { text: string; svg: any }) => {
                 src: 'https://ifh.cc/g/Y9tpDk.png', // 마커이미지의 주소입니다
                 size: {
                   width: 36,
-                  height: 45,
+                  height: 46,
                 }, // 마커이미지의 크기입니다
                 options: {
                   offset: {
@@ -93,7 +94,7 @@ const KakaoMap = ({ text, svg }: { text: string; svg: any }) => {
                     onClick={() => setIsOpen(false)}
                     title="닫기"
                   >
-                    {svg}
+                    <I.CloseIcon />
                   </S.Esc>
                   <S.Overlay>
                     <div

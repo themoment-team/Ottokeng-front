@@ -38,10 +38,10 @@ const StartPage = ({
         {description}
       </S.Description>
       <Link to="/main">
-        <StartBtn svg={<I.VectorIcon />} text="시작하기"></StartBtn>
+        <StartBtn text="시작하기"></StartBtn>
       </Link>
-      <Marker1 svg={<I.MarkerIcon />} svg2={<I.ShadowIcon />}></Marker1>
-      <Marker2 svg={<I.MarkerIcon2 />} svg2={<I.ShadowIcon2 />}></Marker2>
+      <Marker1></Marker1>
+      <Marker2></Marker2>
     </S.Container>
   );
 };

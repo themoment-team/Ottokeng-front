@@ -1,11 +1,13 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import * as S from './style';
-const StartBtn = ({ svg, text }: { svg: any; text: string }) => {
+import * as I from 'assets/svgs';
+
+const StartBtn = ({ text }: { text: string }) => {
   return (
     <S.StartBtnBox>
       <S.StartBtn>{text}</S.StartBtn>
-      {svg}
+      <I.VectorIcon />
     </S.StartBtnBox>
   );
 };

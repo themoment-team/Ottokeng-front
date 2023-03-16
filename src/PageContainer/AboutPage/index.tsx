@@ -5,7 +5,7 @@ import * as S from './style';
 import { useEffect, useState } from 'react';
 import { BackEnd, Design, DevOps, FrontEnd } from 'data/about';
 import TeamLogo from 'images/TeamLogo.png';
-const AboutPage = ({ svg }: { svg: any }) => {
+const AboutPage = () => {
   return (
     <>
       <S.Section>

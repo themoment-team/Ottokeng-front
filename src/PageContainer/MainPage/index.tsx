@@ -5,7 +5,7 @@ import * as I from 'assets/svgs';
 import * as S from './style';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-const MainPage = ({ svg }: { svg: any }) => {
+const MainPage = () => {
   return (
     <div
       css={css`
@@ -13,10 +13,7 @@ const MainPage = ({ svg }: { svg: any }) => {
         height: 100%;
       `}
     >
-      <KakaoMap
-        text="내 위치 주변의 게시글을 확인해 보세요!"
-        svg={<I.CloseIcon />}
-      ></KakaoMap>
+      <KakaoMap text="내 위치 주변의 게시글을 확인해 보세요!"></KakaoMap>
       <S.Comment>최신 등록된 글을 확인해보세요!</S.Comment>
       <S.ArrowBox>
         <S.Arrow
@@ -24,12 +21,14 @@ const MainPage = ({ svg }: { svg: any }) => {
             transform: rotate(180deg);
           `}
         >
-          {svg}
+          <I.ArrowIcon />
         </S.Arrow>
-        <S.Arrow>{svg}</S.Arrow>
+        <S.Arrow>
+          <I.ArrowIcon />
+        </S.Arrow>
       </S.ArrowBox>
       <Preview />
-      <PlusBtn svg={<I.PlusIcon />}></PlusBtn>
+      <PlusBtn></PlusBtn>
       <S.DotsBox>
         <S.Dots></S.Dots>
         <S.Dots></S.Dots>
