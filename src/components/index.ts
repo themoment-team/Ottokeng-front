@@ -1,3 +1,12 @@
+export { default as PlusBtn } from './PlusBtn';
+export { default as KakaoMap } from './KakaoMap';
+export { default as Preview } from './Preview';
+export { default as StartBtn } from './StartBtn';
+export { default as Marker1 } from './Marker1';
+export { default as Marker2 } from './Marker2';
+export { default as ProfileBOx } from './ProfileBox';
+export { default as User } from './User';
+export { default as UserBtn } from './UserBtn';
 export { default as BoardComment } from './BoardComment';
 export { default as BoardImg } from './BoardImg';
 export { default as BoardTitle } from './BoardTitle';
