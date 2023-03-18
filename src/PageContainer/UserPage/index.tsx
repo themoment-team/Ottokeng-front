@@ -5,9 +5,6 @@ import * as S from './style';
 import { User, UserBtn } from 'components';
 import { useState } from 'react';
 
-interface props {
-  idx: String;
-}
 
 const UserPage = () => {
   const [select, isSelect] = useState<Boolean>(false);
