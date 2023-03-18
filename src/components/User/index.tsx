@@ -39,9 +39,9 @@ const User = ({ imageUrl }: props) => {
           <img src={imageUrl} />
         </S.UserImg>
         <S.LoginBox>
-          <S.LogOut onClick={handleLogOut}></S.LogOut>
+          <S.LogOut onClick={handleLogOut}>로그아웃</S.LogOut>
           <S.Bar></S.Bar>
-          <S.UserDelete onClick={handleWithdraw}></S.UserDelete>
+          <S.UserDelete onClick={handleWithdraw}>회원탈퇴</S.UserDelete>
         </S.LoginBox>
       </S.UserBox>
     </>
