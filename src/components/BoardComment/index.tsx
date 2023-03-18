@@ -2,22 +2,21 @@
 import { css } from '@emotion/react';
 import axios from 'axios';
 import * as C from 'components';
+import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 const BoardComment = () => {
   const [datas, setDatas] = useState<any[]>([1]);
+  const { state } = useLocation();
 
-  const getComments = async (url: string) => {
-    const res = await axios.post(url + 'accessToken');
-    const datas = res.data;
-    datas.array.forEach((data: any) => {
+  const getComments = async () => {
+    state.comments.forEach((data: any) => {
       setDatas([...datas, data]);
     });
   };
 
   useEffect(() => {
-    const url = '';
-    getComments(url);
+    getComments();
   }, []);
 
   return (
@@ -42,7 +41,7 @@ const BoardComment = () => {
               user={data.writer}
               date={data.createdAt}
               content={data.contents}
-              picture={data.commentId}
+              picture={data.profileImg}
             />
           );
         })}
