@@ -13,7 +13,7 @@ const WriteBox = () => {
   const [content, setContent] = useState<string>('');
   const [check, setCheck] = useState<string>('');
   const [imgList, setImgList] = useState<any>([]);
-  const [location, setLocation] = useState<string>('address');
+  const [location, setMap] = useState<string[]>([]);
 
   let isUpdate = false;
 
@@ -72,16 +72,17 @@ const WriteBox = () => {
   };
 
   const handleSubmit = () => {
+    console.log(location);
     if (
       title !== '' &&
       content !== '' &&
       check !== '' &&
       (imgList[0] ?? false) &&
-      location !== ''
+      location.length !== 0
     ) {
       //통과
       const url =
-        'http://10.120.74.187:8080/post/writing' + isUpdate && state.id;
+        'https://server.ottokeng.site/post/writing' + (isUpdate && state.id);
       sendData(url);
     } else {
       // 거름
@@ -90,11 +91,14 @@ const WriteBox = () => {
   };
 
   const delServerIMG = async (picture: string) => {
-    const res = await axios.delete(`/post/writing/image/${picture}`, {
-      headers: {
-        Authorization: '',
+    const res = await axios.delete(
+      `https://server.ottokeng.site/post/writing/image/${picture}`,
+      {
+        headers: {
+          Authorization: '',
+        },
       },
-    });
+    );
   };
 
   interface updateProps {
@@ -147,21 +151,10 @@ const WriteBox = () => {
       setContent(state.contents ?? '');
       setCheck(state.type ?? '');
       setImgList(state.imageUrls ?? []);
-      setLocation(state.address ?? '');
+      setMap(state.address ?? '');
       changeChecked(state.type === 'LOST_WRITING' ? 'loss' : 'acquire');
     }
   }, []);
-
-  interface UserProps {
-    name: string;
-    userImg: string;
-  }
-
-  let init: UserProps = {
-    name: 'Anon',
-    userImg: 'img',
-  };
-  const [header, setHeader] = useState<UserProps>(init);
 
   return (
     <>
@@ -171,7 +164,7 @@ const WriteBox = () => {
           <C.IMGModal imgList={imgList} onRemove={onRemove} />
         </dialog>
         <dialog className="MapModal" css={ModalDesign}>
-          <C.MapModal />
+          <C.MapModal setMap={setMap} />
         </dialog>
         <input
           type="file"
