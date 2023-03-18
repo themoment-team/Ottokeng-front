@@ -1,2 +1,22 @@
 export { default as Kakao } from './Kakao.svg';
 export { default as Google } from './Google.svg';
+
+export { default as VectorIcon } from './ArrowIcon.svg';
+export { default as MarkerIcon } from './MarkerIcon.svg';
+export { default as MarkerIcon2 } from './MarkerIcon2.svg';
+export { default as ShadowIcon } from './ShadowIcon.svg';
+export { default as ShadowIcon2 } from './ShadowIcon2.svg';
+export { default as ArrowIcon } from './ArrowIcon.svg';
+export { default as PlusIcon } from './PlusIcon.svg';
+export { default as CloseIcon } from './CloseIcon.svg';
+export { default as DotIcon } from './DotIcon.svg';
+export { default as CameraIcon } from './CameraIcon.svg';
+export { default as LocationIcon } from './LocationIcon.svg';
+export { default as MessageIcon } from './MessageIcon.svg';
+export { default as FileIcon } from './FileIcon.svg';
+export { default as TrashIcon } from './TrashIcon.svg';
+export { default as LogoIcon } from './LogoIcon.svg';
+export { default as SearchIcon } from './SearchIcon.svg';
+export { default as MapIcon } from './MapIcon.svg';
+export { default as Vector } from './Vector.svg';
+export { default as Hamburger } from './Hamburger.svg';
