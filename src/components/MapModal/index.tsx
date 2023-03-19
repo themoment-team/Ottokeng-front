@@ -4,7 +4,11 @@ import * as S from './style';
 import { Map } from 'react-kakao-maps-sdk';
 import { useEffect } from 'react';
 
-const MapModal = ({ setMap }: { setMap: Function }) => {
+interface Props {
+  setMap: Function;
+}
+
+const MapModal = ({ setMap }: Props) => {
   interface props {
     locPosition: any;
   }
@@ -51,6 +55,10 @@ const MapModal = ({ setMap }: { setMap: Function }) => {
         console.log(lat, lon);
       },
     );
+
+    setInterval(() => {
+      map.relayout();
+    }, 1000);
   }, []);
 
   const handleSubmit = () => {
