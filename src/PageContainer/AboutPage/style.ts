@@ -14,22 +14,14 @@ export const Section = styled.div`
     position: relative;
     z-index: 100000000;
     background-image: url(${BackgroundImg});  }
-    .BackEnd {
+.BackEnd, .Design, .DevOps{
       background-color: black;
       color : white;
-    }
-    .FrontEnd{
+}
+.FrontEnd{
       background-color: white;
       color : black;
-    }
-    .Design{
-      background-color: black;
-      color : white;
-    }
-    .DevOps{
-      background-color: black;
-      color : white;
-    }
+ }
   `;
 export const Shadow = styled.div`
   width: inherit;
