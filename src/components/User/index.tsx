@@ -9,22 +9,28 @@ interface props {
 
 const User = ({ imageUrl }: props) => {
   const deleteUser = async () => {
-    const res = await axios.delete(`https://도메인주소//my-page/delete`, {
-      headers: {
-        Authorization: 'accessToken',
+    const res = await axios.delete(
+      `https://server.ottokeng.site/my-page/delete`,
+      {
+        headers: {
+          Authorization: 'accessToken',
+        },
       },
-    });
+    );
   };
   const logOutUser = async () => {
-    const res = await axios.delete(`https://도메인주소//my-page/logout`, {
-      headers: {
-        Authorization: 'accessToken',
+    const res = await axios.delete(
+      `https://server.ottokeng.site/my-page/logout`,
+      {
+        headers: {
+          Authorization: 'accessToken',
+        },
       },
-    });
+    );
   };
   const handleLogOut = () => {
     if (window.confirm('정말 로그아웃하시겠습니까 ?')) {
-      deleteUser();
+      logOutUser();
     }
   };
   const handleWithdraw = () => {
