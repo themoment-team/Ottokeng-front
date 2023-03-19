@@ -52,7 +52,6 @@ const MapModal = ({ setMap }: Props) => {
         marker.setPosition(latlng);
         lat = latlng.getLat();
         lon = latlng.getLng();
-        console.log(lat, lon);
       },
     );
 
