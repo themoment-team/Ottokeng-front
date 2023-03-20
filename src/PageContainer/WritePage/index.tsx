@@ -42,7 +42,8 @@ const WriteBox = () => {
       title: title,
       contents: content,
       acquire: 'GET',
-      address: location,
+      lat: location[0],
+      lng: location[1],
       communication: 'communication',
       type: type,
     };

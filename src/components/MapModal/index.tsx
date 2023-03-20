@@ -1,8 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import * as S from './style';
-import { Map } from 'react-kakao-maps-sdk';
-import { useEffect } from 'react';
+import { CustomOverlayMap, Map, MapMarker } from 'react-kakao-maps-sdk';
+import { useEffect, useState } from 'react';
+import * as I from 'assets/svgs';
 
 interface Props {
   setMap: Function;
@@ -12,9 +13,22 @@ const MapModal = ({ setMap }: Props) => {
   interface props {
     locPosition: any;
   }
+  const [address, setAddress] = useState('');
 
   let lat: number = 35.142738601752846,
     lon: number = 126.80072297715732;
+
+  const geocoder = new kakao.maps.services.Geocoder();
+
+  const getAddress = () => {
+    geocoder.coord2Address(lon, lat, (result, status) => {
+      if (result[0].address.address_name !== null) {
+        console.log(result[0]?.address.address_name);
+        setAddress(String(result[0]?.address.address_name));
+      }
+    });
+  };
+
   useEffect(() => {
     const mapContainer = document.getElementById('mapLocation'),
       mapOption = {
@@ -23,14 +37,21 @@ const MapModal = ({ setMap }: Props) => {
       };
 
     const map = new kakao.maps.Map(mapContainer as HTMLElement, mapOption);
+    const imgSrc = 'https://ifh.cc/g/Y9tpDk.png',
+      imgSize = new kakao.maps.Size(36, 46),
+      imgOption = { offset: new kakao.maps.Point(15, 69) };
+    const markerIMG = new kakao.maps.MarkerImage(imgSrc, imgSize, imgOption);
+    const position = new kakao.maps.LatLng(lat, lon);
     const marker = new kakao.maps.Marker({
-      position: map.getCenter(),
+      position: position,
+      image: markerIMG,
     });
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
         lat = position.coords.latitude;
         lon = position.coords.longitude;
+        getAddress();
 
         const locPosition = new kakao.maps.LatLng(lat, lon);
         marker.setPosition(locPosition);
@@ -52,6 +73,7 @@ const MapModal = ({ setMap }: Props) => {
         marker.setPosition(latlng);
         lat = latlng.getLat();
         lon = latlng.getLng();
+        getAddress();
       },
     );
 
@@ -66,7 +88,8 @@ const MapModal = ({ setMap }: Props) => {
 
   return (
     <S.MapModal>
-      <S.Map id="mapLocation" />
+      <S.Map id="mapLocation"></S.Map>
+      <h3>선택하신 지역은 "{address}" 입니다</h3>
       <form method="dialog">
         <S.SubmitBTN
           css={css`
