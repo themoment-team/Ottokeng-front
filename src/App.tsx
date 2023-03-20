@@ -19,7 +19,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path={PATH.login} element={<P.Login />}></Route>
+          <Route path={PATH.login} element={<P.LoginPage />}></Route>
           {/* <Route path="/write" element={<WritePage />}></Route> */}
           {/* <Route path="/list" element={<ListPage />}></Route> */}
           {/* <Route path="/list/:id" element={<Bulletin />}></Route> */}
