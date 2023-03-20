@@ -34,7 +34,7 @@ const LoginPage = () => {
       'https://accounts.google.com/o/oauth2/v2/auth?scope=https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email&client_id=134995643753-9r3fe5gem5qlg6caijul7qlgrcr9el8c.apps.googleusercontent.com&response_type=code&redirect_uri=https://ottokeng.site/login/oauth2/code/google&access_type=offline',
   };
 
-  const Get = async (code: string, platform: Platform) => {
+  const getUserInfo = async (code: string, platform: Platform) => {
     try {
       const { data } = await axios({
         url: `http://192.168.0.16:8080/login/oauth/${platform}?code=${code}`,
@@ -49,7 +49,7 @@ const LoginPage = () => {
   };
 
   useEffect(() => {
-    // Get(loginCode as string, platform as Platform);
+    // getUserInfo(loginCode as string, platform as Platform);
   }, []);
 
   return (
