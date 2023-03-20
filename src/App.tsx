@@ -8,21 +8,22 @@ function App() {
     write = '/write/*',
     list = '/list',
     bulletin = '/list/1',
-    login = '/login',
+    login = '/login/*',
     start = '/',
     main = '/main',
     about = '/about',
-    user = '/user'
+    user = '/user',
   }
 
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          {/* <Route path="/login" element={<LoginPage />}></Route> */}
+          <Route path={PATH.login} element={<P.LoginPage />}></Route>
           {/* <Route path="/write" element={<WritePage />}></Route> */}
           {/* <Route path="/list" element={<ListPage />}></Route> */}
           {/* <Route path="/list/:id" element={<Bulletin />}></Route> */}
+
           {/* <Route path="*" element={<NotFound />}></Route> */}
           {/* <Route path="/" element={<MainPage />}/> */}
           {/* <Route

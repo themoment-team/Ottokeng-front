@@ -1,3 +1,6 @@
+export { default as Kakao } from './Kakao.svg';
+export { default as Google } from './Google.svg';
+
 export { default as VectorIcon } from './ArrowIcon.svg';
 export { default as MarkerIcon } from './MarkerIcon.svg';
 export { default as MarkerIcon2 } from './MarkerIcon2.svg';
