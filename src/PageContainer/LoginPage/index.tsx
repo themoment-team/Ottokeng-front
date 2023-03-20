@@ -6,7 +6,18 @@ import { useEffect, useState } from 'react';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const GoogleLoginBtnBefore = () => {
+type Platform = 'kakao' | 'google';
+
+interface IUser {
+  name: string;
+  imageUrl: string;
+  role: string;
+  tokenType: string;
+  accessToken: string;
+  refreshToken: string;
+}
+
+const LoginPage = () => {
   const [user, setUser] = useState<IUser | undefined>();
   const parsedHash = new URLSearchParams(window.location.hash.substring(1));
   const accessToken = parsedHash.get('access_token');
@@ -15,7 +26,6 @@ const GoogleLoginBtnBefore = () => {
   const params = new URLSearchParams(dlwjddn.search);
   let loginCode = params.get('code');
   let platform = dlwjddn.pathname.slice(19);
-  type Platform = 'kakao' | 'google';
 
   const Auth = {
     kakao:
@@ -23,15 +33,6 @@ const GoogleLoginBtnBefore = () => {
     google:
       'https://accounts.google.com/o/oauth2/v2/auth?scope=https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email&client_id=134995643753-9r3fe5gem5qlg6caijul7qlgrcr9el8c.apps.googleusercontent.com&response_type=code&redirect_uri=https://ottokeng.site/login/oauth2/code/google&access_type=offline',
   };
-
-  interface IUser {
-    name: string;
-    imageUrl: string;
-    role: string;
-    tokenType: string;
-    accessToken: string;
-    refreshToken: string;
-  }
 
   const Get = async (code: string, platform: Platform) => {
     try {
@@ -107,4 +108,4 @@ const GoogleLoginBtnBefore = () => {
   );
 };
 
-export default GoogleLoginBtnBefore;
+export default LoginPage;
