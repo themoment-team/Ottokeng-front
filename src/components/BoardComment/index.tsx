@@ -27,7 +27,7 @@ const BoardComment = () => {
           height: 18.75rem;
           margin-top: 1.5rem;
           ::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Opera*/
+            display: none;
           }
           overflow-y: scroll;
           overflow-x: hidden;

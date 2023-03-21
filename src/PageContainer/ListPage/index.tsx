@@ -70,7 +70,7 @@ const ListPage = () => {
   return (
     <>
       <C.Header />
-      <Container>{list}</Container>;
+      <Container>{list}</Container>
       <C.Footer />
     </>
   );
