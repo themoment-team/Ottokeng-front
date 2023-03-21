@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import axios from 'axios';
 import * as C from 'components';
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -28,7 +27,7 @@ const BoardComment = () => {
           height: 18.75rem;
           margin-top: 1.5rem;
           ::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Opera*/
+            display: none;
           }
           overflow-y: scroll;
           overflow-x: hidden;
