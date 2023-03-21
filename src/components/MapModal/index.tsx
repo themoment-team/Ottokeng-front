@@ -1,18 +1,13 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import * as S from './style';
-import { CustomOverlayMap, Map, MapMarker } from 'react-kakao-maps-sdk';
 import { useEffect, useState } from 'react';
-import * as I from 'assets/svgs';
 
 interface Props {
   setMap: Function;
 }
 
 const MapModal = ({ setMap }: Props) => {
-  interface props {
-    locPosition: any;
-  }
   const [address, setAddress] = useState('');
 
   let lat: number = 0,

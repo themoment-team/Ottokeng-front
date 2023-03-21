@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import axios from 'axios';
 import * as C from 'components';
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
