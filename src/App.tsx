@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import PrivateRoute from 'components/PrivateRoute';
 import { Component, useState } from 'react';
 import * as P from 'pages';
 import * as C from 'components';
