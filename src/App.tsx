@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-
-import { useState } from 'react';
+import { Component, useState } from 'react';
 import * as P from 'pages';
+import * as C from 'components';
 
 function App() {
   enum PATH {
