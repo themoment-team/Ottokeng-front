@@ -52,7 +52,7 @@ const ListPage = () => {
 
   useEffect(() => {
     location.pathname === '/list' && setIsModify(true);
-    const url = `https://abcd/post/writing`;
+    const url = `https://server.ottokeng.site/post/writing`;
     getData(url);
   }, [reload]);
 
@@ -70,7 +70,7 @@ const ListPage = () => {
   return (
     <>
       <C.Header />
-      <Container>{list}</Container>;
+      <Container>{list}</Container>
       <C.Footer />
     </>
   );
