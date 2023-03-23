@@ -22,8 +22,8 @@ const StartPage = ({
           css={css`
             font-style: normal;
             font-weight: 700;
-            font-size: 72px;
-            line-height: 86px;
+            font-size: 4.5rem;
+            line-height: 5.375rem;
             letter-spacing: -0.02em;
           `}
         >
