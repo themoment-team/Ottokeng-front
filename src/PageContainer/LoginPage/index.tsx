@@ -37,7 +37,8 @@ const LoginPage = () => {
   const getUserInfo = async (code: string, platform: Platform) => {
     try {
       const { data } = await axios({
-        url: `http://server.ottokeng.site/login/oauth/${platform}?code=${code}`,
+
+        url: `https://server.ottokeng.site/login/oauth/${platform}?code=${code}`,
         method: 'get',
       });
       console.log(data.name);
@@ -48,10 +49,12 @@ const LoginPage = () => {
     }
   };
 
+
   const after = () => {
     getUserInfo(loginCode as string, platform as Platform);
     return <p>로그인 중입니다...</p>;
   };
+
 
   return (
     <S.Container>
@@ -101,7 +104,9 @@ const LoginPage = () => {
           </a>
         </div>
       ) : (
+
         after()
+
       )}
     </S.Container>
   );
