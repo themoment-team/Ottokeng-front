@@ -37,7 +37,7 @@ const LoginPage = () => {
   const getUserInfo = async (code: string, platform: Platform) => {
     try {
       const { data } = await axios({
-        url: `http://server.ottokeng.site/login/oauth/${platform}?code=${code}`,
+        url: `https://server.ottokeng.site/login/oauth/${platform}?code=${code}`,
         method: 'get',
       });
       console.log(data.name);
