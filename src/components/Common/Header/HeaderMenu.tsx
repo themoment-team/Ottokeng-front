@@ -16,8 +16,13 @@ export const HeaderMenu = () => {
     <S.NavigationContentWrqp>
       <Link to="/">
         <S.LogoWrap>
-          <img src={I.LogoIcon} />
-          <p style={{ fontWeight: 600 }}>Ottokeng</p>
+          <img
+            src={I.LogoIcon}
+            css={css`
+              padding-right: 1rem;
+            `}
+          />
+          <p style={{ fontWeight: 500 }}>Ottokeng</p>
         </S.LogoWrap>
       </Link>
       <S.HeaderListWrap>

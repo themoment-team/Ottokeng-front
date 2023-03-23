@@ -7,7 +7,7 @@ export const MarkerBox = styled.div({
   height: '28.8125rem',
   width: '22.6875rem',
   left: '63.5562rem',
-  top: '7.8931rem',
+  top: '23.8931rem',
   borderRadius: '0rem',
 });
 

@@ -11,9 +11,9 @@ interface prop {
 const UserBtn = ({ title }: prop) => {
   const [onclick, setOnclick] = useState<Boolean>(false);
   return (
-    <S.Div>
+    <div>
       <S.UserBtn>{title}</S.UserBtn>
-    </S.Div>
+    </div>
   );
 };
 
