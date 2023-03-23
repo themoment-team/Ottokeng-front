@@ -31,7 +31,9 @@ type comments = {
   commentId: 1;
   writer: string;
   contents: string;
+  isMine: boolean;
   createdAt: string;
+  profileImg: 'string';
 };
 
 const ListItem = ({ datas, isModify, setReload, reload }: props) => {
