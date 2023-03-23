@@ -5,9 +5,11 @@ import * as S from './style';
 import { useEffect, useState } from 'react';
 import { BackEnd, Design, DevOps, FrontEnd } from 'data/about';
 import TeamLogo from 'images/TeamLogo.png';
+import * as C from 'components';
 const AboutPage = () => {
   return (
     <>
+      <C.Header />
       <S.Section>
         <S.Window className="LogoBox">
           <div
@@ -169,6 +171,7 @@ const AboutPage = () => {
             </S.ProfileBox>
           </S.Window>
         </div>
+        <C.Footer />
       </S.Section>
     </>
   );

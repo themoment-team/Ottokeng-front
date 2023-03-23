@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react';
 import * as C from 'components';
 import { Container } from 'components/ListItem/style';
 import { useEffect, useState } from 'react';
@@ -70,7 +72,7 @@ const ListPage = () => {
   return (
     <>
       <C.Header />
-      <Container>{list}</Container>;
+      <Container>{list}</Container>
       <C.Footer />
     </>
   );
