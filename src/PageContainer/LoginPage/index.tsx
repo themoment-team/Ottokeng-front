@@ -37,6 +37,7 @@ const LoginPage = () => {
   const getUserInfo = async (code: string, platform: Platform) => {
     try {
       const { data } = await axios({
+
         url: `https://server.ottokeng.site/login/oauth/${platform}?code=${code}`,
         method: 'get',
       });
@@ -48,12 +49,12 @@ const LoginPage = () => {
     }
   };
 
-  // useEffect(() => {
-  //   if (dlwjddn.search !== '') {
-  //     console.log('dd');
-  //     getUserInfo(loginCode as string, platform as Platform);
-  //   }
-  // }, []);
+
+  const after = () => {
+    getUserInfo(loginCode as string, platform as Platform);
+    return <p>로그인 중입니다...</p>;
+  };
+
 
   return (
     <S.Container>
@@ -103,10 +104,9 @@ const LoginPage = () => {
           </a>
         </div>
       ) : (
-        <>
-          <p>로그인 중입니다...</p>
-          {getUserInfo(loginCode as string, platform as Platform)}
-        </>
+
+        after()
+
       )}
     </S.Container>
   );
