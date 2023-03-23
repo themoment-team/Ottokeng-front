@@ -1,14 +1,21 @@
 /** @jsxImportSource @emotion/react */
 import styled from '@emotion/styled';
 
-export const Container = styled.div({
-  position: 'absolute',
-  width: '100%',
-  height: '50rem',
-  left: '0rem',
-  top: '7.5rem',
-  background: '#DDE8F8',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-});
+export const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+`;
+
+export const UserBtnBox = styled.div`
+  display: flex;
+  width: 960px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 32px;
+`;

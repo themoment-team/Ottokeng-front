@@ -9,8 +9,8 @@ function App() {
     list = '/list',
     bulletin = '/list/1',
     login = '/login/*',
-    start = '/',
-    main = '/main',
+    start = '/start',
+    main = '/',
     about = '/about',
     user = '/user',
   }
