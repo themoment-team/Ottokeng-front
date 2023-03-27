@@ -37,7 +37,7 @@ const MapModal = ({ setMap }: Props) => {
     const map = new kakao.maps.Map(mapContainer as HTMLElement, mapOption);
     const imgSrc = 'https://ifh.cc/g/Y9tpDk.png',
       imgSize = new kakao.maps.Size(36, 46),
-      imgOption = { offset: new kakao.maps.Point(15, 69) };
+      imgOption = { offset: new kakao.maps.Point(27, 69) };
     const markerIMG = new kakao.maps.MarkerImage(imgSrc, imgSize, imgOption);
     const position = new kakao.maps.LatLng(lat, lng);
     const marker = new kakao.maps.Marker({
