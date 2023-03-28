@@ -2,7 +2,7 @@
 import { css } from '@emotion/react';
 import * as S from './style';
 import * as C from 'assets/svgs';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
