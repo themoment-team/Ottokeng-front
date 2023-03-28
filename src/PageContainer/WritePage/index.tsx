@@ -123,7 +123,7 @@ const WriteBox = () => {
       }
       if (imgLists.length > 5) {
         imgLists = imgLists.slice(0, 5);
-        alert('이미지는 최대 5장 까지만 등록 가능합니다');
+        alert('이미지는 최대 5장 까지만 등록 가능합니다.');
       }
       setImgList(imgLists);
     }

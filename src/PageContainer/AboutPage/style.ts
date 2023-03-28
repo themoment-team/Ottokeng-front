@@ -6,23 +6,26 @@ export const Image = styled.img`
 `;
 export const Section = styled.div`
   width: 100%;
-  height: 300rem;
+  height: 100%;
   display: flex;
   flex-direction: column;
   .LogoBox {
     width: 100%;
     position: relative;
     z-index: 100000000;
-    background-image: url(${BackgroundImg});  }
-.BackEnd, .Design, .DevOps{
-      background-color: black;
-      color : white;
-}
-.FrontEnd{
-      background-color: white;
-      color : black;
- }
-  `;
+    background-image: url(${BackgroundImg});
+  }
+  .BackEnd,
+  .Design,
+  .DevOps {
+    background-color: black;
+    color: white;
+  }
+  .FrontEnd {
+    background-color: white;
+    color: black;
+  }
+`;
 export const Shadow = styled.div`
   width: inherit;
   height: 80rem;

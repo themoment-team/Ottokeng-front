@@ -8,6 +8,7 @@ export const Container = styled.nav`
   position: fixed;
   top: 0;
   background-color: #fff;
+  z-index: 1000000000000;
 `;
 
 export const HeaderContentWrap = styled.div`

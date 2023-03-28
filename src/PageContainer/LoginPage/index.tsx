@@ -2,9 +2,11 @@
 import { css } from '@emotion/react';
 import * as S from './style';
 import * as C from 'assets/svgs';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useEffect } from 'react';
+import After from './After';
 
 type Platform = 'kakao' | 'google';
 
@@ -28,16 +30,13 @@ const LoginPage = () => {
   let platform = dlwjddn.pathname.slice(19);
 
   const Auth = {
-    kakao:
-      'https://kauth.kakao.com/oauth/authorize?client_id=250c6af4efaac52ed213b342d00b5175&redirect_uri=https://ottokeng.site/login/oauth2/code/kakao&response_type=code&client_secret=F8G7qfHyG1Ml10mqCZRugeqf8dsSJGDg',
-    google:
-      'https://accounts.google.com/o/oauth2/v2/auth?scope=https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email&client_id=134995643753-9r3fe5gem5qlg6caijul7qlgrcr9el8c.apps.googleusercontent.com&response_type=code&redirect_uri=https://ottokeng.site/login/oauth2/code/google&access_type=offline',
+    kakao: process.env.REACT_APP_KAKAO_URL,
+    google: process.env.REACT_APP_GOOGLE_URL,
   };
 
   const getUserInfo = async (code: string, platform: Platform) => {
     try {
       const { data } = await axios({
-
         url: `https://server.ottokeng.site/login/oauth/${platform}?code=${code}`,
         method: 'get',
       });
@@ -48,13 +47,6 @@ const LoginPage = () => {
       console.error(err);
     }
   };
-
-
-  const after = () => {
-    getUserInfo(loginCode as string, platform as Platform);
-    return <p>로그인 중입니다...</p>;
-  };
-
 
   return (
     <S.Container>
@@ -104,9 +96,11 @@ const LoginPage = () => {
           </a>
         </div>
       ) : (
-
-        after()
-
+        <After
+          loginCode={loginCode}
+          platform={platform as Platform}
+          getUserInfo={getUserInfo}
+        />
       )}
     </S.Container>
   );

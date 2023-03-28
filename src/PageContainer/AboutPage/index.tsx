@@ -5,9 +5,11 @@ import * as S from './style';
 import { useEffect, useState } from 'react';
 import { BackEnd, Design, DevOps, FrontEnd } from 'data/about';
 import TeamLogo from 'images/TeamLogo.png';
+import * as C from 'components';
 const AboutPage = () => {
   return (
     <>
+      <C.Header />
       <S.Section>
         <S.Window className="LogoBox">
           <div
@@ -66,7 +68,13 @@ const AboutPage = () => {
                     width={240}
                     height={240}
                   />
-                  <S.Name>{profile.name}</S.Name>
+                  <S.Name
+                    css={css`
+                      padding-top: 1.875rem;
+                    `}
+                  >
+                    {profile.name}
+                  </S.Name>
                 </S.Link>
               ))}
             </div>
@@ -103,7 +111,14 @@ const AboutPage = () => {
                     width={240}
                     height={240}
                   />
-                  <S.Name style={{ color: 'black' }}>{profile.name}</S.Name>
+                  <S.Name
+                    css={css`
+                      padding-top: 1.875rem;
+                      color: black;
+                    `}
+                  >
+                    {profile.name}
+                  </S.Name>
                 </S.Link>
               ))}
             </div>
@@ -133,7 +148,13 @@ const AboutPage = () => {
                       width={240}
                       height={240}
                     />
-                    <S.Name>{profile.name}</S.Name>
+                    <S.Name
+                      css={css`
+                        padding-top: 1.875rem;
+                      `}
+                    >
+                      {profile.name}
+                    </S.Name>
                   </S.Link>
                 ))}
               </div>
@@ -162,13 +183,20 @@ const AboutPage = () => {
                       width={240}
                       height={240}
                     />
-                    <S.Name>{profile.name}</S.Name>
+                    <S.Name
+                      css={css`
+                        padding-top: 1.875rem;
+                      `}
+                    >
+                      {profile.name}
+                    </S.Name>
                   </S.Link>
                 ))}
               </div>
             </S.ProfileBox>
           </S.Window>
         </div>
+        <C.Footer />
       </S.Section>
     </>
   );
