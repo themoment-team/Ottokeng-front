@@ -5,7 +5,7 @@ import * as C from 'assets/svgs';
 import { useState } from 'react';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { useEffect } from 'react';
+import { Navigate } from 'react-router-dom';
 import After from './After';
 
 type Platform = 'kakao' | 'google';
@@ -41,7 +41,11 @@ const LoginPage = () => {
         method: 'get',
       });
       console.log(data.name);
-      setUser(data);
+      localStorage.setItem('name', data.name);
+      localStorage.setItem('profileImg', data.imageUrl);
+      localStorage.setItem('token', data.accessToken);
+      localStorage.setItem('refreshToken', data.refreshToken);
+      <Navigate to="/"></Navigate>;
       // setHeader(data.name);
     } catch (err) {
       console.error(err);
