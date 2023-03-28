@@ -40,7 +40,6 @@ const MainPage = () => {
           <S.Dots></S.Dots>
           <S.Dots></S.Dots>
         </S.DotsBox>
-        <C.Footer />
       </div>
     </>
   );
