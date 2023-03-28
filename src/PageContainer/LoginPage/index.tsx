@@ -34,12 +34,13 @@ const LoginPage = () => {
   };
 
   const getUserInfo = async (code: string, platform: Platform) => {
+    console.log(i);
+    i = false;
     try {
       const { data } = await axios({
         url: `https://server.ottokeng.site/login/oauth/${platform}?code=${code}`,
         method: 'get',
       });
-      console.log(i);
       console.log(data.name);
       setUser(data);
       i = false;
@@ -51,7 +52,6 @@ const LoginPage = () => {
 
   const after = () => {
     if (i) getUserInfo(loginCode as string, platform as Platform);
-    i = false;
     return <p>로그인 중입니다...</p>;
   };
 
@@ -103,7 +103,7 @@ const LoginPage = () => {
           </a>
         </div>
       ) : (
-        i && after()
+        after()
       )}
     </S.Container>
   );
