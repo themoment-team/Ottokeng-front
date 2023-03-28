@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { deflate } from 'zlib';
 
 interface props {
   lat: String;
@@ -6,8 +7,9 @@ interface props {
   title: String;
 }
 
-export const getData = async (url: string) => {
+const getData = async (url: string) => {
   try {
+    const url = `https://server.ottokeng.site/post/writing`;
     const res = await axios.get(url, {
       headers: {
         Authorization: 'Bearer',
@@ -19,3 +21,5 @@ export const getData = async (url: string) => {
     console.error(err);
   }
 };
+
+export default getData;
