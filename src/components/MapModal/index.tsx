@@ -11,10 +11,6 @@ const MapModal = ({ setMap }: Props) => {
   const [address, setAddress] = useState('');
   let lat: number = 0,
     lng: number = 0;
-  const script = document.createElement('script');
-  script.src =
-    'http://dapi.kakao.com/v2/maps/sdk.js?appkey==%REACT_APP_KAKAO_API%&autoload=false&libraries=clusterer,services&';
-  document.head.appendChild(script);
 
   const geocoder = new kakao.maps.services.Geocoder();
 
