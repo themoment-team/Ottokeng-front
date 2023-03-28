@@ -5,6 +5,7 @@ import * as I from 'assets/svgs';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { MapMarker, Map, CustomOverlayMap } from 'react-kakao-maps-sdk';
+import { getData } from 'data/position';
 
 const KakaoMap = ({ text }: { text: string }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -79,7 +80,7 @@ const KakaoMap = ({ text }: { text: string }) => {
                     onClick={() => setIsOpen(false)}
                     title="닫기"
                   >
-                    <I.CloseIcon />
+                    <img src={I.CloseIcon}></img>
                   </S.Esc>
                   <S.Overlay>
                     <div

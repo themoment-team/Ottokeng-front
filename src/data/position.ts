@@ -8,6 +8,7 @@ interface props {
 
 export const getData = async (url: string) => {
   try {
+    const url = `https://server.ottokeng.site/post/writing`;
     const res = await axios.get(url, {
       headers: {
         Authorization: 'Bearer',
