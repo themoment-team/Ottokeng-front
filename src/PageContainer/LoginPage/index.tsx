@@ -28,16 +28,13 @@ const LoginPage = () => {
   let platform = dlwjddn.pathname.slice(19);
 
   const Auth = {
-    kakao:
-      'https://kauth.kakao.com/oauth/authorize?client_id=250c6af4efaac52ed213b342d00b5175&redirect_uri=https://ottokeng.site/login/oauth2/code/kakao&response_type=code&client_secret=F8G7qfHyG1Ml10mqCZRugeqf8dsSJGDg',
-    google:
-      'https://accounts.google.com/o/oauth2/v2/auth?scope=https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email&client_id=134995643753-9r3fe5gem5qlg6caijul7qlgrcr9el8c.apps.googleusercontent.com&response_type=code&redirect_uri=https://ottokeng.site/login/oauth2/code/google&access_type=offline',
+    kakao: process.env.REACT_APP_KAKAO_API,
+    google: process.env.REACT_APP_GOOGLE_API,
   };
 
   const getUserInfo = async (code: string, platform: Platform) => {
     try {
       const { data } = await axios({
-
         url: `https://server.ottokeng.site/login/oauth/${platform}?code=${code}`,
         method: 'get',
       });
@@ -49,12 +46,10 @@ const LoginPage = () => {
     }
   };
 
-
   const after = () => {
     getUserInfo(loginCode as string, platform as Platform);
     return <p>로그인 중입니다...</p>;
   };
-
 
   return (
     <S.Container>
@@ -104,9 +99,7 @@ const LoginPage = () => {
           </a>
         </div>
       ) : (
-
         after()
-
       )}
     </S.Container>
   );
