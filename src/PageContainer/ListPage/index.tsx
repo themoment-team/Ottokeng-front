@@ -1,5 +1,4 @@
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
 import * as C from 'components';
 import { Container } from 'components/ListItem/style';
 import { useEffect, useState } from 'react';
@@ -54,7 +53,7 @@ const ListPage = () => {
 
   useEffect(() => {
     location.pathname === '/list' && setIsModify(true);
-    const url = `https://abcd/post/writing`;
+    const url = `https://server.ottokeng.site/post/writing`;
     getData(url);
   }, [reload]);
 

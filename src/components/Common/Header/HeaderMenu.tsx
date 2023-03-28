@@ -7,7 +7,6 @@ import * as I from 'assets/svgs';
 
 export const HeaderMenu = () => {
   const location = useLocation();
-  console.log(location);
 
   const select = (navPath: string) =>
     navPath === location.pathname && { color: '#2E6EEB' };

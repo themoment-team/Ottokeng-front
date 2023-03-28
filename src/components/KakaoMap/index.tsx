@@ -9,7 +9,6 @@ import { getData } from 'data/position';
 
 const KakaoMap = ({ text }: { text: string }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  console.log(getData);
   const markerPosition = {
     lat: 35.142738601752846,
     lng: 126.80072297715732,
@@ -102,7 +101,7 @@ const KakaoMap = ({ text }: { text: string }) => {
                       <S.DescTitle>휴대폰을 분실했습니다</S.DescTitle>
                       <div>
                         <S.Ellipsis>
-                          제주특별자치도 제주시 첨단로 242
+                          제주특별자치도 제주시 첨단로 243
                         </S.Ellipsis>
                         <S.JibunEllipsis>
                           (우) 63309 (지번) 영평동 2181
