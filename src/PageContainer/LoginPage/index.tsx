@@ -39,6 +39,7 @@ const LoginPage = () => {
         url: `https://server.ottokeng.site/login/oauth/${platform}?code=${code}`,
         method: 'get',
       });
+      console.log(i);
       console.log(data.name);
       setUser(data);
       i = false;
@@ -50,7 +51,7 @@ const LoginPage = () => {
 
   const after = () => {
     i = false;
-    getUserInfo(loginCode as string, platform as Platform);
+    if (i) getUserInfo(loginCode as string, platform as Platform);
     return <p>로그인 중입니다...</p>;
   };
 
