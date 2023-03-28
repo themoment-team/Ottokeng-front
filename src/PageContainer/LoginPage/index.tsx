@@ -50,8 +50,8 @@ const LoginPage = () => {
   };
 
   const after = () => {
-    i = false;
     if (i) getUserInfo(loginCode as string, platform as Platform);
+    i = false;
     return <p>로그인 중입니다...</p>;
   };
 
