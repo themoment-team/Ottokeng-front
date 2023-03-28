@@ -62,7 +62,7 @@ const WriteBox = () => {
         headers: {
           'Content-Type': 'multipart/form-data',
           charset: 'utf-8',
-          Authorization: '',
+          Authorization: localStorage.getItem('token'),
         },
       });
       const data = res.data;
