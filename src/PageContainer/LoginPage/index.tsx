@@ -20,7 +20,6 @@ interface IUser {
 }
 
 const LoginPage = () => {
-  let i = true;
   const [user, setUser] = useState<IUser | undefined>();
   const parsedHash = new URLSearchParams(window.location.hash.substring(1));
   const accessToken = parsedHash.get('access_token');
@@ -36,8 +35,6 @@ const LoginPage = () => {
   };
 
   const getUserInfo = async (code: string, platform: Platform) => {
-    console.log(i);
-    i = false;
     try {
       const { data } = await axios({
         url: `https://server.ottokeng.site/login/oauth/${platform}?code=${code}`,
@@ -45,7 +42,6 @@ const LoginPage = () => {
       });
       console.log(data.name);
       setUser(data);
-      i = false;
       // setHeader(data.name);
     } catch (err) {
       console.error(err);
