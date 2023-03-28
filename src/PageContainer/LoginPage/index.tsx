@@ -20,6 +20,7 @@ interface IUser {
 }
 
 const LoginPage = () => {
+  const navigate = useNavigate();
   const [user, setUser] = useState<IUser | undefined>();
   const parsedHash = new URLSearchParams(window.location.hash.substring(1));
   const accessToken = parsedHash.get('access_token');
@@ -45,7 +46,7 @@ const LoginPage = () => {
       localStorage.setItem('profileImg', data.imageUrl);
       localStorage.setItem('token', data.accessToken);
       localStorage.setItem('refreshToken', data.refreshToken);
-      <Navigate to="/"></Navigate>;
+      navigate('/');
       // setHeader(data.name);
     } catch (err) {
       console.error(err);
