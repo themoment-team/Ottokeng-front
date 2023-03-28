@@ -5,6 +5,8 @@ import * as C from 'assets/svgs';
 import { useState } from 'react';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useEffect } from 'react';
+import After from './After';
 
 type Platform = 'kakao' | 'google';
 
@@ -48,11 +50,6 @@ const LoginPage = () => {
     } catch (err) {
       console.error(err);
     }
-  };
-
-  const after = () => {
-    if (i) getUserInfo(loginCode as string, platform as Platform);
-    return <p>로그인 중입니다...</p>;
   };
 
   return (
@@ -103,7 +100,11 @@ const LoginPage = () => {
           </a>
         </div>
       ) : (
-        after()
+        <After
+          loginCode={loginCode}
+          platform={platform as Platform}
+          getUserInfo={getUserInfo}
+        />
       )}
     </S.Container>
   );
