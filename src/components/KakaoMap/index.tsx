@@ -8,21 +8,6 @@ import { MapMarker, Map, CustomOverlayMap } from 'react-kakao-maps-sdk';
 
 const KakaoMap = ({ text }: { text: string }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const url = `http://localhost:3000/main/post/writing`;
-  const getData = async (url: string) => {
-    try {
-      const res = await axios.get(url, {
-        headers: {
-          Authorization: 'Bearer',
-        },
-      });
-      const data = res.data;
-      console.log(data);
-    } catch (err) {
-      console.error(err);
-    }
-  };
-  getData(url);
   const markerPosition = {
     lat: 35.142738601752846,
     lng: 126.80072297715732,
@@ -100,8 +85,8 @@ const KakaoMap = ({ text }: { text: string }) => {
                     <div
                       css={css`
                         display: flex;
-                        justifycontent: center;
-                        alignitems: center;
+                        justify-content: center;
+                        align-items: center;
                       `}
                     >
                       <S.LocationImg
