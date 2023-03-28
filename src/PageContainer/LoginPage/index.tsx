@@ -49,6 +49,7 @@ const LoginPage = () => {
   };
 
   const after = () => {
+    console.log(i);
     getUserInfo(loginCode as string, platform as Platform);
     return <p>로그인 중입니다...</p>;
   };
