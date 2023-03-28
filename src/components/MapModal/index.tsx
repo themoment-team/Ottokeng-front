@@ -9,14 +9,17 @@ interface Props {
 
 const MapModal = ({ setMap }: Props) => {
   const [address, setAddress] = useState('');
-
   let lat: number = 0,
-    lon: number = 0;
+    lng: number = 0;
+  const script = document.createElement('script');
+  script.src =
+    'http://dapi.kakao.com/v2/maps/sdk.js?appkey==%REACT_APP_KAKAO_API%&autoload=false&libraries=clusterer,services&';
+  document.head.appendChild(script);
 
   const geocoder = new kakao.maps.services.Geocoder();
 
   const getAddress = () => {
-    geocoder.coord2Address(lon, lat, (result, status) => {
+    geocoder.coord2Address(lng, lat, (result, status) => {
       if (result[0].address.address_name !== null) {
         console.log(result[0]?.address.address_name);
         setAddress(String(result[0]?.address.address_name));
@@ -27,16 +30,16 @@ const MapModal = ({ setMap }: Props) => {
   useEffect(() => {
     const mapContainer = document.getElementById('mapLocation'),
       mapOption = {
-        center: new kakao.maps.LatLng(lat, lon),
+        center: new kakao.maps.LatLng(lat, lng),
         level: 3,
       };
 
     const map = new kakao.maps.Map(mapContainer as HTMLElement, mapOption);
     const imgSrc = 'https://ifh.cc/g/Y9tpDk.png',
       imgSize = new kakao.maps.Size(36, 46),
-      imgOption = { offset: new kakao.maps.Point(15, 69) };
+      imgOption = { offset: new kakao.maps.Point(27, 69) };
     const markerIMG = new kakao.maps.MarkerImage(imgSrc, imgSize, imgOption);
-    const position = new kakao.maps.LatLng(lat, lon);
+    const position = new kakao.maps.LatLng(lat, lng);
     const marker = new kakao.maps.Marker({
       position: position,
       image: markerIMG,
@@ -45,10 +48,10 @@ const MapModal = ({ setMap }: Props) => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
         lat = position.coords.latitude;
-        lon = position.coords.longitude;
+        lng = position.coords.longitude;
         getAddress();
 
-        const locPosition = new kakao.maps.LatLng(lat, lon);
+        const locPosition = new kakao.maps.LatLng(lat, lng);
         marker.setPosition(locPosition);
 
         map.setCenter(locPosition);
@@ -67,7 +70,7 @@ const MapModal = ({ setMap }: Props) => {
 
         marker.setPosition(latlng);
         lat = latlng.getLat();
-        lon = latlng.getLng();
+        lng = latlng.getLng();
         getAddress();
       },
     );
@@ -78,7 +81,7 @@ const MapModal = ({ setMap }: Props) => {
   }, []);
 
   const handleSubmit = () => {
-    setMap([String(lat), String(lon)]);
+    setMap([String(lat), String(lng)]);
   };
 
   return (
