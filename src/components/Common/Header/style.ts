@@ -1,3 +1,4 @@
+import { url } from 'inspector';
 import styled from '@emotion/styled';
 
 export const Container = styled.nav`
@@ -92,11 +93,14 @@ export const SearchBox = styled.input`
   color: #999999;
 `;
 
-export const UserImg = styled.div`
+export const UserImg = styled.div<{ bGImg: string | null }>`
   width: 2rem;
   height: 2rem;
   border-radius: 100%;
   background-color: gray;
+  background-image: url(${props => props.bGImg as string});
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 export const UserName = styled.div`
