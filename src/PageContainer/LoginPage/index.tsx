@@ -28,8 +28,8 @@ const LoginPage = () => {
   let platform = dlwjddn.pathname.slice(19);
 
   const Auth = {
-    kakao: process.env.REACT_APP_KAKAO_API,
-    google: process.env.REACT_APP_GOOGLE_API,
+    kakao: process.env.REACT_APP_KAKAO_URL,
+    google: process.env.REACT_APP_GOOGLE_URL,
   };
 
   const getUserInfo = async (code: string, platform: Platform) => {
