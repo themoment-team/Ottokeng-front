@@ -18,6 +18,7 @@ interface IUser {
 }
 
 const LoginPage = () => {
+  let i = true;
   const [user, setUser] = useState<IUser | undefined>();
   const parsedHash = new URLSearchParams(window.location.hash.substring(1));
   const accessToken = parsedHash.get('access_token');
@@ -40,6 +41,7 @@ const LoginPage = () => {
       });
       console.log(data.name);
       setUser(data);
+      i = false;
       // setHeader(data.name);
     } catch (err) {
       console.error(err);
@@ -99,7 +101,7 @@ const LoginPage = () => {
           </a>
         </div>
       ) : (
-        after()
+        i && after()
       )}
     </S.Container>
   );
