@@ -100,7 +100,7 @@ const KakaoMap = ({ text }: { text: string }) => {
                       <S.DescTitle>휴대폰을 분실했습니다</S.DescTitle>
                       <div>
                         <S.Ellipsis>
-                          제주특별자치도 제주시 첨단로 242
+                          제주특별자치도 제주시 첨단로 243
                         </S.Ellipsis>
                         <S.JibunEllipsis>
                           (우) 63309 (지번) 영평동 2181
