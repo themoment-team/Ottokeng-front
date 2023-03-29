@@ -9,8 +9,8 @@ interface Props {
 
 const MapModal = ({ setMap }: Props) => {
   const [address, setAddress] = useState('');
-  let lat: number = 0,
-    lng: number = 0;
+  let lat: number = 35.142738601752846,
+    lng: number = 126.80072297715732;
 
   const geocoder = new kakao.maps.services.Geocoder();
 
