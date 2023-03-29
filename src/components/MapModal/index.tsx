@@ -11,7 +11,9 @@ const MapModal = ({ setMap }: Props) => {
   const [address, setAddress] = useState('');
   let lat: number = 35.142738601752846,
     lng: number = 126.80072297715732;
-
+  const handleSubmit = () => {
+    setMap([String(lat), String(lng)]);
+  };
   const geocoder = new kakao.maps.services.Geocoder();
 
   const getAddress = () => {
@@ -78,10 +80,6 @@ const MapModal = ({ setMap }: Props) => {
       map.relayout();
     }, 1000);
   }, []);
-
-  const handleSubmit = () => {
-    setMap([String(lat), String(lng)]);
-  };
 
   return (
     <S.MapModal>
