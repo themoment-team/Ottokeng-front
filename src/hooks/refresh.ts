@@ -8,6 +8,8 @@ const refresh = async () => {
   });
   const data = res.data;
   console.log(data);
+  localStorage.setItem('token', data.AccessToken);
+  localStorage.setItem('refreshToken', data.RefreshToken);
 };
 
 export default refresh;
