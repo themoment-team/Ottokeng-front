@@ -45,6 +45,7 @@ const MapModal = ({ setMap }: Props) => {
       navigator.geolocation.getCurrentPosition(position => {
         lat = position.coords.latitude;
         lng = position.coords.longitude;
+        handleSubmit();
         getAddress();
 
         const locPosition = new kakao.maps.LatLng(lat, lng);
@@ -67,6 +68,8 @@ const MapModal = ({ setMap }: Props) => {
         marker.setPosition(latlng);
         lat = latlng.getLat();
         lng = latlng.getLng();
+        handleSubmit;
+        handleSubmit();
         getAddress();
       },
     );
