@@ -70,7 +70,6 @@ const MapModal = ({ setMap }: Props) => {
         marker.setPosition(latlng);
         lat = latlng.getLat();
         lng = latlng.getLng();
-        handleSubmit;
         handleSubmit();
         getAddress();
       },
