@@ -84,6 +84,7 @@ const WriteBox = () => {
       //통과
       const url =
         'https://server.ottokeng.site/post/writing' + (isUpdate && state.id);
+      console.log(url);
       sendData(url);
     } else {
       // 거름
