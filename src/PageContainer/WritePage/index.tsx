@@ -86,8 +86,6 @@ const WriteBox = () => {
       if (isUpdate) {
         url += state.id;
       }
-      console.log(url);
-      console.log(localStorage.getItem('token'));
       sendData(url);
     } else {
       // 거름
