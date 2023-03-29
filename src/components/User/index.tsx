@@ -13,7 +13,7 @@ const User = ({ imageUrl }: props) => {
       `https://server.ottokeng.site/my-page/delete`,
       {
         headers: {
-          Authorization: 'accessToken',
+          Authorization: localStorage.getItem('token'),
         },
       },
     );
@@ -23,7 +23,7 @@ const User = ({ imageUrl }: props) => {
       `https://server.ottokeng.site/my-page/logout`,
       {
         headers: {
-          Authorization: 'accessToken',
+          Authorization: localStorage.getItem('token'),
         },
       },
     );

@@ -96,7 +96,7 @@ const WriteBox = () => {
       `https://server.ottokeng.site/post/writing/image/${picture}`,
       {
         headers: {
-          Authorization: '',
+          Authorization: localStorage.getItem('token'),
         },
       },
     );
