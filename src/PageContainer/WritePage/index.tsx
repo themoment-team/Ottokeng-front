@@ -82,7 +82,7 @@ const WriteBox = () => {
       location.length !== 0
     ) {
       //통과
-      let url = 'https://server.ottokeng.site/post/writing';
+      let url = 'https://www.server.ottokeng.site/post/writing';
       if (isUpdate) {
         url += state.id;
       }
