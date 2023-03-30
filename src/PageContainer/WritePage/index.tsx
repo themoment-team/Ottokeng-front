@@ -91,17 +91,6 @@ const WriteBox = () => {
     }
   };
 
-  const delServerIMG = async (picture: string) => {
-    const res = await axios.delete(
-      `https://server.ottokeng.site/post/writing/image/${picture}`,
-      {
-        headers: {
-          Authorization: '',
-        },
-      },
-    );
-  };
-
   interface updateProps {
     picture: string | undefined;
     id: string;
@@ -109,7 +98,7 @@ const WriteBox = () => {
 
   const onRemove = ({ picture, id }: updateProps) => {
     if (isUpdate && picture !== undefined) {
-      delServerIMG(picture);
+      delete imgList[id];
     }
     setImgList(imgList.filter((_: any, index: string) => index !== id));
   };
