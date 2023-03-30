@@ -5,7 +5,7 @@ export const getData = async (url: string) => {
     const url = `https://server.ottokeng.site/post/writing`;
     const res = await axios.get(url, {
       headers: {
-        Authorization: 'Bearer',
+        Authorization: localStorage.getItem('token'),
       },
     });
     const data = res.data;

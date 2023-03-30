@@ -6,7 +6,11 @@ import * as S from './style';
 import * as C from 'components';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import refresh from 'hooks/refresh';
 const MainPage = () => {
+  useEffect(() => {
+    refresh();
+  }, []);
   return (
     <>
       <C.Header />

@@ -62,7 +62,7 @@ const WriteBox = () => {
         headers: {
           'Content-Type': 'multipart/form-data',
           charset: 'utf-8',
-          Authorization: '',
+          Authorization: localStorage.getItem('token'),
         },
       });
       const data = res.data;
@@ -82,8 +82,10 @@ const WriteBox = () => {
       location.length !== 0
     ) {
       //통과
-      const url =
-        'https://server.ottokeng.site/post/writing' + (isUpdate && state.id);
+      let url = 'https://server.ottokeng.site/post/writing';
+      if (isUpdate) {
+        url += state.id;
+      }
       sendData(url);
     } else {
       // 거름

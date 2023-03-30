@@ -65,7 +65,7 @@ const ListItem = ({ datas, isModify, setReload, reload }: props) => {
   const delBulletin = async (id: string) => {
     const res = await axios.delete('https://abc/post/writing', {
       headers: {
-        Authorization: 'accessToken',
+        Authorization: localStorage.getItem('token'),
       },
       data: {
         pathVariable: {
@@ -83,7 +83,7 @@ const ListItem = ({ datas, isModify, setReload, reload }: props) => {
   const getComments = async () => {
     const res = await axios.get('https://abc/post/comment/' + datas.id, {
       headers: {
-        Authorization: 'accessToken',
+        Authorization: localStorage.getItem('token'),
       },
     });
     setComments(res.data);

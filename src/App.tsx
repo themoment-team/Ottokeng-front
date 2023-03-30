@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { Component, useState } from 'react';
 import * as P from 'pages';
 import * as C from 'components';
+import PrivateRoute from 'components/PrivateRoute';
 
 function App() {
   enum PATH {
@@ -31,7 +32,10 @@ function App() {
             element={<GoogleLoginBtnAfter />}
           ></Route>*/}
           {/* <Route path={PATH.login} element={<LoginPage />}/> */}
-          <Route path={PATH.start} element={<P.StartPage />}></Route>
+          <Route
+            path={PATH.start}
+            element={<PrivateRoute component={<P.StartPage />} />}
+          ></Route>
           <Route path={PATH.main} element={<P.MainPage />}></Route>
           <Route path={PATH.about} element={<P.AboutPage />}></Route>
           <Route path={PATH.user} element={<P.UserPage />}></Route>

@@ -42,7 +42,7 @@ const ListPage = () => {
 
   const getData = async (url: string) => {
     try {
-      const res = await axios.get(url + '/' + 'Authorization');
+      const res = await axios.get(url + '/' + localStorage.getItem('token'));
       const data = res.data;
       console.log(data);
       printList(data);
