@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import { css } from '@emotion/react';
 
 const ListPage = () => {
   const location = useLocation();
@@ -71,8 +72,15 @@ const ListPage = () => {
   return (
     <>
       <C.Header />
-      <Container>{list}</Container>
-      <C.Footer />
+      <div
+        css={css`
+          width: 100vw;
+          height: 100vh;
+        `}
+      >
+        <Container>{list}</Container>
+        <C.Footer />
+      </div>
     </>
   );
 };

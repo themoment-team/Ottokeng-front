@@ -21,17 +21,6 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path={PATH.login} element={<P.LoginPage />}></Route>
-          {/* <Route path="/write" element={<WritePage />}></Route> */}
-          {/* <Route path="/list" element={<ListPage />}></Route> */}
-          {/* <Route path="/list/:id" element={<Bulletin />}></Route> */}
-
-          {/* <Route path="*" element={<NotFound />}></Route> */}
-          {/* <Route path="/" element={<MainPage />}/> */}
-          {/* <Route
-            path={PATH.loginUser}
-            element={<GoogleLoginBtnAfter />}
-          ></Route>*/}
-          {/* <Route path={PATH.login} element={<LoginPage />}/> */}
           <Route
             path={PATH.start}
             element={<PrivateRoute component={<P.StartPage />} />}
