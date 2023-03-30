@@ -4,9 +4,9 @@ import * as S from './style';
 import axios from 'axios';
 
 interface props {
-  imageUrl: string;
+  imageUrl: string | null;
+  src?: string | undefined;
 }
-
 const User = ({ imageUrl }: props) => {
   const deleteUser = async () => {
     const res = await axios.delete(
@@ -28,6 +28,7 @@ const User = ({ imageUrl }: props) => {
       },
     );
   };
+  const profileImg = localStorage.getItem('profileImg');
   const handleLogOut = () => {
     if (window.confirm('정말 로그아웃하시겠습니까 ?')) {
       logOutUser();
@@ -42,7 +43,7 @@ const User = ({ imageUrl }: props) => {
     <>
       <S.UserBox>
         <S.UserImg>
-          <img src={imageUrl} />
+          <S.Img image={localStorage.getItem('profileImg')} />
         </S.UserImg>
         <S.LoginBox>
           <S.LogOut onClick={handleLogOut}>로그아웃</S.LogOut>

@@ -49,8 +49,8 @@ const WriteBox = () => {
     };
 
     imgList.forEach((img: File | string) => {
-      if (!isUpdate) formData.append('file', img);
-      else formData.append('file', img as File);
+      formData.append('file', img);
+      formData.append('file', img as File);
     });
 
     const json = JSON.stringify(contents);
@@ -93,26 +93,12 @@ const WriteBox = () => {
     }
   };
 
-  const delServerIMG = async (picture: string) => {
-    const res = await axios.delete(
-      `https://server.ottokeng.site/post/writing/image/${picture}`,
-      {
-        headers: {
-          Authorization: localStorage.getItem('token'),
-        },
-      },
-    );
-  };
-
   interface updateProps {
     picture: string | undefined;
     id: string;
   }
 
   const onRemove = ({ picture, id }: updateProps) => {
-    if (isUpdate && picture !== undefined) {
-      delServerIMG(picture);
-    }
     setImgList(imgList.filter((_: any, index: string) => index !== id));
   };
 
@@ -150,12 +136,16 @@ const WriteBox = () => {
   useEffect(() => {
     isUpdate = path === '/write/update' ? true : false;
     if (isUpdate) {
-      setTitle(state.title ?? '');
-      setContent(state.contents ?? '');
-      setCheck(state.type ?? '');
-      setImgList(state.imageUrls ?? []);
-      setMap(state.address ?? '');
-      changeChecked(state.type === 'LOST_WRITING' ? 'loss' : 'acquire');
+      try {
+        setTitle(state.title ?? '');
+        setContent(state.contents ?? '');
+        setCheck(state.type ?? '');
+        setImgList(state.imageUrls ?? []);
+        setMap(state.address ?? '');
+        changeChecked(state.type === 'LOST_WRITING' ? 'loss' : 'acquire');
+      } catch (err) {
+        alert('수정할 정보가 없습니다.');
+      }
     }
   }, []);
 
