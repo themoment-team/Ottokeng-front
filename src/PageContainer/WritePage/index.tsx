@@ -49,8 +49,8 @@ const WriteBox = () => {
     };
 
     imgList.forEach((img: File | string) => {
-      if (!isUpdate) formData.append('file', img);
-      else formData.append('file', img as File);
+      formData.append('file', img);
+      formData.append('file', img as File);
     });
 
     const json = JSON.stringify(contents);
@@ -99,9 +99,6 @@ const WriteBox = () => {
   }
 
   const onRemove = ({ picture, id }: updateProps) => {
-    if (isUpdate && picture !== undefined) {
-      delete imgList[id];
-    }
     setImgList(imgList.filter((_: any, index: string) => index !== id));
   };
 
