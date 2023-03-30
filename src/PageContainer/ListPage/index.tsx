@@ -82,7 +82,18 @@ const ListPage = () => {
           height: 100vh;
         `}
       >
-        <Container>{list}</Container>
+        <div>
+          <Container
+            css={css`
+              display: flex;
+              width: 100vw;
+              justify-content: center;
+              background-color: #f1f1f5;
+            `}
+          >
+            {list}
+          </Container>
+        </div>
         <C.Footer />
       </div>
     </>

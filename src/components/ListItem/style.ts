@@ -4,7 +4,7 @@ export const Container = styled.div`
   width: 54.625rem;
   padding: 3.75rem 3.25rem 3.75rem 4.625rem;
   background-color: #fff;
-  margin-top: 2.5rem;
+  margin-top: 8rem;
 `;
 
 export const ContentBox = styled.div`
