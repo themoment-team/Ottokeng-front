@@ -136,12 +136,16 @@ const WriteBox = () => {
   useEffect(() => {
     isUpdate = path === '/write/update' ? true : false;
     if (isUpdate) {
-      setTitle(state.title ?? '');
-      setContent(state.contents ?? '');
-      setCheck(state.type ?? '');
-      setImgList(state.imageUrls ?? []);
-      setMap(state.address ?? '');
-      changeChecked(state.type === 'LOST_WRITING' ? 'loss' : 'acquire');
+      try {
+        setTitle(state.title ?? '');
+        setContent(state.contents ?? '');
+        setCheck(state.type ?? '');
+        setImgList(state.imageUrls ?? []);
+        setMap(state.address ?? '');
+        changeChecked(state.type === 'LOST_WRITING' ? 'loss' : 'acquire');
+      } catch (err) {
+        alert('수정할 정보가 없습니다.');
+      }
     }
   }, []);
 
