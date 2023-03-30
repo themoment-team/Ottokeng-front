@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import * as S from './style';
-import axios from 'axios';
+import axios, { all } from 'axios';
 
 interface props {
   imageUrl: string | null;
@@ -28,7 +28,6 @@ const User = ({ imageUrl }: props) => {
       },
     );
   };
-  const profileImg = localStorage.getItem('profileImg');
   const handleLogOut = () => {
     if (window.confirm('정말 로그아웃하시겠습니까 ?')) {
       logOutUser();
