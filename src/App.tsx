@@ -21,10 +21,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path={PATH.login} element={<P.LoginPage />}></Route>
-          <Route
-            path={PATH.start}
-            element={<PrivateRoute component={<P.StartPage />} />}
-          ></Route>
+          <Route path={PATH.start} element={<P.StartPage />}></Route>
           <Route path={PATH.main} element={<P.MainPage />}></Route>
           <Route path={PATH.about} element={<P.AboutPage />}></Route>
           <Route path={PATH.user} element={<P.UserPage />}></Route>
