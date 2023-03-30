@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import { css } from '@emotion/react';
 
 const ListPage = () => {
   const location = useLocation();
@@ -42,7 +43,11 @@ const ListPage = () => {
 
   const getData = async (url: string) => {
     try {
-      const res = await axios.get(url + '/' + 'Authorization');
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: localStorage.getItem('token'),
+        },
+      });
       const data = res.data;
       console.log(data);
       printList(data);
@@ -71,8 +76,15 @@ const ListPage = () => {
   return (
     <>
       <C.Header />
-      <Container>{list}</Container>
-      <C.Footer />
+      <div
+        css={css`
+          width: 100vw;
+          height: 100vh;
+        `}
+      >
+        <Container>{list}</Container>
+        <C.Footer />
+      </div>
     </>
   );
 };

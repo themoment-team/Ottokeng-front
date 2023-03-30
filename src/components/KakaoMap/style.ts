@@ -5,8 +5,8 @@ export const MapComment = styled.p({
   position: 'absolute',
   width: '26.875rem',
   height: '2.0625rem',
-  left: '18.3125rem',
-  top: '8.125rem',
+  left: '17.8125rem',
+  top: '12.125rem',
   fontSize: '1.75rem',
 });
 

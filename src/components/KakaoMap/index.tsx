@@ -5,6 +5,7 @@ import * as I from 'assets/svgs';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { MapMarker, Map, CustomOverlayMap } from 'react-kakao-maps-sdk';
+import { getData } from 'data/position';
 
 const KakaoMap = ({ text }: { text: string }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -79,7 +80,7 @@ const KakaoMap = ({ text }: { text: string }) => {
                     onClick={() => setIsOpen(false)}
                     title="닫기"
                   >
-                    <I.CloseIcon />
+                    <img src={I.CloseIcon}></img>
                   </S.Esc>
                   <S.Overlay>
                     <div
@@ -100,7 +101,7 @@ const KakaoMap = ({ text }: { text: string }) => {
                       <S.DescTitle>휴대폰을 분실했습니다</S.DescTitle>
                       <div>
                         <S.Ellipsis>
-                          제주특별자치도 제주시 첨단로 242
+                          제주특별자치도 제주시 첨단로 243
                         </S.Ellipsis>
                         <S.JibunEllipsis>
                           (우) 63309 (지번) 영평동 2181

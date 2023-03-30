@@ -13,9 +13,9 @@ export const HeaderUser = () => {
         justify-content: space-between;
       `}
     >
-      <S.UserImg></S.UserImg>
+      <S.UserImg bGImg={localStorage.getItem('profileImg')}></S.UserImg>
       <S.UserName>
-        <div>사용자</div>
+        {localStorage.getItem('name') ?? <div>비회원</div>}
       </S.UserName>
     </div>
   );

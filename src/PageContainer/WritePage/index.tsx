@@ -49,8 +49,8 @@ const WriteBox = () => {
     };
 
     imgList.forEach((img: File | string) => {
-      if (!isUpdate) formData.append('file', img);
-      else formData.append('file', img as File);
+      formData.append('file', img);
+      formData.append('file', img as File);
     });
 
     const json = JSON.stringify(contents);
@@ -62,7 +62,7 @@ const WriteBox = () => {
         headers: {
           'Content-Type': 'multipart/form-data',
           charset: 'utf-8',
-          Authorization: '',
+          Authorization: localStorage.getItem('token'),
         },
       });
       const data = res.data;
@@ -82,24 +82,15 @@ const WriteBox = () => {
       location.length !== 0
     ) {
       //통과
-      const url =
-        'https://server.ottokeng.site/post/writing' + (isUpdate && state.id);
+      let url = 'https://server.ottokeng.site/post/writing';
+      if (isUpdate) {
+        url += state.id;
+      }
       sendData(url);
     } else {
       // 거름
-      console.error('안 돼 돌아가');
+      alert('안 돼 돌아가');
     }
-  };
-
-  const delServerIMG = async (picture: string) => {
-    const res = await axios.delete(
-      `https://server.ottokeng.site/post/writing/image/${picture}`,
-      {
-        headers: {
-          Authorization: '',
-        },
-      },
-    );
   };
 
   interface updateProps {
@@ -108,9 +99,6 @@ const WriteBox = () => {
   }
 
   const onRemove = ({ picture, id }: updateProps) => {
-    if (isUpdate && picture !== undefined) {
-      delServerIMG(picture);
-    }
     setImgList(imgList.filter((_: any, index: string) => index !== id));
   };
 
@@ -148,12 +136,16 @@ const WriteBox = () => {
   useEffect(() => {
     isUpdate = path === '/write/update' ? true : false;
     if (isUpdate) {
-      setTitle(state.title ?? '');
-      setContent(state.contents ?? '');
-      setCheck(state.type ?? '');
-      setImgList(state.imageUrls ?? []);
-      setMap(state.address ?? '');
-      changeChecked(state.type === 'LOST_WRITING' ? 'loss' : 'acquire');
+      try {
+        setTitle(state.title ?? '');
+        setContent(state.contents ?? '');
+        setCheck(state.type ?? '');
+        setImgList(state.imageUrls ?? []);
+        setMap(state.address ?? '');
+        changeChecked(state.type === 'LOST_WRITING' ? 'loss' : 'acquire');
+      } catch (err) {
+        alert('수정할 정보가 없습니다.');
+      }
     }
   }, []);
 

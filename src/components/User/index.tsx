@@ -1,19 +1,19 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import * as S from './style';
-import axios from 'axios';
+import axios, { all } from 'axios';
 
 interface props {
-  imageUrl: string;
+  imageUrl: string | null;
+  src?: string | undefined;
 }
-
 const User = ({ imageUrl }: props) => {
   const deleteUser = async () => {
     const res = await axios.delete(
       `https://server.ottokeng.site/my-page/delete`,
       {
         headers: {
-          Authorization: 'accessToken',
+          Authorization: localStorage.getItem('token'),
         },
       },
     );
@@ -23,7 +23,7 @@ const User = ({ imageUrl }: props) => {
       `https://server.ottokeng.site/my-page/logout`,
       {
         headers: {
-          Authorization: 'accessToken',
+          Authorization: localStorage.getItem('token'),
         },
       },
     );
@@ -42,7 +42,7 @@ const User = ({ imageUrl }: props) => {
     <>
       <S.UserBox>
         <S.UserImg>
-          <img src={imageUrl} alt="프로필이미지" />
+          <S.Img image={localStorage.getItem('profileImg')} />
         </S.UserImg>
         <S.LoginBox>
           <S.LogOut onClick={handleLogOut}>로그아웃</S.LogOut>
