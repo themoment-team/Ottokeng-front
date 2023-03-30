@@ -29,3 +29,13 @@ export const Bar = styled.div`
   height: 0.75rem;
   background-color: #a1a1a1;
 `;
+
+export const Img = styled.div<{ image: string | null }>`
+  width: inherit;
+  height: inherit;
+  border-radius: 100%;
+  background-color: gray;
+  background-image: url(${props => props.image as string});
+  background-repeat: no-repeat;
+  background-size: cover;
+`;
