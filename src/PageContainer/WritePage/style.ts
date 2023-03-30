@@ -45,8 +45,10 @@ export const TextArea = styled.textarea`
   padding: 1.25rem 0 0 1rem;
   margin-bottom: 1.25rem;
   font-size: 1.125rem;
+  font-family: 'Pretendard';
   outline: none;
   &::placeholder {
+    font-family: 'Pretendard';
     color: ${P.gray2};
   }
   &:focus {
