@@ -50,7 +50,7 @@ const ListPage = () => {
       });
       const data = res.data;
       console.log(data);
-      printList(data);
+      printList(data.list);
     } catch (err) {
       console.error(err);
     }
