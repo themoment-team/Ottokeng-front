@@ -42,7 +42,7 @@ const User = ({ imageUrl }: props) => {
     <>
       <S.UserBox>
         <S.UserImg>
-          <img src={imageUrl} />
+          <img src={imageUrl} alt="프로필이미지" />
         </S.UserImg>
         <S.LoginBox>
           <S.LogOut onClick={handleLogOut}>로그아웃</S.LogOut>
