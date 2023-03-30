@@ -89,7 +89,7 @@ const WriteBox = () => {
       sendData(url);
     } else {
       // 거름
-      console.error('안 돼 돌아가');
+      alert('안 돼 돌아가');
     }
   };
 
