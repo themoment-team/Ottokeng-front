@@ -7,7 +7,7 @@ const PlusBtn = () => {
     <div>
       <S.PlusBtn>
         <S.Plus>
-          <img src={I.PlusIcon}></img>
+          <img src={I.PlusIcon} alt="플러스버튼"></img>
         </S.Plus>
       </S.PlusBtn>
     </div>

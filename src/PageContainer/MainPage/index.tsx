@@ -24,10 +24,10 @@ const MainPage = () => {
               transform: rotate(180deg);
             `}
           >
-            <img src={I.ArrowIcon}></img>
+            <img src={I.ArrowIcon} alt="화살표"></img>
           </S.Arrow>
           <S.Arrow>
-            <img src={I.ArrowIcon}></img>
+            <img src={I.ArrowIcon} alt="화살표"></img>
           </S.Arrow>
         </S.ArrowBox>
         <Preview />

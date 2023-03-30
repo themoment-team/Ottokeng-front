@@ -10,6 +10,7 @@ export const PlusBtn = styled.button`
   left: 107.25rem;
   border-radius: 100%;
   border: none;
+  cursor: pointer;
 `;
 
 export const Plus = styled.div``;
