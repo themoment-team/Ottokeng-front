@@ -17,7 +17,6 @@ const User = ({ imageUrl }: props) => {
         },
       },
     );
-    localStorage.clear();
   };
   const logOutUser = async () => {
     const res = await axios.delete(
@@ -28,15 +27,16 @@ const User = ({ imageUrl }: props) => {
         },
       },
     );
-    localStorage.clear();
   };
   const handleLogOut = () => {
     if (window.confirm('정말 로그아웃하시겠습니까 ?')) {
+      localStorage.clear();
       logOutUser();
     }
   };
   const handleWithdraw = () => {
     if (window.confirm('정말 탈퇴하시겠습니까 ?')) {
+      localStorage.clear();
       deleteUser();
     }
   };

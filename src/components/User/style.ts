@@ -22,8 +22,12 @@ export const LoginBox = styled.div`
   justify-content: space-between;
   padding-top: 20px;
 `;
-export const LogOut = styled.div``;
-export const UserDelete = styled.div``;
+export const LogOut = styled.div`
+  cursor: pointer;
+`;
+export const UserDelete = styled.div`
+  cursor: pointer;
+`;
 export const Bar = styled.div`
   width: 2px;
   height: 0.75rem;
