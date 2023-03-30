@@ -6,7 +6,12 @@ import * as S from './style';
 import * as C from 'components';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import refresh from 'hooks/refresh';
+import { Link } from 'react-router-dom';
 const MainPage = () => {
+  useEffect(() => {
+    refresh();
+  }, []);
   return (
     <>
       <C.Header />
@@ -24,14 +29,16 @@ const MainPage = () => {
               transform: rotate(180deg);
             `}
           >
-            <img src={I.ArrowIcon}></img>
+            <img src={I.ArrowIcon} alt="화살표"></img>
           </S.Arrow>
           <S.Arrow>
-            <img src={I.ArrowIcon}></img>
+            <img src={I.ArrowIcon} alt="화살표"></img>
           </S.Arrow>
         </S.ArrowBox>
         <Preview />
-        <PlusBtn />
+        <Link to="/write">
+          <PlusBtn />
+        </Link>
         <S.DotsBox>
           <S.Dots></S.Dots>
           <S.Dots></S.Dots>

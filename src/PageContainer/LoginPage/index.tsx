@@ -5,7 +5,7 @@ import * as C from 'assets/svgs';
 import { useState } from 'react';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { useEffect } from 'react';
+import { Navigate } from 'react-router-dom';
 import After from './After';
 
 type Platform = 'kakao' | 'google';
@@ -20,6 +20,7 @@ interface IUser {
 }
 
 const LoginPage = () => {
+  const navigate = useNavigate();
   const [user, setUser] = useState<IUser | undefined>();
   const parsedHash = new URLSearchParams(window.location.hash.substring(1));
   const accessToken = parsedHash.get('access_token');
@@ -41,7 +42,11 @@ const LoginPage = () => {
         method: 'get',
       });
       console.log(data.name);
-      setUser(data);
+      localStorage.setItem('name', data.name);
+      localStorage.setItem('profileImg', data.imageUrl);
+      localStorage.setItem('token', data.accessToken);
+      localStorage.setItem('refreshToken', data.refreshToken);
+      navigate('/');
       // setHeader(data.name);
     } catch (err) {
       console.error(err);

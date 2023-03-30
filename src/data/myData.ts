@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'https://www.ottokeng.site';
+const url = 'https://server.ottokeng.site';
 
 interface Post {
   id: number;
