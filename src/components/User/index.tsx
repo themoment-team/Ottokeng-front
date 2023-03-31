@@ -30,6 +30,7 @@ const User = ({ imageUrl }: props) => {
         },
       },
     );
+    console.log(res);
   };
   const handleLogOut = () => {
     if (window.confirm('정말 로그아웃하시겠습니까 ?')) {
