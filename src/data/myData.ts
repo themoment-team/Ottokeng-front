@@ -9,11 +9,19 @@ interface Post {
 }
 
 export async function getMyPosts(): Promise<Post[]> {
-  const response = await axios.get(`${url}/my-page/post`);
+  const response = await axios.get(`${url}/my-page/post`, {
+    headers: {
+      Authorization: localStorage.getItem('token'),
+    },
+  });
   return response.data;
 }
 
 export async function getMyReplies(): Promise<Post[]> {
-  const response = await axios.get(`${url}/my-page/comment`);
+  const response = await axios.get(`${url}/my-page/comment`, {
+    headers: {
+      Authorization: localStorage.getItem('token'),
+    },
+  });
   return response.data;
 }
