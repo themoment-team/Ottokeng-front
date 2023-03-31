@@ -1,14 +1,12 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import { Component, useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import * as P from 'pages';
-import * as C from 'components';
 import PrivateRoute from 'components/PrivateRoute';
 
 function App() {
   enum PATH {
     write = '/write/*',
-    list = '/list',
-    bulletin = '/list/1',
+    list = '/content/list',
+    bulletin = '/list',
     login = '/login/*',
     start = '/start',
     main = '/',
@@ -32,7 +30,7 @@ function App() {
             element={<PrivateRoute component={<P.UserPage />} />}
           ></Route>
           <Route
-            path="/content/list"
+            path={PATH.list}
             element={<PrivateRoute component={<P.ListPage />} />}
           />
           <Route
