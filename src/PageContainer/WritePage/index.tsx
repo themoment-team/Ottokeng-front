@@ -103,16 +103,8 @@ const WriteBox = () => {
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let imgLists = [...imgList];
-    const target = e.currentTarget;
-    const files = (target.files as FileList)[0];
-    const FILE_SIZE_MAX_LIMIT = 5 * 1024 * 1024;
     if (e.target.files !== null) {
       const pictures = Array.from(e.target.files);
-      if (files.size > FILE_SIZE_MAX_LIMIT) {
-        target.value = '';
-        alert('업로드 가능한 최대 용량은 5MB입니다. ');
-        return;
-      }
       for (let i = 0; i < pictures.length; i++) {
         imgLists.push(pictures[i]);
       }
