@@ -77,7 +77,7 @@ const ListItem = ({ datas, isModify, setReload, reload }: props) => {
 
   const getComments = async () => {
     const res = await axios.get(
-      'https://server.ottokeng/post/comment/' + datas.id,
+      'https://server.ottokeng.site/post/comment/' + datas.id,
       {
         headers: {
           Authorization: localStorage.getItem('token'),

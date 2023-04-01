@@ -18,5 +18,4 @@ export const UserBtnBox = styled.div`
   align-items: center;
   justify-content: center;
   padding-top: 32px;
-  flex-direction: column;
 `;
