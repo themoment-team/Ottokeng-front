@@ -14,7 +14,12 @@ interface PostListProps {
 
 function PostList({ posts }: PostListProps) {
   return (
-    <div>
+    <div
+      css={css`
+        display: flex;
+        flex-direction: column;
+      `}
+    >
       {posts.map(post => (
         <S.PostItem key={post.id}>
           <h3>{post.title}</h3>
