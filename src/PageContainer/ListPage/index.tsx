@@ -27,7 +27,7 @@ const ListPage = () => {
   };
 
   const printList = (datas: Array<datas>) => {
-    const listItems: JSX.Element[] = datas.map((data: datas) => {
+    const listItems: JSX.Element[] = datas.reverse().map((data: datas) => {
       return (
         <C.ListItem
           key={data.id}

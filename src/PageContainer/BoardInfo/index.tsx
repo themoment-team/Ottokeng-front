@@ -61,7 +61,6 @@ const BoardInfo = () => {
             </S.BoardContentWrap>
             <C.BoardComment />
           </S.BoardInfoWrap>
-          <C.Footer />
         </div>
       </S.Container>
     </>
