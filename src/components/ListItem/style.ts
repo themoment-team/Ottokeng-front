@@ -14,6 +14,7 @@ export const ContentBox = styled.div`
 `;
 
 export const IMGBox = styled.img`
+  background-size: contain;
   width: 7.75rem;
   height: 7.75rem;
   border-radius: 0.5rem;
