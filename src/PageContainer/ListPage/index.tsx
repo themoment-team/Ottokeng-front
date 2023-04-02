@@ -87,6 +87,7 @@ const ListPage = () => {
             css={css`
               display: flex;
               flex-direction: column;
+              align-items: center;
               width: 100vw;
               justify-content: center;
               background-color: #f1f1f5;

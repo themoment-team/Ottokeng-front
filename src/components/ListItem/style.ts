@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const Container = styled.div`
   width: 54.625rem;
-  padding: 3.75rem 3.25rem 3.75rem 4.625rem;
+  padding: 3.75rem 0;
   background-color: #fff;
   margin-top: 8rem;
 `;
