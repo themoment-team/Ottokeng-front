@@ -82,15 +82,25 @@ const ListPage = () => {
           height: 100vh;
         `}
       >
-        <div>
+        <div
+          css={css`
+            margin-top: 8rem;
+            background-color: #f1f1f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100vw;
+            justify-content: center;
+          `}
+        >
           <Container
             css={css`
               display: flex;
               flex-direction: column;
               align-items: center;
-              width: 100vw;
+              width: 1000px;
               justify-content: center;
-              background-color: #f1f1f5;
+              background-color: 'white';
             `}
           >
             {list}
