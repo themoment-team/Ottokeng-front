@@ -5,7 +5,10 @@ const url = 'https://server.ottokeng.site';
 interface Post {
   id: number;
   title: string;
-  content: string;
+  contents: string;
+  createdAt: string;
+  imageUrls: [string];
+  writer: string;
 }
 
 export async function getMyPosts(): Promise<Post[]> {

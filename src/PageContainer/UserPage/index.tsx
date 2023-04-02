@@ -12,7 +12,10 @@ const UserPage = () => {
   interface Post {
     id: number;
     title: string;
-    content: string;
+    contents: string;
+    createdAt: string;
+    imageUrls: [string];
+    writer: string;
   }
   const [myPosts, setMyPosts] = useState<Post[]>([]);
   const [myReplies, setMyReplies] = useState<Post[]>([]);
