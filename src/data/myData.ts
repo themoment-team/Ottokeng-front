@@ -14,6 +14,7 @@ export async function getMyPosts(): Promise<Post[]> {
       Authorization: localStorage.getItem('token'),
     },
   });
+  console.log(response.data);
   return response.data;
 }
 
