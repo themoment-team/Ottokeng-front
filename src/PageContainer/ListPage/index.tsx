@@ -100,7 +100,7 @@ const ListPage = () => {
               align-items: center;
               width: 1000px;
               justify-content: center;
-              background-color: 'white';
+              background-color: white;
             `}
           >
             {list}
