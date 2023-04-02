@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import * as S from './style';
-
+import { useState } from 'react';
 interface Post {
   id: number;
   title: string;
@@ -29,7 +29,7 @@ function PostList({ posts }: PostListProps) {
         <S.PostItem key={post.id}>
           <h3>{post.title}</h3>
           <p>{post.contents}</p>
-          {post.createdAt}
+          {post.createdAt.split('T')}
           <div
             css={css`
               background-image: url(${post.imageUrls[0]});
