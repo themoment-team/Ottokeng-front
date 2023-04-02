@@ -39,6 +39,7 @@ const ListItem = ({ datas, isModify, setReload, reload }: props) => {
 
   const [showModal, setShowModal] = useState<boolean>(false);
   const [comments, setComments] = useState<comments[]>([]);
+  const [createdAt, setCreatedAt] = useState<string>('');
 
   const handleDotClick = () => {
     setShowModal(true);
@@ -93,6 +94,7 @@ const ListItem = ({ datas, isModify, setReload, reload }: props) => {
 
   useEffect(() => {
     getComments();
+    setCreatedAt(datas.createdAt.split('T')[0]);
   }, []);
 
   return (
@@ -140,7 +142,7 @@ const ListItem = ({ datas, isModify, setReload, reload }: props) => {
           <S.BottomBox>
             <S.DateAndNameBox>
               <S.DateAndName>
-                {datas.createdAt} &nbsp;.&nbsp; 작성자 &nbsp;: {datas.writer}
+                {createdAt} &nbsp;.&nbsp; 작성자 &nbsp;: {datas.writer}
               </S.DateAndName>
             </S.DateAndNameBox>
             <S.MessageBox>
