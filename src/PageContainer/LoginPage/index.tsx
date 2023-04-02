@@ -20,8 +20,6 @@ const LoginPage = () => {
     google: process.env.REACT_APP_GOOGLE_URL,
   };
 
-  localStorage.setItem('token', '!111');
-
   const getUserInfo = async (code: string, platform: Platform) => {
     try {
       const { data } = await axios({
