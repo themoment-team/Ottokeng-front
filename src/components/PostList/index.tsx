@@ -21,21 +21,28 @@ function PostList({ posts }: PostListProps) {
       css={css`
         display: flex;
         flex-direction: column;
-        width: 626px;
-        height: 100px;
+        width: 960px;
+        background-color: #ffff;
+        justify-content: center;
+        align-items: center;
       `}
     >
       {posts.map(post => (
         <S.PostItem key={post.id}>
-          <h3>{post.title}</h3>
-          <p>{post.contents}</p>
-          {post.createdAt.split('T')}
           <div
             css={css`
               background-image: url(${post.imageUrls[0]});
+              width: 50px;
+              height: 50px;
             `}
           ></div>
-          {post.writer}
+          <div>
+            <S.Title>{post.title}</S.Title>
+            <S.Contents>{post.contents}</S.Contents>
+            <S.Writer>
+              {post.createdAt.split('T')[0]} &nbsp; 작성자 : {post.writer}
+            </S.Writer>
+          </div>
         </S.PostItem>
       ))}
     </div>

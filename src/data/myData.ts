@@ -12,6 +12,15 @@ interface Post {
 }
 
 export async function getMyPosts(): Promise<Post[]> {
+  localStorage.setItem(
+    'token',
+    'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMTM4OTQ3NTAyODI0OTQ4NjM3MzciLCJpYXQiOjE2ODA0MTI0ODUsImV4cCI6MTY4MDQyMzI4NX0.3yePXOi7n5DZpTmtTaWg5XYxiqQNrvxD0kz5pSSP6UY',
+  );
+  localStorage.setItem(
+    'refreshToken',
+    'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMTM4OTQ3NTAyODI0OTQ4NjM3MzciLCJpYXQiOjE2ODA0MTI0ODUsImV4cCI6MTY4ODE4ODQ4NX0.46tt3Hc5m1Q8jD08TzTm4YBP44pUMHZgQ4ne4Jdkmg4',
+  );
+
   const response = await axios.get(`${url}/my-page/post`, {
     headers: {
       Authorization: localStorage.getItem('token'),
