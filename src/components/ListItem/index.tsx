@@ -4,8 +4,6 @@ import * as I from 'assets/svgs';
 import { css } from '@emotion/react';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
-import { StackNavigationProp } from '@react-navigation/stack';
-import { useNavigation } from '@react-navigation/core';
 import axios from 'axios';
 
 type datas = {
@@ -37,13 +35,11 @@ type comments = {
 };
 
 const ListItem = ({ datas, isModify, setReload, reload }: props) => {
-  const navigation =
-    useNavigation<
-      StackNavigationProp<any | { datas: datas; comments: comments }>
-    >();
+  const navigate = useNavigate();
 
   const [showModal, setShowModal] = useState<boolean>(false);
   const [comments, setComments] = useState<comments[]>([]);
+  const [createdAt, setCreatedAt] = useState<string>('');
 
   const handleDotClick = () => {
     setShowModal(true);
@@ -52,7 +48,7 @@ const ListItem = ({ datas, isModify, setReload, reload }: props) => {
   const handleEventClick = (isModify: boolean) => {
     if (isModify) {
       if (window.confirm('수정 하시겠습니까?')) {
-        navigation.navigate('/write/update', { datas });
+        navigate('/write/update', { state: { datas: datas } });
       }
     } else {
       if (window.confirm('정말 삭제 하시겠습니까?')) {
@@ -81,20 +77,24 @@ const ListItem = ({ datas, isModify, setReload, reload }: props) => {
   };
 
   const getComments = async () => {
-    const res = await axios.get('https://abc/post/comment/' + datas.id, {
-      headers: {
-        Authorization: localStorage.getItem('token'),
+    const res = await axios.get(
+      'https://server.ottokeng.site/post/comment/' + datas.id,
+      {
+        headers: {
+          Authorization: localStorage.getItem('token'),
+        },
       },
-    });
+    );
     setComments(res.data);
   };
 
   const handleContentClick = () => {
-    navigation.navigate('/list', { datas, comments });
+    navigate('/list', { state: { datas: datas, comments: comments } });
   };
 
   useEffect(() => {
     getComments();
+    setCreatedAt(datas.createdAt.split('T')[0]);
   }, []);
 
   return (
@@ -142,7 +142,7 @@ const ListItem = ({ datas, isModify, setReload, reload }: props) => {
           <S.BottomBox>
             <S.DateAndNameBox>
               <S.DateAndName>
-                {datas.createdAt} &nbsp;.&nbsp; 작성자 &nbsp;: {datas.writer}
+                {createdAt} &nbsp;.&nbsp; 작성자 &nbsp;: {datas.writer}
               </S.DateAndName>
             </S.DateAndNameBox>
             <S.MessageBox>

@@ -1,14 +1,12 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import { Component, useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import * as P from 'pages';
-import * as C from 'components';
 import PrivateRoute from 'components/PrivateRoute';
 
 function App() {
   enum PATH {
     write = '/write/*',
-    list = '/list',
-    bulletin = '/list/1',
+    list = '/content/list',
+    bulletin = '/list',
     login = '/login/*',
     start = '/start',
     main = '/',
@@ -21,27 +19,28 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path={PATH.login} element={<P.LoginPage />}></Route>
-          {/* <Route path="/write" element={<WritePage />}></Route> */}
-          {/* <Route path="/list" element={<ListPage />}></Route> */}
-          {/* <Route path="/list/:id" element={<Bulletin />}></Route> */}
-
-          {/* <Route path="*" element={<NotFound />}></Route> */}
-          {/* <Route path="/" element={<MainPage />}/> */}
-          {/* <Route
-            path={PATH.loginUser}
-            element={<GoogleLoginBtnAfter />}
-          ></Route>*/}
-          {/* <Route path={PATH.login} element={<LoginPage />}/> */}
+          <Route path={PATH.start} element={<P.StartPage />}></Route>
           <Route
-            path={PATH.start}
-            element={<PrivateRoute component={<P.StartPage />} />}
+            path={PATH.main}
+            element={<PrivateRoute component={<P.MainPage />} />}
           ></Route>
-          <Route path={PATH.main} element={<P.MainPage />}></Route>
           <Route path={PATH.about} element={<P.AboutPage />}></Route>
-          <Route path={PATH.user} element={<P.UserPage />}></Route>
-          <Route path="/content/list" element={<P.ListPage />} />
-          <Route path={PATH.write} element={<P.WritePage />} />
-          <Route path={PATH.bulletin} element={<P.BoardInfoPage />}></Route>
+          <Route
+            path={PATH.user}
+            element={<PrivateRoute component={<P.UserPage />} />}
+          ></Route>
+          <Route
+            path={PATH.list}
+            element={<PrivateRoute component={<P.ListPage />} />}
+          />
+          <Route
+            path={PATH.write}
+            element={<PrivateRoute component={<P.WritePage />} />}
+          />
+          <Route
+            path={PATH.bulletin}
+            element={<PrivateRoute component={<P.BoardInfoPage />} />}
+          ></Route>
 
           <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>

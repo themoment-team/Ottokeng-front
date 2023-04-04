@@ -5,7 +5,7 @@ import * as C from 'components';
 import { css } from '@emotion/react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const WriteBox = () => {
   const { state } = useLocation();
@@ -14,6 +14,8 @@ const WriteBox = () => {
   const [check, setCheck] = useState<string>('');
   const [imgList, setImgList] = useState<any>([]);
   const [location, setMap] = useState<string[]>([]);
+
+  const navigate = useNavigate();
 
   let isUpdate = false;
 
@@ -37,7 +39,6 @@ const WriteBox = () => {
   const sendData = async (url: string) => {
     const formData = new FormData();
     const type = check === 'acquire' ? 'LOST_WRITING' : 'FIND_WRITING';
-
     const contents = {
       title: title,
       contents: content,
@@ -65,15 +66,16 @@ const WriteBox = () => {
           Authorization: localStorage.getItem('token'),
         },
       });
-      const data = res.data;
-      console.log(data);
+      if (res.status === 201) {
+        alert('Success');
+        navigate('/');
+      } else console.log(res.status);
     } catch (err) {
       console.error(err);
     }
   };
 
   const handleSubmit = () => {
-    console.log(location);
     if (
       title !== '' &&
       content !== '' &&
@@ -89,7 +91,7 @@ const WriteBox = () => {
       sendData(url);
     } else {
       // 거름
-      console.error('안 돼 돌아가');
+      alert('안 돼 돌아가');
     }
   };
 

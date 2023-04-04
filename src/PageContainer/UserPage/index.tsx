@@ -12,21 +12,16 @@ const UserPage = () => {
   interface Post {
     id: number;
     title: string;
-    content: string;
+    contents: string;
+    createdAt: string;
+    imageUrls: [string];
+    writer: string;
   }
   const [myPosts, setMyPosts] = useState<Post[]>([]);
   const [myReplies, setMyReplies] = useState<Post[]>([]);
   const title = ['내가 쓴글', '내가 답변한 글'];
   const imageUrl = localStorage.getItem('profileImg');
 
-  const getDatas = async () => {
-    const res = await axios.get(`https://server.ottokeng.site/my-page/post`, {
-      headers: {
-        Authorization: localStorage.getItem('token'),
-      },
-    });
-    console.log(res.data);
-  };
   useEffect(() => {
     async function getData() {
       const posts = await getMyPosts();
@@ -35,7 +30,6 @@ const UserPage = () => {
       setMyReplies(replies);
     }
     getData();
-    getDatas();
   }, []);
   return (
     <>

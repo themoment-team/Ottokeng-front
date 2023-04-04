@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import { css } from '@emotion/react';
 
 const ListPage = () => {
   const location = useLocation();
@@ -26,7 +27,7 @@ const ListPage = () => {
   };
 
   const printList = (datas: Array<datas>) => {
-    const listItems: JSX.Element[] = datas.map((data: datas) => {
+    const listItems: JSX.Element[] = datas.reverse().map((data: datas) => {
       return (
         <C.ListItem
           key={data.id}
@@ -42,10 +43,14 @@ const ListPage = () => {
 
   const getData = async (url: string) => {
     try {
-      const res = await axios.get(url + '/' + localStorage.getItem('token'));
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: localStorage.getItem('token'),
+        },
+      });
       const data = res.data;
       console.log(data);
-      printList(data);
+      printList(data.list);
     } catch (err) {
       console.error(err);
     }
@@ -71,8 +76,38 @@ const ListPage = () => {
   return (
     <>
       <C.Header />
-      <Container>{list}</Container>
-      <C.Footer />
+      <div
+        css={css`
+          width: 100vw;
+          height: 100vh;
+        `}
+      >
+        <div
+          css={css`
+            margin-top: 8rem;
+            background-color: #f1f1f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100vw;
+            justify-content: center;
+          `}
+        >
+          <Container
+            css={css`
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              width: 1000px;
+              justify-content: center;
+              background-color: white;
+            `}
+          >
+            {list}
+          </Container>
+        </div>
+        <C.Footer />
+      </div>
     </>
   );
 };

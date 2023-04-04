@@ -2,33 +2,18 @@
 import { css } from '@emotion/react';
 import * as S from './style';
 import * as C from 'assets/svgs';
-import { useState } from 'react';
-import { useParams, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { Navigate } from 'react-router-dom';
 import After from './After';
 
 type Platform = 'kakao' | 'google';
 
-interface IUser {
-  name: string;
-  imageUrl: string;
-  role: string;
-  tokenType: string;
-  accessToken: string;
-  refreshToken: string;
-}
-
 const LoginPage = () => {
   const navigate = useNavigate();
-  const [user, setUser] = useState<IUser | undefined>();
-  const parsedHash = new URLSearchParams(window.location.hash.substring(1));
-  const accessToken = parsedHash.get('access_token');
-  const [isLogin, setIsLogin] = useState<boolean>(true);
-  const dlwjddn = useLocation();
-  const params = new URLSearchParams(dlwjddn.search);
+  const currentUrl = useLocation();
+  const params = new URLSearchParams(currentUrl.search);
   let loginCode = params.get('code');
-  let platform = dlwjddn.pathname.slice(19);
+  let platform = currentUrl.pathname.slice(19);
 
   const Auth = {
     kakao: process.env.REACT_APP_KAKAO_URL,
@@ -55,7 +40,7 @@ const LoginPage = () => {
 
   return (
     <S.Container>
-      {dlwjddn.search === '' ? (
+      {currentUrl.search === '' ? (
         <div
           css={css`
             width: 27.5rem;

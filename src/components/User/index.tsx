@@ -1,13 +1,15 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import * as S from './style';
-import axios, { all } from 'axios';
-
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 interface props {
   imageUrl: string | null;
   src?: string | undefined;
 }
+
 const User = ({ imageUrl }: props) => {
+  const navigate = useNavigate();
   const deleteUser = async () => {
     const res = await axios.delete(
       `https://server.ottokeng.site/my-page/delete`,
@@ -17,6 +19,7 @@ const User = ({ imageUrl }: props) => {
         },
       },
     );
+    console.log(res);
   };
   const logOutUser = async () => {
     const res = await axios.delete(
@@ -27,15 +30,20 @@ const User = ({ imageUrl }: props) => {
         },
       },
     );
+    console.log(res);
   };
   const handleLogOut = () => {
     if (window.confirm('정말 로그아웃하시겠습니까 ?')) {
       logOutUser();
+      localStorage.clear();
+      navigate('/start');
     }
   };
   const handleWithdraw = () => {
     if (window.confirm('정말 탈퇴하시겠습니까 ?')) {
       deleteUser();
+      localStorage.clear();
+      navigate('/start');
     }
   };
   return (
